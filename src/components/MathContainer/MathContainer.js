@@ -7,8 +7,8 @@ import HomeBttn from "../HomeBttn/index";
 import ConfigBttn from "../ConfigBttn/index";
 import SubmitBttn from "../SubmitBttn/index";
 import EraseBttn from "../EraseBttn/index";
-import EquationBox from "../EquationBox/index"
-
+import EquationBox from "../EquationBox/index";
+import Canvas from "../Canvas/index";
 function MathContainer() {
 
     return (
@@ -32,6 +32,7 @@ function MathContainer() {
 
                     <Row>
                         <Col>
+                            <Canvas />
                             <p> WRITING AREA</p>
                         </Col>
                     </Row>
