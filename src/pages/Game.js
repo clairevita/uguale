@@ -8,7 +8,7 @@ import ConfigBttn from "../components/ConfigBttn/index";
 import SubmitBttn from "../components/SubmitBttn/index";
 import EraseBttn from "../components/EraseBttn/index";
 import EquationBox from "../components/EquationBox/index"
-
+import Canvas from '../components/Canvas/index';
 function Game() {
 
     return (
@@ -32,17 +32,17 @@ function Game() {
 
                     <Row>
                         <Col>
-                            <p> WRITING AREA</p>
+                            <Canvas />
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col>
+                        {/* <Col>
                          <EraseBttn/>
-                        </Col>
-                        <Col>
+                        </Col> */}
+                        {/* <Col>
                         <SubmitBttn/>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </Wrapper>
