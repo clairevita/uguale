@@ -17,7 +17,6 @@ function App() {
           <Route exact path="/game" component={Game} />
         </Wrapper>
     </Router>
-      <Footer />
     </div>
   
   );
