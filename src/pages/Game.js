@@ -1,15 +1,15 @@
 import React from "react";
-import Wrapper from "../Wrapper/index";
-import Container from "../Container";
-import Row from "../Row/index";
-import Col from "../Col/index";
-import HomeBttn from "../HomeBttn/index";
-import ConfigBttn from "../ConfigBttn/index";
-import SubmitBttn from "../SubmitBttn/index";
-import EraseBttn from "../EraseBttn/index";
-import EquationBox from "../EquationBox/index"
+import Wrapper from "../components/Wrapper/index";
+import Container from "../components/Container";
+import Row from "../components/Row/index";
+import Col from "../components/Col/index";
+import HomeBttn from "../components/HomeBttn/index";
+import ConfigBttn from "../components/ConfigBttn/index";
+import SubmitBttn from "../components/SubmitBttn/index";
+import EraseBttn from "../components/EraseBttn/index";
+import EquationBox from "../components/EquationBox/index"
 
-function MathContainer() {
+function Game() {
 
     return (
         <div>
@@ -51,4 +51,4 @@ function MathContainer() {
     );
 }
 
-export default MathContainer;
+export default Game;
