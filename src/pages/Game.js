@@ -16,31 +16,31 @@ function Game() {
             <Wrapper>
                 <Container>
                     <Row>
-                        <Col>
+                        <Col size="md-6">
                         <HomeBttn/>
                         </Col>
-                        <Col>
+                        <Col size="md-6">
                         <ConfigBttn/>
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col>
+                        <Col size="md-12">
                             <EquationBox />
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col>
+                        <Col size="md-12">
                             <p> WRITING AREA</p>
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col>
+                        <Col size="md-6">
                          <EraseBttn/>
                         </Col>
-                        <Col>
+                        <Col size="md-6">
                         <SubmitBttn/>
                         </Col>
                     </Row>

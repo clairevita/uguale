@@ -3,19 +3,19 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
-import Footer from "../components/Footer";
+
 
 function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
         <Row>
-          <Col>
+          <Col size="md-12">
             <h1>Welcome To Uguale!</h1>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col size="md-12">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet diam tortor, id
               consequat mauris ullamcorper eu. Orci varius natoque penatibus et magnis dis
@@ -32,7 +32,7 @@ function Home() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col size="md-12">
             <StartBttn/>
           </Col>
         </Row>
