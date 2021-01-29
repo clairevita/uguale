@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import './HomeBttn.css';
 
 function HomeBttn() {
   return (
-  <Button variant="contained" color="secondary" className="HomeButton">
-  Home
+  <Button bsPrefix= "HomeBttn">
+  HOME
  </Button>
 )}
 
