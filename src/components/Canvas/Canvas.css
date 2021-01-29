@@ -2,4 +2,14 @@
     border:1px solid black;
     width: 1000px;
     height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
 }
