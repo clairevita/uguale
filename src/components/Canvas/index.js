@@ -10,6 +10,7 @@ const Canvas = class extends React.Component {
 
     render() {
         return (
+            <div>
             <div className='canvasContainer'>
                 <ReactSketchCanvas
                     ref={this.canvas}
@@ -19,7 +20,9 @@ const Canvas = class extends React.Component {
                     height="100%"
 
                 />
-                <Button
+                </div>
+                <div className='buttons'>
+                <Button 
                     onClick={() => {
                         this.canvas.current.
                             exportImage("png")
@@ -34,7 +37,7 @@ const Canvas = class extends React.Component {
                     Submit
               </Button>
 
-                <Button
+                <Button 
                     onClick={() => {
                         this.canvas.current.
                         resetCanvas()
@@ -44,6 +47,7 @@ const Canvas = class extends React.Component {
                     Erase
               </Button>
 
+            </div>
             </div>
         );
     }
