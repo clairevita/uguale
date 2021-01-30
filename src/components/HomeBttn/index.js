@@ -5,6 +5,7 @@ import './HomeBttn.css';
 function HomeBttn() {
 
   return (
+
   <Button bsPrefix= "HomeBttn" onClick={event =>  window.location.href='/'}>
    Home
  </Button>
