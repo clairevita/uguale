@@ -5,7 +5,7 @@ import './configBttn.css';
 function ConfigBttn() {
   return (
   <Button bsPrefix ="ConfigBttn">
-  CONFIG
+  config
  </Button>
 )}
 

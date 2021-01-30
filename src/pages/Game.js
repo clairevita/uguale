@@ -17,10 +17,10 @@ function Game() {
             <Wrapper>
                 <Container>
                     <Row>
-                        <Col size="md-6">
+                        <Col size="md-6" align="center">
                         <HomeBttn/>
                         </Col>
-                        <Col size="md-6">
+                        <Col size="md-6" align="center">
                         <ConfigBttn/>
                         </Col>
                     </Row>

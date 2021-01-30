@@ -5,7 +5,7 @@ import './HomeBttn.css';
 function HomeBttn() {
   return (
   <Button bsPrefix= "HomeBttn">
-  HOME
+  home
  </Button>
 )}
 
