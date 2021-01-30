@@ -22,7 +22,7 @@ const Canvas = class extends React.Component {
                 />
                 </div>
                 <div className='buttons'>
-                <Button 
+                <Button bsPrefix="submitBtn"
                     onClick={() => {
                         this.canvas.current.
                             exportImage("png")
@@ -34,17 +34,17 @@ const Canvas = class extends React.Component {
                             });
                     }}
                 >
-                    Submit
+                    submit
               </Button>
 
-                <Button 
+                <Button bsPrefix="eraseBtn"
                     onClick={() => {
                         this.canvas.current.
                         resetCanvas()
 
                     }}
                 >
-                    Erase
+                    erase
               </Button>
 
             </div>

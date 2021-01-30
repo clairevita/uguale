@@ -1,4 +1,5 @@
 import React from "react";
+import './EQBox.css';
 
 // By extending the React.Component class, Counter inherits functionality from it
 class EquationBox extends React.Component {
@@ -26,7 +27,7 @@ class EquationBox extends React.Component {
           <p className="card-text">{this.state.random1} + {this.state.random2}</p>
         </div>
       </div>
-       <button className="btn btn-primary" onClick={this.generateRandoms}>
+       <button id="generateBtn" className="btn btn-primary" onClick={this.generateRandoms}>
        Generate
      </button>
      </div>
