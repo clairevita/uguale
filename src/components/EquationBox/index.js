@@ -23,17 +23,7 @@ class EquationBox extends React.Component {
       <div>
         <div className="jumbotron jumbotron-fluid text-center ">
           <div className="card-body">
-            <p className="card-text">{this.state.random1} + {this.state.random2}</p>
-           
-            <ReactSketchCanvas
-            
-                ref={this.canvas}
-                strokeWidth={5}
-                strokeColor="black"
-                canvasColor=""
-                height="100%"
-              />
-           
+            <p className="card-text">{this.state.random1} + {this.state.random2}</p>        
 
           </div>
         </div>
