@@ -37,12 +37,6 @@ function Game() {
                     </Row>
 
                     <Row>
-                        {/* <Col>
-                         <EraseBttn/>
-                        </Col> */}
-                        {/* <Col>
-                        <SubmitBttn/>
-                        </Col> */}
                     </Row>
                 </Container>
             </Wrapper>
