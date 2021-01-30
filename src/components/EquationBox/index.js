@@ -22,7 +22,7 @@ class EquationBox extends React.Component {
   render() {
     return (
         <div>
-      <div className="jumbotron jumbotron-fluid text-center ">
+      <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
         <div className="card-body">
           <p className="card-text">{this.state.random1} + {this.state.random2}</p>
         </div>

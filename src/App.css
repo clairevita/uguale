@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Typo Grotesk Rounded';
+  src: local('Typo Grotesk Rounded'), url(./Fonts/Typo-Grotesk-Rounded-Demo.otf) format('opentype');
+}

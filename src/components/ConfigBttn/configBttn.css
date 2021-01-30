@@ -9,5 +9,10 @@
     background: #4C3735;
     color: #AFEADC;
     box-shadow: 4px 4px 8px #858585cc;
-    font-family: 'Balsamiq Sans', cursive;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.ConfigBttn:hover {
+    background-color: #AFEADC;
+    color: #4C3735;
 }
