@@ -9,7 +9,6 @@ import SubmitBttn from "../components/SubmitBttn/index";
 import EraseBttn from "../components/EraseBttn/index";
 import EquationBox from "../components/EquationBox/index"
 import Canvas from '../components/Canvas/index';
-import { Button } from "react-bootstrap";
 function Game() {
 
     return (
@@ -38,6 +37,12 @@ function Game() {
                     </Row>
 
                     <Row>
+                        {/* <Col>
+                         <EraseBttn/>
+                        </Col> */}
+                        {/* <Col>
+                        <SubmitBttn/>
+                        </Col> */}
                     </Row>
                 </Container>
             </Wrapper>
