@@ -1,0 +1,12 @@
+#EQbox {
+    font-size: 120px;
+    border: 0;
+    padding: 5px;
+    color: #4C3735;
+    background: #AFEADC;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.jumbotron{
+    padding: 0px;
+}
