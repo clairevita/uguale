@@ -8,6 +8,10 @@ class EquationBox extends React.Component {
     random2: 0
   };
 
+  componentDidMount() {
+    this.generateRandoms()
+  }
+
   // handleIncrement increments this.state.random1 by 1
   generateRandoms = () => {
     let difficulty = 2;
