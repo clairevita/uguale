@@ -26,24 +26,21 @@ function Game() {
                     </Row>
 
                     <Row>
-                        <Col size="md-12">
+                        <Col size="md-12" align="center">
                             <EquationBox />
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col size="md-12">
+                        <Col size="md-12" align="center">
                             <Canvas />
                         </Col>
                     </Row>
 
                     <Row>
-                        {/* <Col>
-                         <EraseBttn/>
-                        </Col> */}
-                        {/* <Col>
-                        <SubmitBttn/>
-                        </Col> */}
+                    <Col size="md-12" align="center">
+                    </Col>
+
                     </Row>
                 </Container>
             </Wrapper>

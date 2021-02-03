@@ -2,14 +2,43 @@
     border:1px solid black;
     width: 1000px;
     height: 500px;
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
+    align-content: center;
 }
 
 .buttons {
     margin-top: 10px;
     display: flex;
     justify-content: center;
-    
+}
+
+.submitBtn {
+    width: 50%;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    border: 0;
+    border-radius: 7px;
+    background: #4C3735;
+    color: #AFEADC;
+    box-shadow: 4px 4px 8px #858585cc;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.eraseBtn {
+    width: 50%;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 40px;
+    border: 0;
+    border-radius: 7px;
+    background: #4C3735;
+    color: #AFEADC;
+    box-shadow: 4px 4px 8px #858585cc;
+    font-family: 'Varela Round', sans-serif;
 }
