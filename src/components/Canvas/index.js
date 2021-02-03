@@ -38,6 +38,16 @@ const Canvas = class extends React.Component {
                 >
                     Erase
                 </Button>
+
+                <Button
+                    bsPrefix='eraseBtn'
+                    onClick={() => {
+                        this.canvas.current.
+                        clearCanvas()
+                        }}
+                >
+                    Skip
+                </Button>
                 </div>
             </div>
         );
