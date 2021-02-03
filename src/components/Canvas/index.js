@@ -7,12 +7,11 @@ const Canvas = class extends React.Component {
         super(props);
         this.canvas = React.createRef();
     }
-
     render() {
         return (
             <div>
                 <div className='canvasContainer'>
-                    <ReactSketchCanvas
+                <ReactSketchCanvas
                         ref={this.canvas}
                         strokeWidth={5}
                         strokeColor="black"
@@ -37,6 +36,7 @@ const Canvas = class extends React.Component {
             </div>
         );
     }
+    
 };
 
 

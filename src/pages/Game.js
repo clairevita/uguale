@@ -10,7 +10,6 @@ import EraseBttn from "../components/EraseBttn/index";
 import EquationBox from "../components/EquationBox/index"
 import Canvas from '../components/Canvas/index';
 function Game() {
-
     return (
         <div>
             <Wrapper>
