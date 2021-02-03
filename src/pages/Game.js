@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import Wrapper from "../components/Wrapper/index";
 import Container from "../components/Container";
 import Row from "../components/Row/index";
