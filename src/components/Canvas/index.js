@@ -7,50 +7,37 @@ const Canvas = class extends React.Component {
         super(props);
         this.canvas = React.createRef();
     }
-
     render() {
         return (
             <div>
                 <div className='canvasContainer'>
-                    <ReactSketchCanvas
+                <ReactSketchCanvas
                         ref={this.canvas}
                         strokeWidth={5}
                         strokeColor="black"
                         width="100%"
                         height="100%"
-
                     />
                 </div>
                 <div className='buttons'>
-                    <Button bsPrefix="submitBtn"
-                        onClick={() => {
-                            this.canvas.current.
-                                exportImage("png")
-                                .then(data => {
-                                    console.log(data);
-                                })
-                                .catch(event => {
-                                    console.log(event);
-                                });
-                        }}
-                    >
-                        submit
-                    </Button>
+                <Button bsPrefix='submitBtn'>
+                    Submit
+                </Button>
 
-                    <Button bsPrefix="eraseBtn"
-                        onClick={() => {
-                            this.canvas.current.
-                                resetCanvas()
-
-                        }}
-                    >
-                        erase
-                    </Button>
-
+                <Button
+                    bsPrefix='eraseBtn'
+                    onClick={() => {
+                    this.canvas.current.
+                    resetCanvas()
+                    }}
+                >
+                    Erase
+                </Button>
                 </div>
             </div>
         );
     }
+    
 };
 
 

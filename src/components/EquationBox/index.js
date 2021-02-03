@@ -1,6 +1,6 @@
 import React from "react";
 import './EQBox.css';
-
+import { ReactSketchCanvas } from "react-sketch-canvas";
 // By extending the React.Component class, Counter inherits functionality from it
 class EquationBox extends React.Component {
     // Setting the initial state of the Counter component
