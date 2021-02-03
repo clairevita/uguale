@@ -9,15 +9,18 @@ class EquationBox extends React.Component {
         random2: 0
     };
 
-    // handleIncrement increments this.state.random1 by 1
-    generateRandoms = () => {
-        let difficulty = 2;
-        let rand1 = Math.floor(Math.random() * (10 * difficulty));
-        let rand2 = Math.floor(Math.random() * (10 * difficulty));
-        // We always use the setState method to update a component's state
-        this.setState({ random1: rand1, random2: rand2 });
-    };
+  componentDidMount() {
+    this.generateRandoms()
+  }
 
+  // handleIncrement increments this.state.random1 by 1
+  generateRandoms = () => {
+    let difficulty = 2;
+    let rand1 = Math.floor(Math.random() * (10 * difficulty));
+    let rand2 = Math.floor(Math.random() * (10 * difficulty));
+    // We always use the setState method to update a component's state
+    this.setState({ random1:  rand1,  random2:  rand2});
+  };
     // The render method returns the JSX that should be rendered
     render() {
         return (
