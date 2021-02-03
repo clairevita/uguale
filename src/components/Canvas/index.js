@@ -21,7 +21,7 @@ const Canvas = class extends React.Component {
                 </div>
                 <div className='buttons'>
                 <Button bsPrefix='submitBtn'>
-                    Submit
+                    submit
                 </Button>
 
                 <Button
@@ -31,7 +31,7 @@ const Canvas = class extends React.Component {
                     resetCanvas()
                     }}
                 >
-                    Erase
+                    erase
                 </Button>
                 </div>
             </div>

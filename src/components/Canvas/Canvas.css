@@ -15,7 +15,7 @@
 }
 
 .submitBtn {
-    width: 50%;
+    width: 25%;
     padding: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -28,8 +28,14 @@
     font-family: 'Varela Round', sans-serif;
 }
 
+.submitBtn:hover {
+    color: #AFEADC;
+    background-color: #4C3735;
+    opacity: 0.85;
+}
+
 .eraseBtn {
-    width: 50%;
+    width: 25%;
     padding: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -41,4 +47,10 @@
     color: #AFEADC;
     box-shadow: 4px 4px 8px #858585cc;
     font-family: 'Varela Round', sans-serif;
+}
+
+.eraseBtn:hover {
+    color: #AFEADC;
+    background-color: #4C3735;
+    opacity: 0.85;
 }

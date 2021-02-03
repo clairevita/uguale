@@ -11,3 +11,9 @@
     box-shadow: 4px 4px 8px #858585cc;
     font-family: 'Varela Round', sans-serif;
 }
+
+.Erasebttn:hover {
+    color: #AFEADC;
+    background-color: #4C3735;
+    opacity: 0.85;
+}
