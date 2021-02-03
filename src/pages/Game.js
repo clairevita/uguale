@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from "react";
 import Wrapper from "../components/Wrapper/index";
 import Container from "../components/Container";
 import Row from "../components/Row/index";
@@ -9,14 +9,12 @@ import SubmitBttn from "../components/SubmitBttn/index";
 import EraseBttn from "../components/EraseBttn/index";
 import EquationBox from "../components/EquationBox/index"
 import Canvas from '../components/Canvas/index';
-import { Button } from "react-bootstrap";
 function Game() {
-
     return (
         <div>
             <Wrapper>
                 <Container>
-                    <Row>
+                <Row>
                         <Col size="md-6" align="center">
                         <HomeBttn/>
                         </Col>
