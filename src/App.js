@@ -10,11 +10,13 @@ function App() {
   return (
     <div>
       <Router>
+        <MathProvider>
         <Wrapper>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/game" component={Game} />
         </Wrapper>
+        </MathProvider>
       </Router>
     </div>
   
