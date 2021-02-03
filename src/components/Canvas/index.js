@@ -20,11 +20,12 @@ const Canvas = class extends React.Component {
                     />
                 </div>
                 <div className='buttons'>
-                <Button>
+                <Button bsPrefix='submitBtn'>
                     Submit
                 </Button>
 
                 <Button
+                    bsPrefix='eraseBtn'
                     onClick={() => {
                     this.canvas.current.
                     resetCanvas()
