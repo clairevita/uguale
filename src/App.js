@@ -5,7 +5,6 @@ import "./App.css";
 import Game from "./pages/Game";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home";
-import Test from './pages/Test';
 
 function App() {
   document.title = "Uguale";
@@ -16,7 +15,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/game" component={Game} />
-          <Route exact path="/test" component={Test} />
         </Wrapper>
     </Router>
     </div>
