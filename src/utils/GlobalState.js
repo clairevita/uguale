@@ -1,37 +1,26 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, { useContext, createContext, useReducer } from "react";
 
-const MathGeneration = createContext({
-    difficulty: 1,
-    numberOne: "",
-    numberTwo: ""
-});
-const { Provider } = MathGeneration;
+const MathContext = createContext();
+const { Provider } = MathContext;
 
-function reducer(state, action){
-    switch (action.type){
-        case "new":
-            return [
-                {
-                    difficulty: 1,
-                    numberOne: 1,
-                    numberTwo: 2
-                }
-            ]
-
+const reducer = (state, action) => {
+    switch (action.type) {
         default:
             return state;
     }
-
 }
 
-function MathProvider({ value = [], ...props }) {
-    const [state, dispatch] = useReducer(reducer, []);
-  
-    return <Provider value={[state, dispatch]} {...props} />;
-  }
-  
-  function useMathContext() {
-    return useContext(MathGeneration);
-  }
-  
-  export { MathProvider, useMathContext };
+const MathProvider = ({ value = [], ...props }) => {
+    const [state, dispatch] = useReducer(reducer, {
+        difficulty: 1,
+        numberOne: 1,
+        numberTwo: 1
+    });
+    return <Provider value={[state, dispatch]} {...props} />
+};
+
+const useMathContext = () => {
+    return useContext(MathContext);
+}
+
+export { MathProvider, useMathContext };

@@ -4,12 +4,12 @@ import "./App.css";
 import Game from "./pages/Game";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home";
-import { MathProvider } from './utils/GlobalState';
+import {MathProvider} from './utils/GlobalState';
 
 function App() {
   document.title = "Uguale";
   return (
-    <div>
+    
       <Router>
         <MathProvider>
           <Wrapper>
@@ -19,7 +19,7 @@ function App() {
           </Wrapper>
         </MathProvider>
       </Router>
-    </div>
+  
 
   );
 }
