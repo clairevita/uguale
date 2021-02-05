@@ -11,6 +11,9 @@ function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
         <Row>
         <Col size="md-2">
           
@@ -21,6 +24,7 @@ function Home() {
           <Col size="md-2">
           </Col>
         </Row>
+
         <Row>
           <Col size="md-12">
             <h1>Welcome!</h1>
