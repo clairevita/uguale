@@ -13,13 +13,14 @@ const Canvas = class extends React.Component {
         return (
             <div>
                 <div className='canvasContainer'>
-                    <ReactSketchCanvas
+                    <EquationBox className="eqb"/>
+                    <ReactSketchCanvas className="bg"
                         ref={this.canvas}
                         strokeWidth={5}
                         strokeColor="black"
                         width="100%"
                         height="100%"
-                        background="url(https://cdn5.vectorstock.com/i/1000x1000/16/14/graph-paper-background-vector-3851614.jpg)"
+                        background="rgba(201, 26, 26)"
                     />
                 </div>
                 <NumberField />
