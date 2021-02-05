@@ -19,31 +19,36 @@ const Canvas = class extends React.Component {
                         strokeColor="black"
                         width="100%"
                         height="100%"
-                        className="ReactSketchCanvas"
-                    >
-
-                    </ReactSketchCanvas>
-
+                        background="url(https://cdn5.vectorstock.com/i/1000x1000/16/14/graph-paper-background-vector-3851614.jpg)"
+                    />
                 </div>
                 <NumberField />
                 <div className='buttons'>
-                    <Button bsPrefix='submitBtn'
-                        onClick={() => {
-                            this.canvas.current.
-                                resetCanvas()
-                        }}
-                    >
-                        Submit
+                <Button bsPrefix='submitBtn' onClick={() => {
+                    this.canvas.current.
+                    clearCanvas()
+                    }}>
+                    submit
                 </Button>
 
-                    <Button
-                        bsPrefix='eraseBtn'
-                        onClick={() => {
-                            this.canvas.current.
-                                resetCanvas()
+                <Button
+                    bsPrefix='eraseBtn'
+                    onClick={() => {
+                    this.canvas.current.
+                    resetCanvas()
+                    }}
+                >
+                    erase
+                </Button>
+
+                <Button
+                    bsPrefix='eraseBtn'
+                    onClick={() => {
+                        this.canvas.current.
+                        clearCanvas()
                         }}
-                    >
-                        Erase
+                >
+                    skip
                 </Button>
                 </div>
             </div>
