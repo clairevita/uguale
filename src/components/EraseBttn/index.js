@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import './EraseBttn.css';
 
 function EraseBttn() {
   return (
-  <Button variant="contained" color="secondary" className="EraseBttn">
+  <Button bsPrefix="EraseBttn">
   Erase
  </Button>
 )}

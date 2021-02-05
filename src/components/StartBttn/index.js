@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 
 function StartBttn() {
   return (
-  <Button variant="contained" color="secondary" className="HomeButton">
-      <Link className="navbar-brand" to="/game">
-        Start
-      </Link>
+  <Button variant="contained" color="secondary" className="HomeButton" onClick={event =>  window.location.href='/game'}>
+      Start
  </Button>
 )}
 

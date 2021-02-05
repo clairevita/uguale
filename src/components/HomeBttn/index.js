@@ -3,8 +3,9 @@ import Button from "react-bootstrap/Button";
 import './HomeBttn.css';
 
 function HomeBttn() {
+
   return (
-  <Button bsPrefix= "HomeBttn">
+  <Button bsPrefix= "HomeBttn" onClick={event =>  window.location.href='/'}>
   home
  </Button>
 )}
