@@ -18,7 +18,7 @@ function EquationBox() {
 
   return (
    
-    <div>
+    <div className="eqb">
       <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
         <div className="card-body">
           <p className="card-text">{state.numberOne} + {state.numberTwo}</p>    

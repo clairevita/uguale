@@ -6,6 +6,8 @@
     margin-left: auto;
     margin-right: auto;
     align-content: center;
+    position: relative;
+    background-image: url("https://t4.ftcdn.net/jpg/00/51/26/13/360_F_51261378_tgZeyDjAdWl4AjXyk2IN4PRiylquEwyx.jpg");
 }
 
 .buttons {
@@ -53,4 +55,12 @@
     color: #AFEADC;
     background-color: #4C3735;
     opacity: 0.85;
+}
+.bg{
+    background: rgba(255, 255, 255, 0.678);
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
 }
