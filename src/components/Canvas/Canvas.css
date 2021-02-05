@@ -64,3 +64,9 @@
     text-align: center;
     font-size: 18px;
 }
+.answer {
+    z-index: 1;
+    position: absolute;
+    margin-left: -50%;
+    margin-top: 38%;
+}

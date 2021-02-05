@@ -1,6 +1,6 @@
-.number {
-    width: 5%;
-    height: 75px;
-    background-color: mintcream;
+.answer {
+    width: 6%;
+    height: 18%;
     text-align: center;
+    font-size: 80px;
 }

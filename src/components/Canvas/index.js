@@ -2,14 +2,25 @@ import React from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
 import Button from "react-bootstrap/Button";
-import NumberField from '../NumberField';
+import NumberField from '../NumberField/';
+import EquationBox from '../EquationBox'
+import { useMathContext } from "../../utils/GlobalState"
 
-const Canvas = class extends React.Component {
-    constructor(props) {
-        super(props);
-        this.canvas = React.createRef();
-    }
-    render() {
+function Canvas (props){
+
+        const [state, dispatch] = useMathContext();
+
+        function concatAnswer(){
+            let answer = 5
+            checkAnswer(answer)
+        }
+        function checkAnswer(answer) {
+            if (answer === state.answer){
+                dispatch({ type: "win" });
+            } else {
+                dispatch({ type: "loss" });
+            }
+        }
         return (
             <div>
                 <div className='canvasContainer'>
@@ -22,12 +33,16 @@ const Canvas = class extends React.Component {
                         height="100%"
                         background="rgba(201, 26, 26)"
                     />
+                    <NumberField className="answer"/>
                 </div>
-                <NumberField />
+              
                 <div className='buttons'>
                 <Button bsPrefix='submitBtn' onClick={() => {
                     this.canvas.current.
-                    clearCanvas()
+                    clearCanvas();
+//Need to find a way to count the number of inputfields
+                    concatAnswer();
+
                     }}>
                     submit
                 </Button>
@@ -54,7 +69,7 @@ const Canvas = class extends React.Component {
                 </div>
             </div>
         );
-    }
+    
 
 };
 
