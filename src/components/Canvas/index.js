@@ -12,7 +12,7 @@ const Canvas = class extends React.Component {
         return (
             <div>
                 <div className='canvasContainer'>
-                <ReactSketchCanvas
+                    <ReactSketchCanvas
                         ref={this.canvas}
                         strokeWidth={5}
                         strokeColor="black"
@@ -26,7 +26,7 @@ const Canvas = class extends React.Component {
                     this.canvas.current.
                     clearCanvas()
                     }}>
-                    Submit
+                    submit
                 </Button>
 
                 <Button
@@ -36,7 +36,7 @@ const Canvas = class extends React.Component {
                     resetCanvas()
                     }}
                 >
-                    Erase
+                    erase
                 </Button>
 
                 <Button
@@ -46,7 +46,7 @@ const Canvas = class extends React.Component {
                         clearCanvas()
                         }}
                 >
-                    Skip
+                    skip
                 </Button>
                 </div>
             </div>

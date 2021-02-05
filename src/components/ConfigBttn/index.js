@@ -8,7 +8,7 @@ function ConfigBttn() {
   return (
     <div>
       <Button bsPrefix="ConfigBttn" onClick ={() => setModalIsOpen(true)}>
-        config
+        settings
  </Button>
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <h2> Theme values will go here</h2>
