@@ -13,7 +13,7 @@ const reducer = (state, action) => {
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         difficulty: 1,
-        numberOne: 1,
+        numberOne: 5,
         numberTwo: 1
     });
     return <Provider value={[state, dispatch]} {...props} />
