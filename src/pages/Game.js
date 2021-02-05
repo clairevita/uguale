@@ -7,7 +7,7 @@ import HomeBttn from "../components/HomeBttn/index";
 import ConfigBttn from "../components/ConfigBttn/index";
 import SubmitBttn from "../components/SubmitBttn/index";
 import EraseBttn from "../components/EraseBttn/index";
-import EquationBox from "../components/EquationBox/index"
+import EquationBox from "../components/EquationBox/index";
 import Canvas from '../components/Canvas/index';
 import { Button } from "react-bootstrap";
 function Game() {

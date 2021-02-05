@@ -1,20 +1,9 @@
-import React, { useState } from "react";
-// import ConfigBttn from "../ConfigBttn/index";
+import React from "react";
 import "./style.css";
 
 function Wrapper(props) {
-  const [themeState, setThemeState] = useState({
-    theme: "default",
-  });
-  
-  return <main className={themeState.theme} {...props} />;
+  return <main className="wrapper" {...props} />;
+
 }
 
 export default Wrapper;
-
-
-
-
-    // <button onClick={() => setThemeState({ ...themeState, theme: "inverse" })} className="btn btn-info">
-    //   INVERSE COLORS
-    // </button>
