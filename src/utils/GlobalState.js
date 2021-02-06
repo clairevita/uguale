@@ -19,8 +19,8 @@ const reducer = (state, action) => {
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         difficulty: 1,
-        numberOne: 29,
-        numberTwo: 10
+        numberOne: 20,
+        numberTwo: 52
     });
     return <Provider value={[state, dispatch]} {...props} />
 };
@@ -29,4 +29,4 @@ const useMathContext = () => {
     return useContext(MathContext);
 }
 
-export { MathProvider, useMathContext };
+ export { MathProvider, useMathContext };
