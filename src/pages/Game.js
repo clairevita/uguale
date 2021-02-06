@@ -1,18 +1,17 @@
 import React, { Component }  from "react";
 import Wrapper from "../components/Wrapper/index";
-import Container from "../components/Container";
+import Container from "../components/Container/index";
 import Row from "../components/Row/index";
 import Col from "../components/Col/index";
-import HomeBttn from "../components/HomeBttn/index";
-import ConfigBttn from "../components/ConfigBttn/index";
-import EquationBox from "../components/EquationBox/index"
+import HomeBttn from "../components/Buttons/HomeBttn/index";
+import ConfigBttn from "../components/Buttons/ConfigBttn/index";
 import Canvas from '../components/Canvas/index';
 function Game() {
     return (
         <div>
             <Wrapper>
                 <Container>
-                <Row>
+                    <Row>
                         <Col size="md-6" align="center">
                         <HomeBttn/>
                         </Col>
