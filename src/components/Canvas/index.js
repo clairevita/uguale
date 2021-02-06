@@ -46,19 +46,31 @@ function Canvas (props){
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
+<<<<<<< HEAD
                     // this.canvas.current.
                     // resetCanvas()
                     }}
                 >
+=======
+                    this.canvas.current.
+                    resetCanvas()
+                    }}>
+>>>>>>> 22adbca42f0d6a7bb71c2e8627b5755c71632f8b
                     erase
                 </Button>
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
+<<<<<<< HEAD
                         // this.canvas.current.
                         // clearCanvas()
                         }}
                 >
+=======
+                        this.canvas.current.
+                        clearCanvas()
+                        }}>
+>>>>>>> 22adbca42f0d6a7bb71c2e8627b5755c71632f8b
                     skip
                 </Button>
                 </div>
