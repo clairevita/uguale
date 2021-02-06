@@ -36,8 +36,7 @@ const Canvas = class extends React.Component {
                     onClick={() => {
                     this.canvas.current.
                     resetCanvas()
-                    }}
-                >
+                    }}>
                     erase
                 </Button>
 
@@ -46,8 +45,7 @@ const Canvas = class extends React.Component {
                     onClick={() => {
                         this.canvas.current.
                         clearCanvas()
-                        }}
-                >
+                        }}>
                     skip
                 </Button>
                 </div>
