@@ -5,6 +5,7 @@ import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
 import Footer from "../components/Footer";
 import logo from '../images/uguale-logo-brown.png';
+import Login from "../components/Login/Login";
 import './home.css';
 
 function Home() {
@@ -50,6 +51,11 @@ function Home() {
         <Row>
           <Col size="md-12">
             <StartBttn/>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-12">
+            <Login/>
           </Col>
         </Row>
       </Container>
