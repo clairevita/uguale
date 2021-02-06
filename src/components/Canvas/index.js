@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
 import Button from "react-bootstrap/Button";
 import NumberField from '../NumberField/';
 import EquationBox from '../EquationBox'
-import { useMathContext } from "../../utils/GlobalState"
+import { useMathContext, useEffect } from "../../utils/GlobalState"
 
 function Canvas (props){
-
         const [state, dispatch] = useMathContext();
-
-        function concatAnswer(){
+        function seeAnswer(){
             let answer;
             checkAnswer(answer)
         }
@@ -21,11 +19,13 @@ function Canvas (props){
                 dispatch({ type: "loss" });
             }
         }
+        const canvasRef = useRef(null)
         return (
             <div>
                 <div className='canvasContainer'>
                     <EquationBox className="eqb"/>
-                    <ReactSketchCanvas className="bg"
+                    <ReactSketchCanvas className="bgCanvas"
+                    ref={canvasRef}
                         strokeWidth={5}
                         strokeColor="black"
                         width="100%"
@@ -33,44 +33,30 @@ function Canvas (props){
                         background="rgba(201, 26, 26)"
                     />
                 </div>
-                <NumberField className="answer"/>
+                <NumberField className="answer"
+                
+                />
                 <div className='buttons'>
                 <Button bsPrefix='submitBtn' onClick={() => {
-//                     this.canvas.current.
-//                     clearCanvas();
-// //Need to find a way to count the number of inputfields
-//                     concatAnswer();
+                
+                canvasRef.current.clearCanvas()
                     }}>
                     submit
                 </Button>
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
-<<<<<<< HEAD
-                    // this.canvas.current.
-                    // resetCanvas()
+                    canvasRef.current.clearCanvas()
                     }}
                 >
-=======
-                    this.canvas.current.
-                    resetCanvas()
-                    }}>
->>>>>>> 22adbca42f0d6a7bb71c2e8627b5755c71632f8b
                     erase
                 </Button>
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
-<<<<<<< HEAD
-                        // this.canvas.current.
-                        // clearCanvas()
+                        canvasRef.current.clearCanvas()
                         }}
                 >
-=======
-                        this.canvas.current.
-                        clearCanvas()
-                        }}>
->>>>>>> 22adbca42f0d6a7bb71c2e8627b5755c71632f8b
                     skip
                 </Button>
                 </div>
