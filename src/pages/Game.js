@@ -1,4 +1,4 @@
-import React, { Component }  from "react";
+import React, { Component } from "react";
 import Wrapper from "../components/Wrapper/index";
 import Container from "../components/Container";
 import Row from "../components/Row/index";
@@ -7,21 +7,22 @@ import HomeBttn from "../components/HomeBttn/index";
 import ConfigBttn from "../components/ConfigBttn/index";
 import EquationBox from "../components/EquationBox/index"
 import Canvas from '../components/Canvas/index';
+import Logout from "../components/Logout/Logout";
 function Game() {
     return (
         <div>
             <Wrapper>
                 <Container>
-                <Row>
+                    <Row>
                         <Col size="md-6" align="center">
-                        <HomeBttn/>
+                            <HomeBttn />
                         </Col>
                         <Col size="md-6" align="center">
-                        <ConfigBttn/>
+                            <ConfigBttn />
                         </Col>
                     </Row>
 
-                  
+
                     <Row>
                         <Col size="md-12" align="center">
                             <Canvas />
@@ -29,13 +30,19 @@ function Game() {
                     </Row>
 
                     <Row>
-                    <Col size="md-12" align="center">
-                    </Col>
+                        <Col size="md-12" align="center">
+                        </Col>
 
+                    </Row>
+
+                    <Row>
+                        <Col size="md-12">
+                            <Logout />
+                        </Col>
                     </Row>
                 </Container>
             </Wrapper>
-    
+
         </div>
     );
 }
