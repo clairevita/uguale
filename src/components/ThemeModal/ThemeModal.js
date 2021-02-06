@@ -24,7 +24,7 @@ function ThemeModal() {
 export default ThemeModal;
 
 
-// onClick={() => })}         onClick={() => setThemeState({ ...themeState, stylePath: "../default.css" })}
+// onClick={() => })}        
 
 // <Form>
 //   {['checkbox', 'radio'].map((type) => (

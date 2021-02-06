@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMathContext } from "../../../utils/GlobalState";
-import ThemeModal from "../../../utils/ThemeModal";
+import ThemeModal from "../../ThemeModal/ThemeModal";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import '../buttons.css';

@@ -1,43 +1,42 @@
-import React, { useState } from "react";
-import HomeConfigContainer from "./HomeConfigContainer";
-import ThemeModal from "./ThemeModal";
-// import "./style.css";
+// import React, { useState } from "react";
+// import ThemeModal from "./ThemeModal";
+// // import "./style.css";
 
-// function Wrapper(props) {
-//   return <main className="wrapper" {...props} />;
-// }
-// export default Wrapper;
+// // function Wrapper(props) {
+// //   return <main className="wrapper" {...props} />;
+// // }
+// // export default Wrapper;
 
 
-function Wrapper() {
-    const [themeState, setThemeState] = useState({
-      stylePath: '../default.css',
-    });
+// function Wrapper() {
+//     const [themeState, setThemeState] = useState({
+//       stylePath: '../default.css',
+//     });
 
-    // const [darkState, setDarkState] = useState({
-    //   darkState: false,
-    // });
+//     // const [darkState, setDarkState] = useState({
+//     //   darkState: false,
+//     // });
 
-    function handleThemeChange() {
-      if (themeState.stylePath == '../berrytheme.css') {
-        console.log('The style chosen is berry')
-      }
-      else if (themeState.stylePath == '../honeytheme.css') {
-        console.log('The style chosen is honey')
-      }
-      else {
-        console.log('The style chosen is mint')
-      }
-    }
+//     function handleThemeChange() {
+//       if (themeState.stylePath == '../berrytheme.css') {
+//         console.log('The style chosen is berry')
+//       }
+//       else if (themeState.stylePath == '../honeytheme.css') {
+//         console.log('The style chosen is honey')
+//       }
+//       else {
+//         console.log('The style chosen is mint')
+//       }
+//     }
   
-    return (
-      <main className="Wrapper">
-        <HomeConfigContainer setThemeState={this.setThemeState} handleThemeChange={this.handleThemeChange}></HomeConfigContainer>
-      </main>
-    );
-  }
+//     return (
+//       <main className="Wrapper">
+//         <HomeConfigContainer setThemeState={this.setThemeState} handleThemeChange={this.handleThemeChange}></HomeConfigContainer>
+//       </main>
+//     );
+//   }
   
-  export default Wrapper;
+//   export default Wrapper;
 
 
 
@@ -46,12 +45,6 @@ function Wrapper() {
 
 
   //create custom hook?  
-
-
-
-
-
-
 
 
   // <link rel="stylesheet" type="text/css" href={this.state.stylePath} />
