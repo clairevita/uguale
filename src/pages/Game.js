@@ -12,7 +12,7 @@ function Game() {
         <div>
             <Wrapper>
                 <Container>
-                <Row>
+                    <Row>
                         <Col size="md-6" align="center">
                         <HomeBttn/>
                         </Col>

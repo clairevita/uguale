@@ -14,7 +14,7 @@ const Canvas = class extends React.Component {
             <div>
                 <div className='canvasContainer'>
                     <EquationBox className="eqb"/>
-                    <ReactSketchCanvas className="bg"
+                    <ReactSketchCanvas className="bgCanvas"
                         ref={this.canvas}
                         strokeWidth={5}
                         strokeColor="black"

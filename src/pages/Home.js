@@ -11,12 +11,11 @@ function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+        <div class="Homebg"></div>
+        <div class="Homebg bg2"></div>
+        <div class="Homebg bg3"></div>
         <Row>
-        <Col size="md-2">
-          
+          <Col size="md-2">
           </Col>
           <Col size="md">
            <img className= "logoHeader" src={logo}/>
@@ -49,7 +48,9 @@ function Home() {
         </Row>
         <Row>
           <Col size="md-12">
-            <StartBttn/>
+            <div>
+              <StartBttn/>
+            </div>
           </Col>
         </Row>
       </Container>

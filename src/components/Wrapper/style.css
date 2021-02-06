@@ -1,7 +1,6 @@
 .wrapper {
+  /*background-color: #AFEADC;*/
   min-height: 100%;
   padding-bottom: 100px;
-  background-color: #afeadc00;
   z-index: -1;
-  
 }
