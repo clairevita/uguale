@@ -14,7 +14,9 @@ const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         difficulty: 1,
         numberOne: 5,
-        numberTwo: 1
+        numberTwo: 1,
+        themeStyle: "mint",
+        night: ''
     });
     return <Provider value={[state, dispatch]} {...props} />
 };

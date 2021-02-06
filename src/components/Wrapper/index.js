@@ -1,8 +1,11 @@
 import React from "react";
+import { useMathContext } from "../../utils/GlobalState";
 import "./style.css";
 
 function Wrapper(props) {
-  return <main className="wrapper" {...props} />;
+  const [state] = useMathContext();
+
+  return <main className={state.night + state.themeStyle + 'main wrapper'} {...props} />;
 
 }
 
