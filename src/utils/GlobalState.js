@@ -28,7 +28,7 @@ const MathProvider = ({ value = [], ...props }) => {
         difficulty: 1,
         numberOne: 20,
         numberTwo: 15,
-        answers: [],
+        answers: [3, 5],
         themeStyle: "mint",
         night: ''
     });

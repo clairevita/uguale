@@ -6,7 +6,8 @@ import { useMathContext } from '../../utils/GlobalState';
 
 function NumberField() {
     let digits = []
-    let userAnswer = [0, 0];
+    let userAnswer;
+    let proxyAnswer = [];
     const [state, dispatch] = useMathContext();
     let answer = state.numberOne + state.numberTwo;
     
@@ -16,13 +17,11 @@ function NumberField() {
     }
     
     function handleChange(e){
-        if (!userAnswer[e.target.data]){
-            userAnswer = state.answers.splice(e.target.data, 0, e.target.value);
-        } else {
-            userAnswer[e.target.data] = e.target.value;
-        }
-
-        console.log(state.answers)
+        
+        userAnswer = state.answers;
+        userAnswer.splice(e.target.data, 1, e.target.value);
+        console.log(userAnswer);
+        
     }
     getInputNo(answer);
     return (
