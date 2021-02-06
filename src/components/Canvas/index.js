@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
 import Button from "react-bootstrap/Button";
-import NumberField from '../NumberField/';
+import {NumberField} from '../NumberField/';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
 
@@ -25,7 +25,7 @@ function Canvas (props){
                 <div className='canvasContainer'>
                     <EquationBox className="eqb"/>
                     <ReactSketchCanvas className="bgCanvas"
-                    ref={canvasRef}
+                        ref={canvasRef}
                         strokeWidth={5}
                         strokeColor="black"
                         width="100%"

@@ -11,6 +11,13 @@ const reducer = (state, action) => {
             return {};
         case "skip":
             return {};
+        case "answer":
+            return [
+                ...state,
+                {
+                    answers: action.answers
+                }
+            ]
         default:
             return state;
     }
@@ -19,8 +26,9 @@ const reducer = (state, action) => {
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         difficulty: 1,
-        numberOne: 5,
-        numberTwo: 1,
+        numberOne: 20,
+        numberTwo: 15,
+        answers: [],
         themeStyle: "mint",
         night: ''
     });
