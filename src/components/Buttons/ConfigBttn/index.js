@@ -12,7 +12,7 @@ function ConfigBttn() {
   return (
     <div>
       <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'} onClick ={() => setModalIsOpen(true)}>
-        settings
+      <i className="fa fa-cog"></i> settings
       </Button>
       <Modal size="lg"
         show={modalIsOpen}

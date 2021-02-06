@@ -46,11 +46,16 @@ function Home() {
             </p>
           </Col>
         </Row>
+
         <Row>
-          <Col size="md-12">
+          <Col size="md">
+          </Col>
+          <Col size="md-4">
             <div>
-              <StartBttn/>
+              <StartBttn />
             </div>
+          </Col>
+          <Col size="md">
           </Col>
         </Row>
       </Container>
