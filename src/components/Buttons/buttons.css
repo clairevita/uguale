@@ -12,20 +12,6 @@
     font-family: 'Varela Round', sans-serif;
 }
 
-/* .ConfigBttn {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 50px;
-    border: 0;
-    border-radius: 7px;
-    font-family: 'Varela Round', sans-serif;
-} */
-
 .mint {
     background: #4C3735;
     color: #AFEADC;
@@ -50,3 +36,106 @@
     opacity: 0.85;
 }
 
+.berry {
+    background: #2d2147;
+    color: #e9ced5;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.berry:hover {
+    color: #e9ced5;
+    background-color:#2d2147;
+    opacity: 0.85;
+}
+
+.nightberry {
+    background: #e9ced5;
+    color: #2d2147;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nightberry:hover {
+    color:  #2d2147;
+    background-color: #e9ced5;
+    opacity: 0.85;
+}
+
+.honey {
+    background: #701b45;
+    color: #F2F0A1;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.honey:hover {
+    color: #F2F0A1;
+    background-color:#701b45;
+    opacity: 0.85;
+}
+
+.nighthoney {
+    background: #F2F0A1;
+    color: #701b45;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nighthoney:hover {
+    color:  #701b45;
+    background-color: #F2F0A1;
+    opacity: 0.85;
+}
+
+.classic {
+    background: #302E2C;
+    color: #e6eeec;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.classic:hover {
+    color: #e6eeec;
+    background-color:#302E2C;
+    opacity: 0.85;
+}
+
+.nightclassic {
+    background: #e6eeec;
+    color: #302E2C;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nightclassic:hover {
+    color:  #302E2C;
+    background-color: #e6eeec;
+    opacity: 0.85;
+}
+
+.mintmain {
+    background-color: #AFEADC;
+  }
+  
+  .berrymain {
+    background-color: #e9ced5;
+  }
+  
+  .honeymain {
+    background-color: #F2F0A1;
+  }
+  
+  .classicmain {
+   background-color: #e6eeec;
+  }
+  
+  .nightmintmain {
+    background-color: #4c3735;
+  }
+  
+  .nightberrymain {
+    background-color: #2d2147;
+  }
+  
+  .nighthoneymain {
+    background-color: #701b45;
+  }
+  
+  .nightclassicmain {
+    background-color: #302E2C;
+  }

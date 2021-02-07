@@ -1,19 +1,38 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Row } from "react-bootstrap";
+import { useMathContext } from "../../utils/GlobalState";
+import '../Buttons/buttons.css';
 // import Form from "react-bootstrap/Form"
 
 function ThemeModal() {
-
+  const [state, dispatch] = useMathContext();
   return (
     <div>
         <Row>
-          <div className="btn-group">
-            <Button className="btn btn-success">
+          <div className="btn-group inherit">
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "mint"})}>
+              Mint Theme
+            </Button>            
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "berry"})}> 
               Berry Theme
             </Button>
-            <Button className="btn btn-sucess">
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "honey"})}>
+              Honey Theme
+            </Button>
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "classic"})}>
               Classic Theme
+            </Button>
+          </div>
+        </Row>
+        <br/>
+        <Row>
+          <div className="btn-group"> 
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "night"})}>
+              Night Colors
+            </Button>
+            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "light"})}>
+              Light Colors
             </Button>
           </div>
         </Row>
@@ -23,7 +42,7 @@ function ThemeModal() {
 
 export default ThemeModal;
 
-
+// onClick={() => dispatch({ type: "remove", index })}
 // onClick={() => })}        
 
 // <Form>
