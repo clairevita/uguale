@@ -2,15 +2,20 @@
     font-size: 80px;
     border: 0;
     padding: 5px;
-    color: #4C3735;
     background: #f7f7f700;
     font-family: 'Balsamiq Sans', cursive;
    
 }
 .jumbotron{
     padding: 0px;
+    border-color: #4C3735;
 }
 .eqb{
     margin: auto;
     width: 50%;
+}
+
+.card-text {
+    font-size: 80px;
+    color: black;
 }

@@ -7,7 +7,7 @@ function HomeBttn() {
   const [state] = useMathContext();
   return (
     <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'} onClick={event => window.location.href = '/'}>
-      home
+    <i className="fa fa-home"></i> home
     </Button>
   )
 }
