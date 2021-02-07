@@ -23,9 +23,9 @@ body {
     margin:0;
   }
   
-  .bg {
+  .Homebg {
     animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #c3fff1 20%, #AFEADC 20%, #c3fff1  90%, #AFEADC 50%);
+    background-image: linear-gradient(-60deg, #AFEADC 20%, #c3fff1 20%, #c3fff1 90%, #AFEADC 20%);
     bottom:0;
     left:-50%;
     opacity:.5;
@@ -35,13 +35,13 @@ body {
     z-index:-1;
   }
   
-  .bg2 {
+  .Homebg2 {
     animation-direction:alternate-reverse;
-    animation-duration:4s;
+    animation-duration:7s;
   }
   
-  .bg3 {
-    animation-duration:5s;
+  .Homebg3 {
+    animation-duration:8s;
   }
   
   @keyframes slide {
