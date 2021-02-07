@@ -1,47 +1,43 @@
-import React, { Component } from "react";
-import Wrapper from "../components/Wrapper/index";
+import React, { Component }  from "react";
 import Container from "../components/Container/index";
 import Row from "../components/Row/index";
 import Col from "../components/Col/index";
 import HomeBttn from "../components/Buttons/HomeBttn/index";
 import ConfigBttn from "../components/Buttons/ConfigBttn/index";
 import Canvas from '../components/Canvas/index';
-import Logout from "../components/Logout/Logout";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 function Game() {
     return (
         <div>
-            <Wrapper>
-                <Container>
-                    <Row>
-                        <Col size="md-6" align="center">
-                            <HomeBttn />
-                        </Col>
-                        <Col size="md-6" align="center">
-                            <ConfigBttn />
-                        </Col>
-                    </Row>
+            <Container>
+                <Row>
+                    <Col size="md">
+                    </Col>
+                    <Col size="md-4" align="center">
+                        <HomeBttn />
+                    </Col>
+                    <Col size="md-4" align="center">
+                        <ConfigBttn />
+                    </Col>
+                    <Col size="md">
+                    </Col>
+                </Row>
 
 
-                    <Row>
-                        <Col size="md-12" align="center">
-                            <Canvas />
-                        </Col>
-                    </Row>
+                <Row>
+                    <Col size="md-12" align="center">
+                        <Canvas />
+                    </Col>
+                </Row>
 
-                    <Row>
-                        <Col size="md-12" align="center">
-                        </Col>
+                <Row>
+                    <Col size="md-3" align="center">
+                    </Col>
 
-                    </Row>
-
-                    <Row>
-                        <Col size="md-12">
-                            <Logout />
-                        </Col>
-                    </Row>
-                </Container>
-            </Wrapper>
-
+                </Row>
+            </Container>
+    
         </div>
     );
 }
