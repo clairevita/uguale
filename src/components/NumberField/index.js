@@ -7,20 +7,26 @@ import { useMathContext } from '../../utils/GlobalState';
 function NumberField() {
     let digits = []
     let userAnswer;
-    let proxyAnswer = [];
     const [state, dispatch] = useMathContext();
     let answer = state.numberOne + state.numberTwo;
     
     function getInputNo(answer) {
         digits = ("" + answer).split("")
-        console.log(digits);
+        
     }
     
     function handleChange(e){
-        
+        let index = e.target.dataset.indexNumber
         userAnswer = state.answers;
-        userAnswer.splice(e.target.data, 1, e.target.value);
-        console.log(userAnswer);
+        userAnswer[index] = e.target.value;
+
+        dispatch({
+            type: "answer",
+            answers: userAnswer,
+ 
+        })
+
+        console.log(state.answers);
         
     }
     getInputNo(answer);
@@ -34,7 +40,7 @@ function NumberField() {
                             type="text" 
                             bsPrefix="answer"
                             maxlength="1" 
-                            data={[index]}
+                            data-index-number={[index]}
                             onChange={handleChange}
                             
                             />
