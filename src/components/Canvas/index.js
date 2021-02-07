@@ -8,15 +8,25 @@ import { useMathContext, useEffect } from "../../utils/GlobalState"
 
 function Canvas (props){
         const [state, dispatch] = useMathContext();
-        function seeAnswer(){
-            let answer;
-            checkAnswer(answer)
-        }
-        function checkAnswer(answer) {
-            if (answer === state.answer){
-                dispatch({ type: "win" });
+
+        function checkAnswer() {
+            let userAnswer = state.answers.join("");
+            let finalAnswer = state.numberOne + state.numberTwo;
+            console.log(userAnswer, finalAnswer);
+            if (userAnswer == finalAnswer){
+                console.log("win")
+                dispatch({ 
+                    type: "win" ,
+                    numberOne: state.numberOne + 10,
+                    numberTwo: state.numberTwo + 3
+            });
             } else {
-                dispatch({ type: "loss" });
+                console.log("loss")
+                dispatch({ 
+                    type: "loss",
+                    numberOne: state.numberOne - 1,
+                    numberTwo: state.numberTwo - 1
+            });
             }
         }
         const canvasRef = useRef(null)
@@ -38,7 +48,7 @@ function Canvas (props){
                 />
                 <div className='buttons'>
                 <Button bsPrefix='submitBtn' onClick={() => {
-                
+                checkAnswer();
                 canvasRef.current.clearCanvas()
                     }}>
                     submit
@@ -46,7 +56,8 @@ function Canvas (props){
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
-                    canvasRef.current.clearCanvas()
+                    canvasRef.current.clearCanvas();
+                    
                     }}
                 >
                     erase

@@ -6,17 +6,26 @@ const { Provider } = MathContext;
 const reducer = (state, action) => {
     switch (action.type) {
         case "loss":
-            return {};
+            return {
+                ...state,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: []
+            };
         case "win":
-            return {};
+            return {
+                ...state,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: []
+            };
         case "skip":
             return {};
         case "answer":
             return {
                 ...state,
                 answers: action.answers,
-            }
-            
+            } 
         default:
             return state;
     }

@@ -12,7 +12,6 @@ function NumberField() {
     
     function getInputNo(answer) {
         digits = ("" + answer).split("")
-        
     }
     
     function handleChange(e){
@@ -25,10 +24,9 @@ function NumberField() {
             answers: userAnswer,
  
         })
-
-        console.log(state.answers);
-        
+        console.log(state.answers);   
     }
+
     getInputNo(answer);
     return (
             <Form>
@@ -41,8 +39,7 @@ function NumberField() {
                             bsPrefix="answer"
                             maxlength="1" 
                             data-index-number={[index]}
-                            onChange={handleChange}
-                            
+                            onChange={handleChange}                     
                             />
                         </Col>
                     ))}
