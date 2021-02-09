@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useMathContext } from "../../../utils/GlobalState";
-import ThemeModal from "../../ThemeModal/ThemeModal";
+import ThemeModal from "../../ThemeModal";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
 import '../buttons.css';
 
 
@@ -18,16 +19,17 @@ function ConfigBttn() {
         show={modalIsOpen}
         onHide={() => setModalIsOpen(false)}
         aria-labelledby="example-modal-sizes-title-lg">
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Global Settings
+          <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Global Settings
           </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <ThemeModal/>
-        </Modal.Body>
+          </Modal.Header>
+          <Modal.Body className={state.night + state.themeStyle + 'main'}>
+            <Container>
+              <ThemeModal />
+            </Container>
+          </Modal.Body>
       </Modal>
-
     </div>
   )
 }

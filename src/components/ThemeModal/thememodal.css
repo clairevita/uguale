@@ -1,15 +1,15 @@
-.MenuBttn {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 50px;
+.themebttn {
+    /* width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
     border: 0;
-    border-radius: 7px;
-    font-family: 'Varela Round', sans-serif;
+    border-radius: 3px;
+    font-family: 'Varela Round', sans-serif; */
 }
 
 .mint {
@@ -109,42 +109,38 @@
 }
 
 
-.mintheader {
-    background: #4C3735;
-    color: #AFEADC;
+
+
+//background theme colors 
+
+.mintmain {
+    background-color: #AFEADC;
   }
   
-  .berryheader {
-    background: #2d2147;
-    color: #e9ced5;
+  .berrymain {
+    background-color: #e9ced5;
   }
   
-  .honeyheader {
-    background: #701b45;
-    color: #F2F0A1;
+  .honeymain {
+    background-color: #F2F0A1;
   }
   
-  .classicheader {
-    background: #302E2C;
-    color: #e6eeec;
+  .classicmain {
+   background-color: #e6eeec;
   }
   
-  .nightmintheader {
-    background: #AFEADC;
-    color: #4c3735;
+  .nightmintmain {
+    background-color: #4c3735;
   }
   
-  .nightberryheader {
-    background: #e9ced5;
-    color: #2d2147;
+  .nightberrymain {
+    background-color: #2d2147;
   }
   
-  .nighthoneyheader {
-    background: #F2F0A1;
-    color: #701b45;
+  .nighthoneymain {
+    background-color: #701b45;
   }
   
-  .nightclassicheader {
-    background: #e6eeec;
-    color: #302E2C;
+  .nightclassicmain {
+    background-color: #302E2C;
   }
