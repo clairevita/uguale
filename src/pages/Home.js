@@ -5,18 +5,18 @@ import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
 import Footer from "../components/Footer";
 import logo from '../images/uguale-logo-brown.png';
+import Login from "../components/Login/Login";
 import './home.css';
 
 function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+        <div class="Homebg"></div>
+        <div class="Homebg bg2"></div>
+        <div class="Homebg bg3"></div>
         <Row>
-        <Col size="md-2">
-          
+          <Col size="md-2">
           </Col>
           <Col size="md">
            <img className= "logoHeader" src={logo}/>
@@ -47,9 +47,21 @@ function Home() {
             </p>
           </Col>
         </Row>
+
+        <Row>
+          <Col size="md">
+          </Col>
+          <Col size="md-4">
+            <div>
+              <StartBttn />
+            </div>
+          </Col>
+          <Col size="md">
+          </Col>
+        </Row>
         <Row>
           <Col size="md-12">
-            <StartBttn/>
+            <Login/>
           </Col>
         </Row>
       </Container>
