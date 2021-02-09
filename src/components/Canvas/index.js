@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
 import Button from "react-bootstrap/Button";
-import EquationBox from "../EquationBox/index"
+import {NumberField} from '../NumberField/';
+import EquationBox from '../EquationBox'
+import { useMathContext, useEffect } from "../../utils/GlobalState"
 
-const Canvas = class extends React.Component {
-    constructor(props) {
-        super(props);
-        this.canvas = React.createRef();
-    }
-    render() {
+function Canvas (props){
+        const [state, dispatch] = useMathContext();
+
+        function checkAnswer() {
+            let userAnswer = state.answers.join("");
+            let finalAnswer = state.numberOne + state.numberTwo;
+            console.log(userAnswer, finalAnswer);
+            if (userAnswer == finalAnswer){
+                console.log("win")
+                dispatch({ 
+                    type: "win" ,
+                    numberOne: state.numberOne + 10,
+                    numberTwo: state.numberTwo + 3
+            });
+            } else {
+                console.log("loss")
+                dispatch({ 
+                    type: "loss",
+                    numberOne: state.numberOne - 1,
+                    numberTwo: state.numberTwo - 1
+            });
+            }
+        }
+        const canvasRef = useRef(null)
         return (
             <div>
                 <div className='canvasContainer'>
                     <EquationBox className="eqb"/>
                     <ReactSketchCanvas className="bgCanvas"
-                        ref={this.canvas}
+                        ref={canvasRef}
                         strokeWidth={5}
                         strokeColor="black"
                         width="100%"
@@ -23,36 +43,38 @@ const Canvas = class extends React.Component {
                         background="rgba(201, 26, 26)"
                     />
                 </div>
+                <NumberField className="answer"
+                
+                />
                 <div className='buttons'>
                 <Button bsPrefix='submitBtn' onClick={() => {
-                    this.canvas.current.
-                    clearCanvas()
+                checkAnswer();
+                canvasRef.current.clearCanvas()
                     }}>
                     submit
                 </Button>
-
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
-                    this.canvas.current.
-                    resetCanvas()
-                    }}>
+                    canvasRef.current.clearCanvas();
+                    
+                    }}
+                >
                     erase
                 </Button>
-
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
-                        this.canvas.current.
-                        clearCanvas()
-                        }}>
+                        canvasRef.current.clearCanvas()
+                        }}
+                >
                     skip
                 </Button>
                 </div>
             </div>
         );
-    }
     
+
 };
 
 

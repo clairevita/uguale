@@ -56,7 +56,6 @@
     background-color: #4C3735;
     opacity: 0.85;
 }
-
 .bgCanvas{
     background: rgba(255, 255, 255, 0.678);
     position: absolute;
@@ -64,4 +63,13 @@
     width: 100%;
     text-align: center;
     font-size: 18px;
+    
+}
+.answer {
+    z-index: 1;
+    position: absolute;
+    -ms-transform: translateY(-105%);
+    transform: translateY(-105%);
+    padding: 5px;
+    
 }

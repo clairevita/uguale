@@ -1,6 +1,6 @@
 import React from "react";
 import './EQBox.css';
-import { useMathContext } from "../../utils/GlobalState"
+import { useMathContext } from "../../utils/GlobalState";
 // By extending the React.Component class, Counter inherits functionality from it
 function EquationBox() {
   // Setting the initial state of the Counter component

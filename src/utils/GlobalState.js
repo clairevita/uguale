@@ -5,6 +5,27 @@ const { Provider } = MathContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case "loss":
+            return {
+                ...state,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: []
+            };
+        case "win":
+            return {
+                ...state,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: []
+            };
+        case "skip":
+            return {};
+        case "answer":
+            return {
+                ...state,
+                answers: action.answers,
+            } 
         default:
             return state;
     }
@@ -13,8 +34,9 @@ const reducer = (state, action) => {
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         difficulty: 1,
-        numberOne: 5,
-        numberTwo: 1,
+        numberOne: 20,
+        numberTwo: 15,
+        answers: [],
         themeStyle: "mint",
         night: ''
     });
@@ -25,4 +47,4 @@ const useMathContext = () => {
     return useContext(MathContext);
 }
 
-export { MathProvider, useMathContext };
+ export { MathProvider, useMathContext };
