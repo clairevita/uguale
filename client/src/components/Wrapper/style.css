@@ -1,0 +1,39 @@
+.wrapper {
+  min-height: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  opacity: 99%;
+  z-index: -1;
+}
+
+.mintmain {
+  background-color: #AFEADC;
+}
+
+.berrymain {
+  background-color: #e9ced5;
+}
+
+.honeymain {
+  background-color: #F2F0A1;
+}
+
+.classicmain {
+ background-color: #e6eeec;
+}
+
+.nightmintmain {
+  background-color: #4c3735;
+}
+
+.nightberrymain {
+  background-color: #2d2147;
+}
+
+.nighthoneymain {
+  background-color: #701b45;
+}
+
+.nightclassicmain {
+  background-color: #302E2C;
+}

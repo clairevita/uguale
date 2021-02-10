@@ -1,0 +1,54 @@
+.logoHeader {
+    align-content: center;
+    width: inherit;
+}
+
+h1 {
+    color: #4C3735;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+p {
+    color: #4C3735;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+  }
+  
+  .Homebg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #AFEADC 20%, #c3fff1 20%, #c3fff1 90%, #AFEADC 20%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .Homebg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:7s;
+  }
+  
+  .Homebg3 {
+    animation-duration:8s;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }

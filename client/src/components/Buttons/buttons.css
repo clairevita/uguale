@@ -1,0 +1,150 @@
+.MenuBttn {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    border: 0;
+    border-radius: 7px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.mint {
+    background: #4C3735;
+    color: #AFEADC;
+    box-shadow: 1px 1px 10px #4C3735;
+}
+
+.mint:hover {
+    color: #AFEADC;
+    background-color: #4C3735;
+    opacity: 0.85;
+}
+
+.nightmint {
+    background: #AFEADC;
+    color: #4c3735;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nightmint:hover {
+    color:  #4C3735;
+    background-color: #AFEADC;
+    opacity: 0.85;
+}
+
+.berry {
+    background: #2d2147;
+    color: #e9ced5;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.berry:hover {
+    color: #e9ced5;
+    background-color:#2d2147;
+    opacity: 0.85;
+}
+
+.nightberry {
+    background: #e9ced5;
+    color: #2d2147;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nightberry:hover {
+    color:  #2d2147;
+    background-color: #e9ced5;
+    opacity: 0.85;
+}
+
+.honey {
+    background: #701b45;
+    color: #F2F0A1;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.honey:hover {
+    color: #F2F0A1;
+    background-color:#701b45;
+    opacity: 0.85;
+}
+
+.nighthoney {
+    background: #F2F0A1;
+    color: #701b45;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nighthoney:hover {
+    color:  #701b45;
+    background-color: #F2F0A1;
+    opacity: 0.85;
+}
+
+.classic {
+    background: #302E2C;
+    color: #e6eeec;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.classic:hover {
+    color: #e6eeec;
+    background-color:#302E2C;
+    opacity: 0.85;
+}
+
+.nightclassic {
+    background: #e6eeec;
+    color: #302E2C;
+    box-shadow: 4px 4px 8px #858585cc;
+}
+
+.nightclassic:hover {
+    color:  #302E2C;
+    background-color: #e6eeec;
+    opacity: 0.85;
+}
+
+
+.mintheader {
+    background: #4C3735;
+    color: #AFEADC;
+  }
+  
+  .berryheader {
+    background: #2d2147;
+    color: #e9ced5;
+  }
+  
+  .honeyheader {
+    background: #701b45;
+    color: #F2F0A1;
+  }
+  
+  .classicheader {
+    background: #302E2C;
+    color: #e6eeec;
+  }
+  
+  .nightmintheader {
+    background: #AFEADC;
+    color: #4c3735;
+  }
+  
+  .nightberryheader {
+    background: #e9ced5;
+    color: #2d2147;
+  }
+  
+  .nighthoneyheader {
+    background: #F2F0A1;
+    color: #701b45;
+  }
+  
+  .nightclassicheader {
+    background: #e6eeec;
+    color: #302E2C;
+  }
