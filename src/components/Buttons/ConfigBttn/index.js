@@ -21,7 +21,7 @@ function ConfigBttn() {
         aria-labelledby="example-modal-sizes-title-lg">
           <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-              Global Settings
+              GLOBAL SETTINGS
           </Modal.Title>
           </Modal.Header>
           <Modal.Body className={state.night + state.themeStyle + 'main'}>

@@ -108,6 +108,12 @@
     opacity: 0.85;
 }
 
+/* Settings header CSS section */
+
+.h4 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 70px;
+}
 
 .mintheader {
     background: #4C3735;
