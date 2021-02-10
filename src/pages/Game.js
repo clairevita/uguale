@@ -6,6 +6,7 @@ import HomeBttn from "../components/Buttons/HomeBttn/index";
 import ConfigBttn from "../components/Buttons/ConfigBttn/index";
 import Canvas from '../components/Canvas/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Logout  from "../components/Logout/Logout";
 
 function Game() {
     return (
@@ -25,13 +26,12 @@ function Game() {
                     </Col>
                 </Row>
 
-                <br></br>
-
                 <Row>
                     <Col size="md-12" align="center">
                         <Canvas />
                     </Col>
                 </Row>
+                <Logout/>
             </Container>
     
         </div>

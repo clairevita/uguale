@@ -1,8 +1,9 @@
 .canvasContainer {
     border:1px solid #4C3735;
-    width: 1000px;
+    width: 100%;
     height: 500px;
     display: flex;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     align-content: center;
@@ -11,51 +12,20 @@
 }
 
 .buttons {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 70px;
+    padding-bottom: 30px;
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.submitBtn {
-    width: 50%;
-    padding: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 40px;
     border: 0;
     border-radius: 7px;
-    background: #4C3735;
-    color: #AFEADC;
-    box-shadow: 1px 1px 10px #4C3735;
     font-family: 'Varela Round', sans-serif;
 }
 
-.submitBtn:hover {
-    color: #AFEADC;
-    background-color: #4C3735;
-    opacity: 0.85;
-}
 
-.eraseBtn {
-    width: 25%;
-    padding: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    font-size: 40px;
-    border: 0;
-    border-radius: 7px;
-    background: #4C3735;
-    color: #AFEADC;
-    box-shadow: 1px 1px 10px #4C3735;
-    font-family: 'Varela Round', sans-serif;
-}
-
-.eraseBtn:hover {
-    color: #AFEADC;
-    background-color: #4C3735;
-    opacity: 0.85;
-}
 .bgCanvas{
     background: rgba(255, 255, 255, 0.678);
     position: absolute;
