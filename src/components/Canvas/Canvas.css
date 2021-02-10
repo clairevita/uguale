@@ -3,7 +3,7 @@
     width: 100%;
     height: 500px;
     display: flex;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     align-content: center;
@@ -16,7 +16,7 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 70px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 40px;

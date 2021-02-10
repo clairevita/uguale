@@ -17,6 +17,11 @@ h2 {
     font-family: 'Varela Round', sans-serif;
 }
 
+.googleButtons{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
 
 .mint {
     background: #4C3735;
