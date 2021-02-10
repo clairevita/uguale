@@ -33,6 +33,7 @@ function Canvas(props) {
                 numberTwo: state.numberTwo - 1
             });
         }
+
     }
     const canvasRef = useRef(null)
     return (
@@ -50,36 +51,34 @@ function Canvas(props) {
             </div>
             <NumberField className="answer"
             />
-            <div className='buttons'>
+        
                 <Row>
-                    <Col size="md"/>
-                    <Col size="md-6" align="center">
-                        <SubmitBttn
-                            onClick={() => {
-                                checkAnswer();
-                                canvasRef.current.clearCanvas()
-                            }} />
-                    </Col>
-                    <Col size="md-5" align="center">
+                <Col size="md-6" align="center">
                     <EraseBttn
                             onClick={() => {
                                 canvasRef.current.clearCanvas();
                             }}
                         />
                     </Col>
-                    {/* <Col size="md-4" align="center">
+                    <Col size="md-6" align="center">
                         <SkipBttn
                             onClick={() => {
                                 canvasRef.current.clearCanvas()
                             }}
                         />
-                    </Col> */}
-                     
+                    </Col>
+                    
                 </Row>
-
-
-
-            </div>
+                    <Row>
+                    <Col size="md-12" align="center">
+                        <SubmitBttn
+                            onClick={() => {
+                                checkAnswer();
+                                canvasRef.current.clearCanvas()
+                            }} />
+                    </Col>
+                    </Row>
+         
         </div>
     );
 

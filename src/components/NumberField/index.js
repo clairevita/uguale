@@ -18,7 +18,7 @@ function NumberField() {
         let index = e.target.dataset.indexNumber
         userAnswer = state.answers;
         userAnswer[index] = e.target.value;
-
+        
         dispatch({
             type: "answer",
             answers: userAnswer,
