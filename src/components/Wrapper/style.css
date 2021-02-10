@@ -1,8 +1,8 @@
 .wrapper {
   /*background-color: #AFEADC;*/
   min-height: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 25px;
+  padding-bottom: 140px;
   opacity: 99%;
   z-index: -1;
 }
