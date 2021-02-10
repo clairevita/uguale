@@ -5,6 +5,10 @@ import Button from "react-bootstrap/Button";
 import {NumberField} from '../NumberField/';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
+import SubmitBttn from '../Buttons/SubmitBttn';
+import SkipBttn from '../Buttons/SkipBttn';
+import EraseBttn from '../Buttons/EraseBttn';
+
 
 function Canvas (props){
         const [state, dispatch] = useMathContext();
@@ -44,32 +48,24 @@ function Canvas (props){
                     />
                 </div>
                 <NumberField className="answer"
-                
                 />
                 <div className='buttons'>
-                <Button bsPrefix='submitBtn' onClick={() => {
-                checkAnswer();
+                <SubmitBttn 
+                onClick={() => {checkAnswer();
                 canvasRef.current.clearCanvas()
-                    }}>
-                    submit
-                </Button>
-                <Button
-                    bsPrefix='eraseBtn'
+                    }} />
+                <EraseBttn
                     onClick={() => {
                     canvasRef.current.clearCanvas();
                     
                     }}
-                >
-                    erase
-                </Button>
-                <Button
-                    bsPrefix='eraseBtn'
+                />
+
+                <SkipBttn
                     onClick={() => {
                         canvasRef.current.clearCanvas()
                         }}
-                >
-                    skip
-                </Button>
+                />
                 </div>
             </div>
         );
