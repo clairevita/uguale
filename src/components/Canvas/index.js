@@ -51,34 +51,34 @@ function Canvas(props) {
             </div>
             <NumberField className="answer"
             />
-        
-                <Row>
+
+            <Row>
                 <Col size="md-6" align="center">
                     <EraseBttn
-                            onClick={() => {
-                                canvasRef.current.clearCanvas();
-                            }}
-                        />
-                    </Col>
-                    <Col size="md-6" align="center">
-                        <SkipBttn
-                            onClick={() => {
-                                canvasRef.current.clearCanvas()
-                            }}
-                        />
-                    </Col>
-                    
-                </Row>
-                    <Row>
-                    <Col size="md-12" align="center">
-                        <SubmitBttn
-                            onClick={() => {
-                                checkAnswer();
-                                canvasRef.current.clearCanvas()
-                            }} />
-                    </Col>
-                    </Row>
-         
+                        onClick={() => {
+                            canvasRef.current.clearCanvas();
+                        }}
+                    />
+                </Col>
+                <Col size="md-6" align="center">
+                    <SkipBttn
+                        onClick={() => {
+                            canvasRef.current.clearCanvas()
+                        }}
+                    />
+                </Col>
+
+            </Row>
+            <Row>
+                <Col size="md-12" align="center">
+                    <SubmitBttn
+                        onClick={() => {
+                            checkAnswer();
+                            canvasRef.current.clearCanvas()
+                        }} />
+                </Col>
+            </Row>
+
         </div>
     );
 
