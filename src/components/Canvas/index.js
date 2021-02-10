@@ -45,14 +45,9 @@ function Canvas (props){
                 </div>
                 <NumberField className="answer"
                 
-                />
+/>
                 <div className='buttons'>
-                <Button bsPrefix='submitBtn' onClick={() => {
-                checkAnswer();
-                canvasRef.current.clearCanvas()
-                    }}>
-                    submit
-                </Button>
+                
                 <Button
                     bsPrefix='eraseBtn'
                     onClick={() => {
@@ -69,6 +64,12 @@ function Canvas (props){
                         }}
                 >
                     skip
+                </Button>
+                <Button bsPrefix='submitBtn' onClick={() => {
+                checkAnswer();
+                canvasRef.current.clearCanvas()
+                    }}>
+                    submit
                 </Button>
                 </div>
             </div>

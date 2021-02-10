@@ -1,0 +1,13 @@
+.HomeBttn {
+    width: 75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    border: 0;
+    border-radius: 7px;
+    font-family: 'Varela Round', sans-serif;
+}

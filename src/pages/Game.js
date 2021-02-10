@@ -11,30 +11,26 @@ function Game() {
     return (
         <div>
             <Container>
+
                 <Row>
                     <Col size="md">
                     </Col>
-                    <Col size="md-4" align="center">
+                    <Col size="md-5" align="center">
                         <HomeBttn />
                     </Col>
-                    <Col size="md-4" align="center">
+                    <Col size="md-5" align="center">
                         <ConfigBttn />
                     </Col>
                     <Col size="md">
                     </Col>
                 </Row>
 
+                <br></br>
 
                 <Row>
                     <Col size="md-12" align="center">
                         <Canvas />
                     </Col>
-                </Row>
-
-                <Row>
-                    <Col size="md-3" align="center">
-                    </Col>
-
                 </Row>
             </Container>
     
