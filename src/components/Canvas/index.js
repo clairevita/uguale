@@ -51,13 +51,13 @@ function Canvas (props){
                 />
                 <div className='buttons'>
                 <SubmitBttn 
-                onClick={() => {checkAnswer();
+                onClick={() => {
+                checkAnswer();
                 canvasRef.current.clearCanvas()
                     }} />
                 <EraseBttn
                     onClick={() => {
                     canvasRef.current.clearCanvas();
-                    
                     }}
                 />
 
