@@ -25,7 +25,6 @@ function Game() {
                     </Col>
                 </Row>
 
-
                 <Row>
                     <Col size="md-12" align="center">
                         <Canvas />
