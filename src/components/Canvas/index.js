@@ -10,6 +10,7 @@ import SkipBttn from '../Buttons/SkipBttn';
 import EraseBttn from '../Buttons/EraseBttn';
 import Row from "../Row/index";
 import Col from "../Col/index";
+import {equationSkip, equationLose, equationWin} from '../../utils/Curr';
 
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
@@ -33,7 +34,6 @@ function Canvas(props) {
                 numberTwo: state.numberTwo - 1
             });
         }
-
     }
     const canvasRef = useRef(null)
     return (
