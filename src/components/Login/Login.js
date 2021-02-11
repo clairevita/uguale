@@ -1,16 +1,18 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
+import { useGoogleLogin } from 'react-google-login';
+import "./login.css";
+
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
 
-
-const clientId =`632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com`;
+const clientId =
+  '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     alert(
-      `Logged in successfully Welcome ${res.profileObj.name}!`
+      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
     refreshTokenSetup(res);
   };
@@ -22,18 +24,22 @@ function Login() {
     );
   };
 
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    onFailure,
+    clientId,
+    isSignedIn: true,
+    accessType: 'offline',
+    // responseType: 'code',
+    // prompt: 'consent',
+  });
+
   return (
-    <div>
-      <GoogleLogin
-        clientId={clientId}
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-        cookiePolicy={'single_host_origin'}
-        style={{ marginTop: '100px' }}
-        isSignedIn={true}
-        buttonText="Login"
-      />
-    </div>
+    <button onClick={signIn} className="button">
+      <img src="icons/logo.png" alt="google login" className="icon"></img>
+
+      <span className="buttonText">Sign in with Google</span>
+    </button>
   );
 }
 
