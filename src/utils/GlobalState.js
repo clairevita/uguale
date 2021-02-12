@@ -27,6 +27,7 @@ const reducer = (state, action) => {
         case "win":
             return {
                 ...state,
+                difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
                 answers: []
