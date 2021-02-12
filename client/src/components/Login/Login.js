@@ -1,21 +1,23 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
+import { useGoogleLogin } from 'react-google-login';
+import "./login.css";
+
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import LoginModal from "../LoginModal";
 
-
-const clientId =`632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com`;
+const clientId =
+  '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     
-    alert(
-      `Logged in successfully Welcome ${res.profileObj.name}!`
-    ); 
-    
+    alert(   
+      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
+    );
     refreshTokenSetup(res);
   };
 
@@ -25,6 +27,16 @@ function Login() {
       `Failed to login`
     );
   };
+
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    onFailure,
+    clientId,
+    isSignedIn: true,
+    accessType: 'offline',
+    // responseType: 'code',
+    // prompt: 'consent',
+  });
 
   return (
     <div>
@@ -39,6 +51,12 @@ function Login() {
       >
 
       </GoogleLogin>
+    
+    <button onClick={signIn} className="button">
+      <img src="icons/logo.png" alt="google login" className="icon"></img>
+
+      <span className="buttonText">Sign in with Google</span>
+    </button>
     </div>
   );
 }
