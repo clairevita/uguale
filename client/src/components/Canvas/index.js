@@ -63,8 +63,8 @@ function Canvas(props) {
                     background="rgba(201, 26, 26)"
                 />
             </div>
-            <NumberField className="answer"
-            />
+            {/* <NumberField className="answer"
+            /> */}
 
             <Row>
                 <Col size="md-6" align="center">

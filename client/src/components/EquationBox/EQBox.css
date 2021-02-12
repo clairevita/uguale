@@ -4,7 +4,7 @@
     padding: 5px;
     background: #f7f7f700;
     font-family: 'Balsamiq Sans', cursive;
-   
+    z-index: 1;
 }
 .jumbotron{
     padding: 0px;
@@ -18,4 +18,11 @@
 .card-text {
     font-size: 80px;
     color: black;
+}
+.answer {
+    z-index: 1;
+    position: absolute;
+    -ms-transform: translateY(-105%);
+    transform: translateY(-105%);
+    padding: 5px;
 }
