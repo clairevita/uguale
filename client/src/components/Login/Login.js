@@ -1,12 +1,9 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { GoogleLogin } from 'react-google-login';
 import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
-import LoginModal from "../LoginModal";
 
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
@@ -14,8 +11,7 @@ const clientId =
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
-    
-    alert(   
+    alert(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
     refreshTokenSetup(res);
@@ -39,31 +35,15 @@ function Login() {
   });
 
   return (
-    <div>
-      <GoogleLogin
-        clientId={clientId}
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-        cookiePolicy={'single_host_origin'}
-        style={{ marginTop: '100px' }}
-        isSignedIn={true}
-        buttonText="Login"
-      >
-
-      </GoogleLogin>
-    
     <button onClick={signIn} className="button">
       <img src="icons/logo.png" alt="google login" className="icon"></img>
 
       <span className="buttonText">Sign in with Google</span>
     </button>
-    </div>
   );
 }
 
 export default Login;
 
-      /* if (onSuccess) { 
-        return(<LoginModal/>)} */
 //   after 1 hour your tokenId gets expired and hence it won't be used to access data or authenticate users. so we need to generate new tokenId. To make things work we need to add some additional cases in the Login component.
 // refreshTokenSetup function will take care of handling new tokenIds
