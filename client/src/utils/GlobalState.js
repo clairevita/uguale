@@ -3,58 +3,59 @@ import React, { useContext, createContext, useReducer } from "react";
 const MathContext = createContext();
 const { Provider } = MathContext;
 
-// const reducer = (state, action) => {
-//     switch (action.type) {
-//         default:
-//             return state;
-//     }
-// }
-
 const reducer = (state, action) => {
     switch (action.type) {
         case "mint":
-            return { ...state, themeStyle: "mint"};
+            return { ...state, themeStyle: "mint" };
         case "berry":
-            return { ...state, themeStyle: "berry"};
+            return { ...state, themeStyle: "berry" };
         case "honey":
-            return { ...state, themeStyle: "honey"};
+            return { ...state, themeStyle: "honey" };
         case "classic":
-            return { ...state, themeStyle: "classic"};
+            return { ...state, themeStyle: "classic" };
         case "night":
-            return { ...state, night: "night"};
+            return { ...state, night: "night" };
         case "light":
-            return { ...state, night: ""};
+            return { ...state, night: "" };
         case "loss":
             return {
                 ...state,
+                difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: []
+                answers: ["", ""]
             };
         case "win":
             return {
                 ...state,
+                difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: []
+                answers: ["", ""]
             };
         case "skip":
-            return {};
+            return {
+                ...state,
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: ["", ""]
+            };
         case "answer":
             return {
                 ...state,
                 answers: action.answers,
-            } 
+            }
         default:
             return state;
-    }; 
+    };
 }
 
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
-        difficulty: 1,
-        numberOne: 20,
-        numberTwo: 15,
+        difficulty: 2,
+        numberOne: 2,
+        numberTwo: 2,
         answers: [],
         themeStyle: "mint",
         night: ""
@@ -66,4 +67,4 @@ const useMathContext = () => {
     return useContext(MathContext);
 }
 
- export { MathProvider, useMathContext };
+export { MathProvider, useMathContext };

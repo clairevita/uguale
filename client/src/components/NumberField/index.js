@@ -39,7 +39,8 @@ function NumberField() {
                             bsPrefix="answer"
                             maxlength="1" 
                             data-index-number={[index]}
-                            onChange={handleChange}                     
+                            onChange={handleChange}
+                            value={state.answers[[index]]}                     
                             />
                         </Col>
                     ))}

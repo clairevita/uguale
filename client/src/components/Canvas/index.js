@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
-import Button from "react-bootstrap/Button";
 import { NumberField } from '../NumberField/';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
@@ -10,30 +9,45 @@ import SkipBttn from '../Buttons/SkipBttn';
 import EraseBttn from '../Buttons/EraseBttn';
 import Row from "../Row/index";
 import Col from "../Col/index";
+const curr= require('../../utils/Curr');
 
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
+
+    function handleSkip(){
+        let newMath = curr.equationSkip(state.difficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+        dispatch({
+            type: "skip",
+            difficulty: newMath[0],
+            numberOne: newMath[1],
+            numberTwo: newMath[2]
+        });
+    }
 
     function checkAnswer() {
         let userAnswer = state.answers.join("");
         let finalAnswer = state.numberOne + state.numberTwo;
         console.log(userAnswer, finalAnswer);
         if (userAnswer == finalAnswer) {
-            console.log("win")
+            let newMath = curr.equationWin(state.difficulty);
+            console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             dispatch({
-                type: "win",
-                numberOne: state.numberOne + 10,
-                numberTwo: state.numberTwo + 3
-            });
+                    type: "win",
+                    difficulty: newMath[0],
+                    numberOne: newMath[1],
+                    numberTwo: newMath[2]
+                });
         } else {
-            console.log("loss")
+            let newMath = curr.equationLose(state.difficulty);
+            console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             dispatch({
                 type: "loss",
-                numberOne: state.numberOne - 1,
-                numberTwo: state.numberTwo - 1
+                difficulty: newMath[0],
+                numberOne: newMath[1],
+                numberTwo: newMath[2]
             });
         }
-
     }
     const canvasRef = useRef(null)
     return (
@@ -51,34 +65,35 @@ function Canvas(props) {
             </div>
             <NumberField className="answer"
             />
-        
-                <Row>
+
+            <Row>
                 <Col size="md-6" align="center">
                     <EraseBttn
-                            onClick={() => {
-                                canvasRef.current.clearCanvas();
-                            }}
-                        />
-                    </Col>
-                    <Col size="md-6" align="center">
-                        <SkipBttn
-                            onClick={() => {
-                                canvasRef.current.clearCanvas()
-                            }}
-                        />
-                    </Col>
-                    
-                </Row>
-                    <Row>
-                    <Col size="md-12" align="center">
-                        <SubmitBttn
-                            onClick={() => {
-                                checkAnswer();
-                                canvasRef.current.clearCanvas()
-                            }} />
-                    </Col>
-                    </Row>
-         
+                        onClick={() => {
+                            canvasRef.current.clearCanvas();
+                        }}
+                    />
+                </Col>
+                <Col size="md-6" align="center">
+                    <SkipBttn
+                        onClick={() => {
+                            handleSkip();
+                            canvasRef.current.clearCanvas();
+                        }}
+                    />
+                </Col>
+
+            </Row>
+            <Row>
+                <Col size="md-12" align="center">
+                    <SubmitBttn
+                        onClick={() => {
+                            checkAnswer();
+                            canvasRef.current.clearCanvas()
+                        }} />
+                </Col>
+            </Row>
+
         </div>
     );
 
