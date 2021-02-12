@@ -20,6 +20,7 @@ const reducer = (state, action) => {
         case "loss":
             return {
                 ...state,
+                difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
                 answers: []
@@ -34,7 +35,11 @@ const reducer = (state, action) => {
             };
         case "skip":
             return {
-
+                ...state,
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                answers: []
             };
         case "answer":
             return {
