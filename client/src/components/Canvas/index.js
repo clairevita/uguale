@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
+
 import { ReactSketchCanvas } from "react-sketch-canvas";
+
 import './Canvas.css';
 import { NumberField } from '../NumberField/';
 import EquationBox from '../EquationBox'
@@ -13,7 +15,7 @@ const curr= require('../../utils/Curr');
 
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
-
+    
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -49,19 +51,22 @@ function Canvas(props) {
             });
         }
     }
+    
     const canvasRef = useRef(null)
     return (
         <div>
             <div className='canvasContainer'>
-                <EquationBox className="eqb" />
                 <ReactSketchCanvas className="bgCanvas"
                     ref={canvasRef}
+                    text= 'This is a test'
                     strokeWidth={5}
                     strokeColor="black"
                     width="100%"
                     height="100%"
                     background="rgba(201, 26, 26)"
+                    
                 />
+                <EquationBox className="eqb" />
             </div>
             {/* <NumberField className="answer"
             /> */}
@@ -71,6 +76,7 @@ function Canvas(props) {
                     <EraseBttn
                         onClick={() => {
                             canvasRef.current.clearCanvas();
+                            
                         }}
                     />
                 </Col>

@@ -10,7 +10,6 @@ function EquationBox() {
   const [state, dispatch] = useMathContext();
 
   // The render method returns the JSX that should be rendered
-
   return (
     <div className="eqb">
       <div id="EQbox" className="jumbotron jumbotron-fluid text-center">
@@ -27,7 +26,7 @@ function EquationBox() {
     </Row>
     <br></br>
     <Row>
-    <NumberField className="answer unselectable"
+    <NumberField className="answer"
             />
     </Row>
           {/* <p className="card-text">{state.numberOne} + {state.numberTwo}</p>     */}
