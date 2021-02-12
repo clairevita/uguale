@@ -7,6 +7,7 @@ const SkipBttn = (props) => {
     const [state] = useMathContext();
     return (
         <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
+        // onClick={()=>{}}
         {...props}
         >
             submit

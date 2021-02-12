@@ -23,7 +23,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: []
+                answers: ["", ""]
             };
         case "win":
             return {
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: []
+                answers: ["", ""]
             };
         case "skip":
             return {
@@ -39,7 +39,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: []
+                answers: ["", ""]
             };
         case "answer":
             return {

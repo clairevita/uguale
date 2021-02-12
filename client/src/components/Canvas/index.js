@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
-import Button from "react-bootstrap/Button";
 import { NumberField } from '../NumberField/';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
@@ -21,7 +20,7 @@ function Canvas(props) {
         console.log(userAnswer, finalAnswer);
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
-            console.log(newMath[0] + "  " + newMath[1] + "  " + newMath[2]);
+            console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             dispatch({
                     type: "win",
                     difficulty: newMath[0],
@@ -30,6 +29,7 @@ function Canvas(props) {
                 });
         } else {
             let newMath = curr.equationLose(state.difficulty);
+            console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             dispatch({
                 type: "loss",
                 difficulty: newMath[0],

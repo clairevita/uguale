@@ -1,4 +1,5 @@
 // This is the curriculum script. All difficulty modification and number generation is sourced from these exports
+
 module.exports = {
     equationWin(score){
         console.log("Win");
@@ -10,7 +11,7 @@ module.exports = {
     
     equationLose(score){
         console.log("Lose");
-        let newScore = score--;
+        let newScore = score - 1;
         let numberOne = Math.ceil(Math.random()*newScore);
         let numberTwo = Math.ceil(Math.random()*newScore);
         return [newScore, numberOne, numberTwo]
@@ -18,7 +19,7 @@ module.exports = {
     
     equationSkip(score){
         console.log("Skip")
-        let newScore = score--;
+        let newScore = score;
         let numberOne = Math.ceil(Math.random()*newScore);
         let numberTwo = Math.ceil(Math.random()*newScore);
         return [newScore, numberOne, numberTwo]
