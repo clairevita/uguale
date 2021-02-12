@@ -14,6 +14,17 @@ const curr= require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
 
+    function handleSkip(){
+        let newMath = curr.equationSkip(state.difficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+        dispatch({
+            type: "skip",
+            difficulty: newMath[0],
+            numberOne: newMath[1],
+            numberTwo: newMath[2]
+        });
+    }
+
     function checkAnswer() {
         let userAnswer = state.answers.join("");
         let finalAnswer = state.numberOne + state.numberTwo;
@@ -66,7 +77,8 @@ function Canvas(props) {
                 <Col size="md-6" align="center">
                     <SkipBttn
                         onClick={() => {
-                            canvasRef.current.clearCanvas()
+                            handleSkip();
+                            canvasRef.current.clearCanvas();
                         }}
                     />
                 </Col>
