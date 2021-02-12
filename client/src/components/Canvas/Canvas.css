@@ -1,6 +1,6 @@
 .canvasContainer {
     border:1px solid #4C3735;
-    width: 1000px;
+    width: 100%;
     height: 500px;
     display: flex;
     margin-left: auto;
