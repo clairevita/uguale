@@ -33,9 +33,12 @@
 .answer {
     z-index: 1;
     position: absolute;
-    -ms-transform: translateY(-105%);
-    transform: translateY(-105%);
-    padding: 5px;
+    user-select: visible;
+    -moz-user-select: visible;
+    -khtml-user-select: visible;
+    -webkit-user-select: visible;
+    -o-user-select: visible;
+    pointer-events:initial;
 }
 .unselectable {
     user-select: auto;
@@ -45,13 +48,4 @@
     -o-user-select: auto;
     pointer-events: auto;
     background: auto;
-}
-
-.NumberField {
-    user-select: visible;
-    -moz-user-select: visible;
-    -khtml-user-select: visible;
-    -webkit-user-select: visible;
-    -o-user-select: visible;
-    pointer-events:initial;
 }

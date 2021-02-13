@@ -21,7 +21,7 @@ function EquationBox() {
         <Row>
           <Col size="md">
             +
-      </Col>
+          </Col>
           <Col size="md">
             <Row>
               {state.numberOne}
@@ -29,13 +29,14 @@ function EquationBox() {
             <Row>
               {state.numberTwo}
             </Row>
-          </Col>
-          <Row />
+            <Row>
+          <NumberField className="answer" />
         </Row>
+          </Col>
+        </Row>
+
       </div>
-      <Row>
-        <NumberField className="NumberField" />
-      </Row>
+
 
     </div>
 
