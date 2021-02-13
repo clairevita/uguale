@@ -3,7 +3,6 @@ import './EQBox.css';
 import { useMathContext } from "../../utils/GlobalState";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
 import Form from 'react-bootstrap/Form';
 
 // By extending the React.Component class, Counter inherits functionality from it
@@ -16,20 +15,20 @@ function EquationBox() {
   let answer = state.numberOne + state.numberTwo;
 
   function getInputNo(answer) {
-      digits = ("" + answer).split("")
+    digits = ("" + answer).split("")
   }
 
   function handleChange(e) {
-      let index = e.target.dataset.indexNumber
-      userAnswer = state.answers;
-      userAnswer[index] = e.target.value;
+    let index = e.target.dataset.indexNumber
+    userAnswer = state.answers;
+    userAnswer[index] = e.target.value;
 
-      dispatch({
-          type: "answer",
-          answers: userAnswer,
+    dispatch({
+      type: "answer",
+      answers: userAnswer,
 
-      })
-      console.log(state.answers);
+    })
+    console.log(state.answers);
   }
 
   getInputNo(answer);
@@ -49,23 +48,23 @@ function EquationBox() {
             <Row>
               {state.numberTwo}
             </Row>
-          
+
             <Row className="InputField">
-                {digits.map((digit, index) => (
-                    <Col>
-                        <Form.Control
-                            size="lg"
-                            type="text"
-                            bsPrefix="answer"
-                            maxlength="1"
-                            data-index-number={[index]}
-                            onChange={handleChange}
-                            value={state.answers[[index]]}
-                        />
-                    </Col>
-                ))}
+              {digits.map((digit, index) => (
+                <Col>
+                  <Form.Control
+                    size="lg"
+                    type="text"
+                    bsPrefix="answer"
+                    maxlength="1"
+                    data-index-number={[index]}
+                    onChange={handleChange}
+                    value={state.answers[[index]]}
+                  />
+                </Col>
+              ))}
             </Row>
-        
+
           </Col>
         </Row>
 

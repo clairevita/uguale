@@ -8,7 +8,7 @@
     display: inline-block;
     margin: auto;
     width: 70%;
-    margin-top: 0;
+    margin-top: 50px;
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -34,14 +34,20 @@
 .answer {
     z-index: 1;
     position: absolute;
-    -ms-transform: translateY(0);
-    transform: translateY(0);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
     user-select: visible;
     -moz-user-select: visible;
     -khtml-user-select: visible;
     -webkit-user-select: visible;
     -o-user-select: visible;
     pointer-events:visible;
+    text-align: center;
+    font-size: 80px;
+    width: 100px;
+    height: 140px;
+    
+    
 }
 .unselectable {
     user-select: auto;
@@ -53,10 +59,8 @@
     background: auto;
 }
 
-.answer {
-    text-align: center;
-    font-size: 80px;
-    width: 100px;
-    height: 140px;
-    float: left;
+.InputField {
+    width: 100%;
+    align-content: center;
+    margin-right: 100px;
 }
