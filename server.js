@@ -1,3 +1,4 @@
+  
 const express = require("express");
 require("dotenv").config();
 
@@ -13,16 +14,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-require("./routes/html-routes.js")(app);
-<<<<<<< HEAD
-require("./routes/api-routes.js")(app);
-
-
-=======
+// require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
->>>>>>> c9742354d24426ae627be12f14e9a9a838a54237
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
