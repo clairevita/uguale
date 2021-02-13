@@ -14,9 +14,14 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 require("./routes/html-routes.js")(app);
+<<<<<<< HEAD
 require("./routes/api-routes.js")(app);
 
 
+=======
+// require("./routes/api-routes.js")(app);
+
+>>>>>>> c9742354d24426ae627be12f14e9a9a838a54237
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
