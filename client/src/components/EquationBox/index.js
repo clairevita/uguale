@@ -3,6 +3,7 @@ import './EQBox.css';
 import { useMathContext } from "../../utils/GlobalState";
 import Row from "..//Row";
 import Col from "../Col";
+import { NumberField } from "../NumberField";
 
 
 // By extending the React.Component class, Counter inherits functionality from it
@@ -32,6 +33,8 @@ function EquationBox() {
     </Row>
           {/* <p className="card-text">{state.numberOne} + {state.numberTwo}</p>     */}
         </div>
+
+        <NumberField />
       </div>
    
 
