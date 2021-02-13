@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useMathContext } from "../../utils/GlobalState";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import { Col, Form, Row } from "react-bootstrap";
