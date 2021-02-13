@@ -38,18 +38,19 @@ function EquationBox() {
     <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
       <div>
         <Row>
-          <Col size="">
+          <Col>
             +
           </Col>
-          <Col size="">
-            <Row>
+          <Col>
+            <Row className="number">
               {state.numberOne}
             </Row>
-            <Row>
+            <Row className="number">
               {state.numberTwo}
             </Row>
-
-            <Row className="InputField">
+          </Col>
+        </Row>
+        <Row >
               {digits.map((digit, index) => (
                 <Col>
                   <Form.Control
@@ -64,10 +65,6 @@ function EquationBox() {
                 </Col>
               ))}
             </Row>
-
-          </Col>
-        </Row>
-
       </div>
 
 
