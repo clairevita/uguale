@@ -50,6 +50,9 @@
  
     
 }
+.answerField {
+    padding-inline: 100px;
+}
 .unselectable {
     user-select: auto;
     -moz-user-select: auto;

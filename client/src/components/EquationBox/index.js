@@ -50,7 +50,7 @@ function EquationBox() {
             </Row>
           </Col>
         </Row>
-        <Row >
+        <Row className="answerField">
               {digits.map((digit, index) => (
                 <Col>
                   <Form.Control
