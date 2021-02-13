@@ -4,7 +4,18 @@
     padding: 5px;
     background: #f7f7f700;
     font-family: 'Balsamiq Sans', cursive;
-   
+    z-index: 1;
+    display: inline-block;
+    margin: auto;
+    width: 70%;
+    margin-top: 50px;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    pointer-events: none;
+    background: none !important;
 }
 .jumbotron{
     padding: 0px;
@@ -13,9 +24,51 @@
 .eqb{
     margin: auto;
     width: 50%;
+    display: inline-block;
 }
 
 .card-text {
     font-size: 80px;
     color: black;
+}
+.answer {
+    z-index: 1;
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    user-select: visible;
+    -moz-user-select: visible;
+    -khtml-user-select: visible;
+    -webkit-user-select: visible;
+    -o-user-select: visible;
+    pointer-events:visible;
+    text-align: center;
+    font-size: 80px;
+    width: 100px;
+    height: 140px;
+    margin-left: -50px;
+    margin-right: -50px;
+ 
+    
+}
+.answerField {
+    padding-inline: 100px;
+}
+.unselectable {
+    user-select: auto;
+    -moz-user-select: auto;
+    -khtml-user-select: auto;
+    -webkit-user-select: auto;
+    -o-user-select: auto;
+    pointer-events: auto;
+    background: auto;
+}
+
+.InputField {
+    width: 100%;
+    align-content: left;
+    padding-right: 10px;
+}
+
+.number {
+    letter-spacing: 32px;
 }

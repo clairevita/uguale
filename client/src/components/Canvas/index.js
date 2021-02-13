@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import {useLocalState} from "../../utils/localS";
 import { ReactSketchCanvas } from "react-sketch-canvas";
+
 import './Canvas.css';
-import { NumberField } from '../NumberField/';
+
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
@@ -15,9 +16,8 @@ const curr= require('../../utils/Curr');
 
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
-    //added===================================
     const [dif, setDif] = useLocalState("dif");
-    //added===================================
+    
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -53,28 +53,31 @@ function Canvas(props) {
             });
         }
     }
+    
     const canvasRef = useRef(null)
     return (
         <div>
             <div className='canvasContainer'>
-                <EquationBox className="eqb" />
                 <ReactSketchCanvas className="bgCanvas"
                     ref={canvasRef}
+                    text= 'This is a test'
                     strokeWidth={5}
                     strokeColor="black"
                     width="100%"
                     height="100%"
                     background="rgba(201, 26, 26)"
+                    
                 />
+                <EquationBox className="eqb" />
             </div>
-            <NumberField className="answer"
-            />
+        
 
             <Row>
                 <Col size="md-6" align="center">
                     <EraseBttn
                         onClick={() => {
                             canvasRef.current.clearCanvas();
+                            
                         }}
                     />
                 </Col>
