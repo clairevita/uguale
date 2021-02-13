@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import {useLocalState} from "../../utils/localS";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import './Canvas.css';
 import { NumberField } from '../NumberField/';
@@ -11,9 +12,12 @@ import Row from "../Row/index";
 import Col from "../Col/index";
 const curr= require('../../utils/Curr');
 
+
 function Canvas(props) {
     const [state, dispatch] = useMathContext();
-
+    //added===================================
+    const [dif, setDif] = useLocalState("dif");
+    //added===================================
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -88,9 +92,11 @@ function Canvas(props) {
                 <Col size="md-12" align="center">
                     <SubmitBttn
                         onClick={() => {
+                            setDif(state.difficulty);
                             checkAnswer();
                             canvasRef.current.clearCanvas()
                         }} />
+                        <p>{dif}</p>
                 </Col>
             </Row>
 
