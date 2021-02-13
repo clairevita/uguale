@@ -3,13 +3,6 @@ import React, { useContext, createContext, useReducer } from "react";
 const MathContext = createContext();
 const { Provider } = MathContext;
 
-// const reducer = (state, action) => {
-//     switch (action.type) {
-//         default:
-//             return state;
-//     }
-// }
-
 const reducer = (state, action) => {
     switch (action.type) {
         case "mint":
@@ -44,7 +37,9 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 answers: action.answers,
-            } 
+            };
+        case "profile":
+            return { ...state, newUser: true}; 
         default:
             return state;
     }; 
@@ -57,7 +52,8 @@ const MathProvider = ({ value = [], ...props }) => {
         numberTwo: 15,
         answers: [],
         themeStyle: "mint",
-        night: ""
+        night: "",
+        newUser: false
     });
     return <Provider value={[state, dispatch]} {...props} />
 };
