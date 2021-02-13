@@ -5,6 +5,16 @@
     background: #f7f7f700;
     font-family: 'Balsamiq Sans', cursive;
     z-index: 1;
+    display: inline-flexbox;
+    margin: auto;
+    width: 20%;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    pointer-events: none;
+    background: none !important;
 }
 .jumbotron{
     padding: 0px;
@@ -13,6 +23,7 @@
 .eqb{
     margin: auto;
     width: 50%;
+    display: inline-block;
 }
 
 .card-text {
@@ -33,5 +44,5 @@
     -webkit-user-select: none;
     -o-user-select: none;
     pointer-events: none;
-background: none !important;
+    background: none !important;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import './EQBox.css';
 import { useMathContext } from "../../utils/GlobalState";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import Row from "..//Row";
+import Col from "../Col";
 
 
 // By extending the React.Component class, Counter inherits functionality from it
@@ -14,14 +14,14 @@ function EquationBox() {
 
   return (
    
-    <div className="eqb">
+    
       <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
         <div className="card-body">
     <Row>
-      <Col>
+      <Col size="md">
       +
       </Col>
-      <Col>
+      <Col size="md">
       <Row>
       {state.numberOne}
       </Row>
@@ -30,10 +30,10 @@ function EquationBox() {
       </Row>
       </Col>
     </Row>
-          <p className="card-text">{state.numberOne} + {state.numberTwo}</p>    
+          {/* <p className="card-text">{state.numberOne} + {state.numberTwo}</p>     */}
         </div>
       </div>
-    </div>
+   
 
   );
 }
