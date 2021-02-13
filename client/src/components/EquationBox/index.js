@@ -14,29 +14,31 @@ function EquationBox() {
   // The render method returns the JSX that should be rendered
 
   return (
-   
-    
-      <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
-        <div className="card-body">
-    <Row>
-      <Col size="md">
-      +
-      </Col>
-      <Col size="md">
-      <Row>
-      {state.numberOne}
-      </Row>
-      <Row>
-      {state.numberTwo}
-      </Row>
-      </Col>
-    </Row>
-          {/* <p className="card-text">{state.numberOne} + {state.numberTwo}</p>     */}
-        </div>
 
-        <NumberField />
+
+    <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
+      <div className="card-body">
+        <Row>
+          <Col size="md">
+            +
+      </Col>
+          <Col size="md">
+            <Row>
+              {state.numberOne}
+            </Row>
+            <Row>
+              {state.numberTwo}
+            </Row>
+          </Col>
+          <Row />
+        </Row>
       </div>
-   
+      <Row>
+        <NumberField className="NumberField" />
+      </Row>
+
+    </div>
+
 
   );
 }
