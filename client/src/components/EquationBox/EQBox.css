@@ -33,12 +33,14 @@
 .answer {
     z-index: 1;
     position: absolute;
+    -ms-transform: translateY(0);
+    transform: translateY(0);
     user-select: visible;
     -moz-user-select: visible;
     -khtml-user-select: visible;
     -webkit-user-select: visible;
     -o-user-select: visible;
-    pointer-events:initial;
+    pointer-events:visible;
 }
 .unselectable {
     user-select: auto;

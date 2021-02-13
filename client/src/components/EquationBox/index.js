@@ -19,10 +19,10 @@ function EquationBox() {
     <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
       <div className="card-body">
         <Row>
-          <Col size="md">
+          <Col size="">
             +
           </Col>
-          <Col size="md">
+          <Col size="">
             <Row>
               {state.numberOne}
             </Row>
