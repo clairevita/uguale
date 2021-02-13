@@ -1,23 +1,43 @@
 import React from "react";
 import './EQBox.css';
 import { useMathContext } from "../../utils/GlobalState";
-import Row from "..//Row";
-import Col from "../Col";
-import { NumberField } from "../NumberField";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
+import Form from 'react-bootstrap/Form';
 
 // By extending the React.Component class, Counter inherits functionality from it
 function EquationBox() {
   // Setting the initial state of the Counter component
   const [state, dispatch] = useMathContext();
 
-  // The render method returns the JSX that should be rendered
+  let digits = []
+  let userAnswer;
+  let answer = state.numberOne + state.numberTwo;
+
+  function getInputNo(answer) {
+      digits = ("" + answer).split("")
+  }
+
+  function handleChange(e) {
+      let index = e.target.dataset.indexNumber
+      userAnswer = state.answers;
+      userAnswer[index] = e.target.value;
+
+      dispatch({
+          type: "answer",
+          answers: userAnswer,
+
+      })
+      console.log(state.answers);
+  }
+
+  getInputNo(answer);
 
   return (
 
-
     <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
-      <div className="card-body">
+      <div>
         <Row>
           <Col size="">
             +
@@ -29,9 +49,23 @@ function EquationBox() {
             <Row>
               {state.numberTwo}
             </Row>
-            <Row>
-          <NumberField className="answer" />
-        </Row>
+          
+            <Row className="InputField">
+                {digits.map((digit, index) => (
+                    <Col>
+                        <Form.Control
+                            size="lg"
+                            type="text"
+                            bsPrefix="answer"
+                            maxlength="1"
+                            data-index-number={[index]}
+                            onChange={handleChange}
+                            value={state.answers[[index]]}
+                        />
+                    </Col>
+                ))}
+            </Row>
+        
           </Col>
         </Row>
 

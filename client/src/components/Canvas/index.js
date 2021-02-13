@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
 import './Canvas.css';
-import { NumberField } from '../NumberField/';
+
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
@@ -68,8 +68,7 @@ function Canvas(props) {
                 />
                 <EquationBox className="eqb" />
             </div>
-            {/* <NumberField className="answer"
-            /> */}
+        
 
             <Row>
                 <Col size="md-6" align="center">
