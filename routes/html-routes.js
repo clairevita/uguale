@@ -1,31 +1,13 @@
 const path = require("path");
-const db = require("../models/user");
+const router = require("express").Router();
+const apiRoutes = require("./api");
 
-// Routes
-// =============================================================
+// API Routes
+router.use("/api", apiRoutes);
 
-module.exports = function (app) {
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
-    app.get("/", function (req, res) {
-        if (req.user) {
-            res.redirect("/home");
-        }
-        res.sendFile(path.join(__dirname, ""));
-    });
-
-    app.get("/home", function (req, res) {
-        if (!req.user) {
-            res.redirect("/");
-        }
-        res.sendFile(path.join(__dirname, ""));
-    });
-
-    app.get("/game", function (req, res) {
-       
-      if (req.user) {
-        res.redirect("/game");
-    }
-    res.sendFile(path.join(__dirname, ""));
-    });
-
-};
+module.exports = router;

@@ -11,7 +11,7 @@ module.exports = {
     
     equationLose(score){
         console.log("Lose");
-        let newScore = score - 1;
+        let newScore = score - .8;
         let numberOne = Math.ceil(Math.random()*newScore);
         let numberTwo = Math.ceil(Math.random()*newScore);
         return [newScore, numberOne, numberTwo]
