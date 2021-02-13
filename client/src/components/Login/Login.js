@@ -4,6 +4,7 @@ import "./login.css";
 
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
+import NewUserModal from '../NewUserModal';
 
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
@@ -39,6 +40,7 @@ function Login() {
       <img src="icons/logo.png" alt="google login" className="icon"></img>
 
       <span className="buttonText">Sign in with Google</span>
+      <NewUserModal />
     </button>
   );
 }
