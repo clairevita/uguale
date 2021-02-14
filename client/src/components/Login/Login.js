@@ -2,6 +2,8 @@ import React from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 
+// import API from '../../../../routes/api'
+
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import NewUserModal from '../NewUserModal';
@@ -15,6 +17,9 @@ function Login() {
     console.log(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
+
+
+
     refreshTokenSetup(res);
   };
 
