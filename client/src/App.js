@@ -4,6 +4,7 @@ import "./App.css";
 import Game from "./pages/Game";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home";
+import User from "./pages/User"; 
 import {MathProvider} from './utils/GlobalState';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/game" component={Game} />
+            <Route exact path="/user" component={User} />
           </Wrapper>
         </MathProvider>
       </Router>
