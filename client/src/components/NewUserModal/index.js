@@ -57,9 +57,11 @@ function NewUserModal() {
                 <Form.Label>Briefly describe your desired outcome:</Form.Label>
                 <Form.Control as="textarea" rows={2} />
               </Form.Group>
+
               <Button variant="primary" type="submit">
                 Submit
               </Button>
+
             </Form>
           </Container>
         </Modal.Body>
