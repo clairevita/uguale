@@ -14,12 +14,15 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
+    console.log("Received payload  " + req.body)
     db.User
-      .create(req.body)
+      .create({
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name
+      })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  console.log(req.body);
-  
+      .catch(err => res.status(422).json(err)); 
   },
   update: function (req, res) {
     db.User
