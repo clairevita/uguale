@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all posts
   getUsers: function() {
-    return axios.get("/api/user")
+    return axios.get("/api/user/")
     .catch(error => {
         console.log(error.response)
     });
@@ -17,7 +17,7 @@ export default {
   },
   // Saves a post to the database
   createUser: function(data) {
-    return axios.post("/api/user", data)
+    return axios.post("/api/user/", data)
     .catch(error => {
         console.log(error.response)
     });

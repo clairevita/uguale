@@ -15,14 +15,14 @@ module.exports = {
   },
   create: function (req, res) {
     console.log("Received payload  " + req.body)
-    db.User
-      .create({
-        email: req.body.email,
-        password: req.body.password,
-        name: req.body.name
-      })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err)); 
+    // db.User
+    //   .create({
+    //     email: req.body.email,
+    //     password: req.body.password,
+    //     name: req.body.name
+    //   })
+    //   .then(dbModel => res.json(dbModel))
+    //   .catch(err => res.status(422).json(err)); 
   },
   update: function (req, res) {
     db.User

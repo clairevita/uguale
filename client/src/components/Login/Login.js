@@ -17,14 +17,12 @@ function Login() {
     console.log(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
-      
-    API.createUser({
-      email: res.profileObj.email,
-      password: "",
-      name: res.profileObj.name
-    });  
-
     refreshTokenSetup(res);
+  
+    API.createUser({
+      data: "Passing Data"
+    });  
+  
   };
 
   const onFailure = (res) => {
