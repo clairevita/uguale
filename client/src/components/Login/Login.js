@@ -19,14 +19,15 @@ function Login() {
     );
     refreshTokenSetup(res);
   
-    API.createUser({
-      data: "Passing Data"
-    });  
+ 
   
   };
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
+    API.createUser({
+      data: "Passing Data"
+    }); 
     console.log(
       `Failed to login`
     );
