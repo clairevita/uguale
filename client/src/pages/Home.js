@@ -12,9 +12,9 @@ function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
-        <div class="Homebg"></div>
-        <div class="Homebg bg2"></div>
-        <div class="Homebg bg3"></div>
+        <div className="Homebg"></div>
+        <div className="Homebg bg2"></div>
+        <div className="Homebg bg3"></div>
         <Row>
           <Col size="md-2">
           </Col>
