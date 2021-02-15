@@ -15,11 +15,12 @@ function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     
-    API.createUser({
-      email: "Clairej.vita@gmail.com",
-      password: "",
-      name: "Claire Vita"
-    }); 
+    API.getUsers();
+    // API.createUser({
+    //   email: "Clairej.vita@gmail.com",
+    //   password: "",
+    //   name: "Claire Vita"
+    // }); 
 
     refreshTokenSetup(res);
 
@@ -27,11 +28,13 @@ function Login() {
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
-    API.createUser({
-      email: "Clairej.vita@gmail.com",
-      password: "",
-      name: "Claire Vita"
-    }); 
+    // API.createUser({
+    //   email: "Clairej.vita@gmail.com",
+    //   password: "",
+    //   name: "Claire Vita"
+    // }); 
+
+API.getUsers();
 
     console.log(
       `Failed to login`
