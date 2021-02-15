@@ -10,6 +10,18 @@ function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
 
+  function handleFormSubmit(){
+    console.log
+  }
+
+  const [form, setState] = useState({
+    firstName: "",
+    lastName: "",
+    mySelf: "",
+    lovedOne: "",
+    outcome: ""
+  })
+
   return (
     <div>
       <Modal size="lg"
@@ -35,6 +47,7 @@ function NewUserModal() {
                     label="Myself"
                     type="radio"
                     id={`custom-inline-radio-1`}
+                    name="mySelf"
                   />
                   <Form.Check
                     custom
@@ -42,23 +55,34 @@ function NewUserModal() {
                     label="A loved one"
                     type="radio"
                     id={`custom-inline-radio-2`}
+                    name="lovedOne"
                   />
                 </div>
               </Form.Row>
               <Form.Row>
                 <Col>
-                  <Form.Control placeholder="First name" />
+                  <Form.Control placeholder="First name" 
+                  name="firstName"
+                  />
                 </Col>
                 <Col>
-                  <Form.Control placeholder="Last name" />
+                  <Form.Control placeholder="Last name" 
+                  name="lastName"
+                  />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Briefly describe your desired outcome:</Form.Label>
-                <Form.Control as="textarea" rows={2} />
+                <Form.Control as="textarea" 
+                rows={2} 
+                name="outcome"
+                />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" 
+              type="submit"
+              handleFormSubmit={handleFormSubmit}
+              >
                 Submit
               </Button>
 
