@@ -18,7 +18,11 @@ function Login() {
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
       
-    API.getUser(res.profileObj.email);  
+    API.createUser({
+      email: res.profileObj.email,
+      password: "",
+      name: res.profileObj.name
+    });  
 
     refreshTokenSetup(res);
   };

@@ -7,10 +7,10 @@ export default {
   },
   // Gets the post with the given id
   getUser: function(email) {
-    return axios.get("/api/" + email);
+    return axios.get("/api/user/" + email);
   },
   // Saves a post to the database
-  createUser: function(newData) {
-    return axios.post("/api/signup", newData);
+  createUser: function(data) {
+    return axios.post("/api/user", data);
   }
 };
