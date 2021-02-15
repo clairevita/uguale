@@ -19,7 +19,8 @@ export default {
   createUser: function(data) {
     return axios.post("/api/user/", data)
     .catch(error => {
-        console.log(error.response)
+        console.log(error);
+        console.log(data);
     });
   }
 };

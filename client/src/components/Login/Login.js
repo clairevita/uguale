@@ -26,7 +26,9 @@ function Login() {
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     API.createUser({
-      data: "Passing Data"
+      email: "Clairej.vita@gmail.com",
+      password: "",
+      name: "Claire Vita"
     }); 
     console.log(
       `Failed to login`

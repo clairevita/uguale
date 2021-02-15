@@ -17,9 +17,9 @@ module.exports = {
     // console.log("Received payload  " + req.body)
     db.User
       .create({
-        email: "clairej.vita@gmail.com",
-        password: "",
-        name: "Claire Vita"
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err)); 
