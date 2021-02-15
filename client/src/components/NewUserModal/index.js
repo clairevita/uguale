@@ -10,8 +10,8 @@ function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
 
-  function handleFormSubmit(){
-    console.log
+  function handleFormSubmit(e){
+    console.log(e.target.name);
   }
 
   const [form, setState] = useState({

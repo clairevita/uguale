@@ -2,7 +2,7 @@ import React from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 
-// import API from '../../../../routes/api'
+import API from '../../utils/API';
 
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
@@ -17,8 +17,8 @@ function Login() {
     console.log(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
-
-
+      
+    API.getUser(res.profileObj.email);  
 
     refreshTokenSetup(res);
   };
