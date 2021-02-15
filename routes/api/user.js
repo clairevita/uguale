@@ -14,6 +14,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/user", function(req, res){
+    console.log(req.body)
     db.User
       .find(req.query)
       .then(dbModel => res.json(dbModel))
