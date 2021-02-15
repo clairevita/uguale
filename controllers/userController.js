@@ -14,7 +14,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
-    // console.log("Received payload  " + req.body)
+    console.log("Received payload  " + req.body)
     db.User
       .create({
         email: req.body.email,

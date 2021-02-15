@@ -1,12 +1,24 @@
-const router = require("express").Router();
-const userController = require("../../controllers/userController");
+const db = require("../../models");
 
-router.route("/:id")
-.get(userController.findById)
-.put(userController.update);
+module.exports = function(app) {
 
-router.route("/")
-.get(userController.findAll)
-.post(userController.create);
+  app.post("/api/signup", function(req, res){
+    db.User
+      .create({
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err)); 
+  });
 
-module.exports = router;
+  app.get("/api/user", function(req, res){
+    db.User
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
+  });
+
+}

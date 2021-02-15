@@ -14,13 +14,15 @@ const clientId =
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
-    console.log(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
+    
+    API.createUser({
+      email: "Clairej.vita@gmail.com",
+      password: "",
+      name: "Claire Vita"
+    }); 
+
     refreshTokenSetup(res);
-  
- 
-  
+
   };
 
   const onFailure = (res) => {
@@ -30,6 +32,7 @@ function Login() {
       password: "",
       name: "Claire Vita"
     }); 
+
     console.log(
       `Failed to login`
     );
