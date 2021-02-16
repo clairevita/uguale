@@ -18,7 +18,7 @@ function Canvas(props) {
     const [state, dispatch] = useMathContext();
     const [dif, setDif] = useLocalState("dif");
     const [numbers, setNums] = useLocalState("numbers");
-    
+    console.log(state)
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -39,6 +39,7 @@ function Canvas(props) {
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             setNums([newMath[1], newMath[2]]);
             API.updateStats({
+                email: state.email,
                 difficulty: dif,
                 lastIntegers: numbers,
                 wrongQuestions: "Test"

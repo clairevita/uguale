@@ -14,7 +14,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log(req.body);
     db.User
       .create({
         email: req.body.email,
@@ -27,7 +26,7 @@ module.exports = {
   },
   update: function (req, res) {
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, {
+      .findOneAndUpdate({ email: req.body.email }, {
         difficulty: req.body.difficulty,
         lastIntegers: req.body.lastIntegers,
         wrongQuestions: req.body.wrongQuestions

@@ -47,7 +47,9 @@ const reducer = (state, action) => {
                 answers: action.answers,
             };
         case "profile":
-            return { ...state, newUser: true}; 
+            return { ...state, newUser: true };
+        case "email":
+            return { ...state, email: action.email };
         default:
             return state;
     };
@@ -55,6 +57,7 @@ const reducer = (state, action) => {
 
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
+        email: "",
         difficulty: 2,
         numberOne: 2,
         numberTwo: 2,
