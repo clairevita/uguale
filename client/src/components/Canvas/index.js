@@ -104,7 +104,7 @@ function Canvas(props) {
                             canvasRef.current.clearCanvas()
                         }} />
                         <p>{dif}</p>
-                        <p>{numbers.toString()}</p>
+                        {/* <p>{numbers.toString()}</p> */}
                 </Col>
             </Row>
 
