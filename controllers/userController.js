@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    db.User
+      db.User
       .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -14,7 +14,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log("Received payload  " + req.body)
+    console.log(req.body);
+
     db.User
       .create({
         email: req.body.email,
