@@ -49,7 +49,10 @@ const reducer = (state, action) => {
         case "profile":
             return { ...state, newUser: true };
         case "email":
-            return { ...state, email: action.email };
+            return { 
+                ...state, 
+                email: action.email 
+            };
         default:
             return state;
     };
@@ -57,14 +60,14 @@ const reducer = (state, action) => {
 
 const MathProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
-        email: "",
         difficulty: 2,
         numberOne: 2,
         numberTwo: 2,
         answers: [],
         themeStyle: "mint",
         night: "",
-        newUser: false
+        newUser: false,
+        email: ""
     });
     return <Provider value={[state, dispatch]} {...props} />
 };
