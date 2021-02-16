@@ -6,4 +6,6 @@ router.post("/sign", userController.findOne);
 
 router.get("/user/:id", userController.findById);
 
+router.put("/user/:id", userController.update);
+
 module.exports = router
