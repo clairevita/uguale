@@ -13,6 +13,7 @@ function App() {
   return (
     
       <Router>
+        <div>
         <MathProvider>
           <Wrapper>
             <Route exact path="/" component={Home} />
@@ -22,6 +23,7 @@ function App() {
             <Route component={NoMatch} />
           </Wrapper>
         </MathProvider>
+        </div>
       </Router>
   
 
