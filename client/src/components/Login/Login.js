@@ -38,7 +38,6 @@ function Login() {
       type: "setEmail",
       email: "Guest"
   });
-  console.log(state);
     console.log(
       `Failed to login`
     );

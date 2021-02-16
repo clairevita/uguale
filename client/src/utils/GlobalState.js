@@ -48,7 +48,7 @@ const reducer = (state, action) => {
             };
         case "profile":
             return { ...state, newUser: true };
-        case "email":
+        case "setEmail":
             return { 
                 ...state, 
                 email: action.email 
