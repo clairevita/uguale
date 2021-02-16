@@ -14,7 +14,6 @@ const clientId =
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
-    
    
     API.createUser({
       email: "Clairej.vita@gmail.com",
@@ -28,11 +27,6 @@ function Login() {
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
-    // API.createUser({
-    //   email: "Clairej.vita@gmail.com",
-    //   password: "",
-    //   name: "Claire Vita"
-    // }); 
 
     console.log(
       `Failed to login`
