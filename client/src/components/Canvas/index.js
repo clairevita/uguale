@@ -3,7 +3,7 @@ import {useLocalState} from "../../utils/localS";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
 import './Canvas.css';
-
+import API from '../../utils/API';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
@@ -38,6 +38,9 @@ function Canvas(props) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             setNums([newMath[1], newMath[2]]);
+            API.updateStats({
+                
+            })
             dispatch({
                     type: "win",
                     difficulty: newMath[0],

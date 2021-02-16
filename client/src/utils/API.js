@@ -13,7 +13,7 @@ export default {
   signup: function(data) {
     return axios.post("/api/sign", data);
   },
-  updateStats: function(){
-    return axios.put("/api/user/" + data);
+  updateStats: function(data){
+    return axios.put("/api/user/", data);
   }
 };
