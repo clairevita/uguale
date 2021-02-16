@@ -39,7 +39,9 @@ function Canvas(props) {
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             setNums([newMath[1], newMath[2]]);
             API.updateStats({
-                
+                difficulty: dif,
+                lastIntegers: numbers,
+                wrongQuestions: "Test"
             })
             dispatch({
                     type: "win",
