@@ -24,7 +24,7 @@ function Login() {
     API.createUser({
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
-      name: res.profileObj.name
+      name: res.profileObj.name,
     }); 
 
     refreshTokenSetup(res);

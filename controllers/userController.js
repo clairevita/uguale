@@ -19,8 +19,9 @@ module.exports = {
     db.User
       .create({
         email: req.body.email,
-        password: req.body.password,
-        name: req.body.name
+        profileImage: req.body.profileImage,
+        name: req.body.name,
+        difficulty: 2
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err)); 
