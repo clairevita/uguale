@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     wrongQuestions: {
-      type: STRING 
+      type: DataTypes.STRING 
     }
 
   });
