@@ -15,10 +15,10 @@ const curr= require('../../utils/Curr');
 
 
 function Canvas(props) {
-    const [state, dispatch] = useMathContext({...props});
+    const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
     const [numbers, setNums] = useLocalState("numbers");
-    
+    console.log(props)
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
