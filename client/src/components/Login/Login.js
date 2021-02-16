@@ -16,7 +16,6 @@ const clientId =
 function Login() {
   const [state, dispatch] = useMathContext();
 
-
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     API.signup({
@@ -28,7 +27,7 @@ function Login() {
       type: "setEmail",
       email: res.profileObj.email
   });
-  
+  console.log(state);
     refreshTokenSetup(res);
 
   };
