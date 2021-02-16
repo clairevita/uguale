@@ -10,8 +10,8 @@ export default {
     return axios.get("/api/user/" + email);
   },
   // Saves a post to the database
-  createUser: function(data) {
-    return axios.post("/api/signup", data)
+  signup: function(data) {
+    return axios.post("/api/sign", data)
     .then(console.log(data))
     
   }

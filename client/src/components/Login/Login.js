@@ -14,14 +14,8 @@ const clientId =
 function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
-    API.getUser(res.profileObj.email).then(
 
-       res => {
-         console.log(res)
-       }
-
-    )
-    API.createUser({
+    API.signup({
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
