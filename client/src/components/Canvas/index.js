@@ -15,7 +15,7 @@ const curr= require('../../utils/Curr');
 
 
 function Canvas(props) {
-    const [state, dispatch] = useMathContext(state);
+    const [state, dispatch] = useMathContext({...props});
     const [dif, setDif] = useLocalState("dif");
     const [numbers, setNums] = useLocalState("numbers");
     
