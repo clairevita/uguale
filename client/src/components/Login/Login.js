@@ -26,6 +26,7 @@ function Login() {
       type: "setEmail",
       email: res.profileObj.email
   });
+  console.log(state);
     refreshTokenSetup(res);
 
   };
