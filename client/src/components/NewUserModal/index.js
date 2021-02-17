@@ -50,14 +50,14 @@ function NewUserModal() {
                       label="Myself"
                       name="who"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
+                      onChange={e => setState({ ...state, technicalAssistance: e.target.label })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
                       name="who"
                       id="formHorizontalRadios2"
-                      onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
+                      onChange={e => setState({ ...state, technicalAssistance: e.target.label })}
                     />
                   </Col>
                 </Form.Group>
