@@ -10,18 +10,14 @@ import '../Buttons/buttons.css';
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
-  const [value, setValue] = React.useState(4);
   const [form, setState] = useState({
-    age: "",
+    age: 50,
     technicalAssistance: "",
     outcome: ""
   })
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    setState({
-      age: value
-    });
     console.log(form);
   }
 
@@ -52,16 +48,16 @@ function NewUserModal() {
                     <Form.Check
                       type="radio"
                       label="Myself"
-                      name="radio"
+                      name="Myself"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ technicalAssistance: e.target.label })}
+                      onChange={e => setState({ technicalAssistance: e.target.name })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
-                      name="radio"
+                      name="A Loved One"
                       id="formHorizontalRadios2"
-                      onChange={e => setState({ technicalAssistance: e.target.label })}
+                      onChange={e => setState({ technicalAssistance: e.target.name })}
                     />
                   </Col>
                 </Form.Group>
@@ -71,12 +67,12 @@ function NewUserModal() {
                 <Form.Label>Range</Form.Label>
                 <Col xs="9">
                   <RangeSlider
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
+                    value={form.age}
+                    onChange={e => setState({age: e.target.value})}
                   />
                 </Col>
                 <Col xs="3">
-                  <Form.Control value={value} />
+                  <Form.Control value={form.age} />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
