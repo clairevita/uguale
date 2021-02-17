@@ -24,11 +24,12 @@ function Login() {
       name: res.profileObj.name,
     }).then(function(response) {
       if (response.data === "user already exists!"){
-        dispatch({
-          type: "profile"
-        })
+        console.log("")
       } else {
-        console.log("New user created!")
+        dispatch({
+          type: "profile",
+          newUser: true
+        })
       }
     })
     dispatch({
