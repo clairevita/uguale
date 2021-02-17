@@ -36,7 +36,7 @@ function Canvas(props) {
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-        
+            let numbers = newMath[1] + "," + newMath[2]
             API.updateStats({
                 email: state.email,
                 difficulty: dif,
