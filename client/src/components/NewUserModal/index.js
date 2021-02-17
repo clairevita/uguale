@@ -48,14 +48,14 @@ function NewUserModal() {
                     <Form.Check
                       type="radio"
                       label="Myself"
-                      name="Myself"
+                      name="who"
                       id="formHorizontalRadios1"
                       onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
-                      name="A Loved One"
+                      name="who"
                       id="formHorizontalRadios2"
                       onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
                     />
