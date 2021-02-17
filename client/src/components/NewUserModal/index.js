@@ -59,28 +59,21 @@ function NewUserModal() {
                       id="formHorizontalRadios2"
                       onChange={e => setState({ technicalAssistance: e.target.name })}
                     />
-                    <Form.Check
-                      type="radio"
-                      label="A Student"
-                      name="lovedOne"
-                      id="formHorizontalRadios3"
-                      onChange={e => setState({ technicalAssistance: e.target.name })}
-                    />
                   </Col>
                 </Form.Group>
               </fieldset>
               <Form.Label>Please Enter Your Current Age</Form.Label>
               <Form.Row>
                 <Form.Label>Range</Form.Label>
-                <Col xs="9">
+                <Col m="9">
                   <RangeSlider
-                    onChange={e => setState({ age: e.target.value })}
+                    onChange={e => setValue({ age: e.target.value })}
                   />
                 </Col>
                 <Col xs="3">
                   <Form.Control 
                   value= {value}
-                  onChange={e => this.value = {value}}
+                  onChange={e => setState({ outcome: e.target.value })}
                   />
                 </Col>
               </Form.Row>
