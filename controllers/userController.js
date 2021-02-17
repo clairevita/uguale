@@ -26,11 +26,17 @@ module.exports = {
   },
   update: function (req, res) {
     db.User
-      .findOneAndUpdate({ email: req.body.email }, {
+      .update({
         difficulty: req.body.difficulty,
         lastIntegers: req.body.lastIntegers,
         wrongQuestions: req.body.wrongQuestions
-      })
+      },
+      {
+        where: {
+          email: req.body.email
+        }
+      }
+      )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
