@@ -73,7 +73,6 @@ function NewUserModal() {
                 <Col xs="3">
                   <Form.Control 
                   value= {value}
-                  onChange={e => setState({ age: e.target.value })}
                   />
                 </Col>
               </Form.Row>
