@@ -5,12 +5,13 @@ import "./StartBttn.css";
 
 function StartBttn() {
   return (
-  <Link to='/game'>
-    <Button variant="contained" color="secondary" bsPrefix="StartBttn">
-      start
-    </Button>
-  </Link>
-  
-)}
+    <Link to='/game'>
+      <Button variant="contained" color="secondary" bsPrefix="StartBttn" >
+        start
+      </Button>
+    </Link>
+
+  )
+}
 
 export default StartBttn;

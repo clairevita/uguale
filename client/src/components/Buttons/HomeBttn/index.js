@@ -7,10 +7,10 @@ import '../buttons.css';
 function HomeBttn() {
   const [state] = useMathContext();
   return (
-    <Link to='/'> 
-      <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'} >
-      <i className="fa fa-home"></i> home
-      </Button>
+    <Link to="/home">
+      <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'}>
+        <i className="fa fa-home"></i> home
+    </Button>
     </Link>
   )
 }

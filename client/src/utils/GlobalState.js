@@ -23,7 +23,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""]
+                answers: ["", "", "", "", "", "", "", ""]
             };
         case "win":
             return {
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""]
+                answers: ["", "", "", "", "", "", "", ""]
             };
         case "skip":
             return {
@@ -39,7 +39,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""]
+                answers: ["", "", "", "", "", "", "", ""]
             };
         case "answer":
             return {
@@ -47,7 +47,12 @@ const reducer = (state, action) => {
                 answers: action.answers,
             };
         case "profile":
-            return { ...state, newUser: true}; 
+            return { ...state, newUser: true };
+        case "setEmail":
+            return { 
+                ...state, 
+                email: action.email 
+            };
         default:
             return state;
     };
@@ -61,7 +66,8 @@ const MathProvider = ({ value = [], ...props }) => {
         answers: [],
         themeStyle: "berry",
         night: "",
-        newUser: false
+        newUser: false,
+        email: ""
     });
     return <Provider value={[state, dispatch]} {...props} />
 };
