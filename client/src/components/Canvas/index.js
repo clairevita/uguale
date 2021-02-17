@@ -38,12 +38,12 @@ function Canvas(props) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             setNums([newMath[1], newMath[2]]);
-            API.updateStats({
-                email: state.email,
-                difficulty: dif,
-                lastIntegers: numbers,
-                wrongQuestions: "Test"
-            })
+            // API.updateStats({
+            //     email: state.email,
+            //     difficulty: dif,
+            //     lastIntegers: numbers,
+            //     wrongQuestions: "Test"
+            // })
             dispatch({
                     type: "win",
                     difficulty: newMath[0],
