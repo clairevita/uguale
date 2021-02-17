@@ -52,7 +52,12 @@ function Canvas(props) {
         } else {
             let newMath = curr.equationLose(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            setNums([newMath[1], newMath[2]]);
+            let numbers = newMath[1] + "," + newMath[2]
+            API.updateStats({
+                email: state.email,
+                difficulty: state.difficulty,
+                lastIntegers: numbers
+            })
             dispatch({
                 type: "loss",
                 difficulty: newMath[0],

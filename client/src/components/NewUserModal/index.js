@@ -18,23 +18,21 @@ function NewUserModal() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    let modDifficulty;
-    let newMath;
     if (form.age > 13){
-      modDifficulty == 50;
-      newMath = Curr.equationSkip(modDifficulty);
+      let modDifficulty = 50;
+      let newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else if (form.age > 19){
-      modDifficulty == 200;
-      newMath = Curr.equationSkip(modDifficulty);
+      let modDifficulty = 200;
+      let newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else if (form.age > 45 && form.age < 60){
-      modDifficulty = 100;
-      newMath = Curr.equationSkip(modDifficulty);
+      let modDifficulty = 100;
+      let newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else {
-      modDifficulty = 2
-      newMath = Curr.equationSkip(modDifficulty);
+      let modDifficulty = 2
+      let newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     }
     dispatch({
