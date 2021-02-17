@@ -24,9 +24,9 @@ function Login() {
       name: res.profileObj.name,
     }).then(function(response) {
       if (response.data === "user already exists!"){
-        //*****
-        //Add modal unhide!
-        //*****
+        dispatch({
+          type: "profile"
+        })
       } else {
         console.log("New user created!")
       }
