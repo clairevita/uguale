@@ -24,7 +24,9 @@ function Login() {
       name: res.profileObj.name,
     }).then(
       (res) => {
-          console.log(res);
+          if (res.data.status === 200){
+            console.log("Conditional funcationality!")
+          }
       }
     );
     dispatch({
