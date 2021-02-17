@@ -10,7 +10,12 @@ import '../Buttons/buttons.css';
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
-  const [value, setValue] = React.useState(25);
+  const [value, setValue] = React.useState(4);
+  const [form, setState] = useState({
+    age: "",
+    technicalAssistance: "",
+    outcome: ""
+  })
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -18,14 +23,9 @@ function NewUserModal() {
       age: value
     });
     console.log(form);
-    console.log(form.age);
   }
 
-  const [form, setState] = useState({
-    age: "",
-    technicalAssistance: "",
-    outcome: ""
-  })
+
   return (
     <div>
       <Modal size="lg"
@@ -52,16 +52,16 @@ function NewUserModal() {
                     <Form.Check
                       type="radio"
                       label="Myself"
-                      name="mySelf"
+                      name="radio"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                      onChange={e => setState({ technicalAssistance: e.target.label })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
-                      name="mySelf"
+                      name="radio"
                       id="formHorizontalRadios2"
-                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                      onChange={e => setState({ technicalAssistance: e.target.label })}
                     />
                   </Col>
                 </Form.Group>
