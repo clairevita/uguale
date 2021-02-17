@@ -45,7 +45,7 @@ module.exports = {
       .findOne({where: {email: req.body.email}})
       .then(function(user){
         if (user){
-          console.log('User Exists!')
+          return res("user exists")
         } else {
           db.User
           .create({
