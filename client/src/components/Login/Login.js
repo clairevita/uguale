@@ -23,8 +23,8 @@ function Login() {
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
     }).then(
-      (res) => {
-          if (res.data.status === 200){
+      (response) => {
+          if (response.data.status === 200){
             console.log("Conditional funcationality!")
           }
       }
