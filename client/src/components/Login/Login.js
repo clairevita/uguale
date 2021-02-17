@@ -22,10 +22,11 @@ function Login() {
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
-    });
+    })
     dispatch({
       type: "setEmail",
-      email: res.profileObj.email
+      email: res.profileObj.email,
+      newUser: true
   });
   console.log(state);
     refreshTokenSetup(res);
