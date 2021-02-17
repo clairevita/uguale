@@ -19,7 +19,11 @@ function NewUserModal() {
   function handleFormSubmit(e) {
     e.preventDefault();
     console.log(form.age + ", " + form.technicalAssistance +", " + form.outcome);
-
+    dispatch({
+      type: "submitForm",
+      newUser: false
+    });
+    
   }
 
 
