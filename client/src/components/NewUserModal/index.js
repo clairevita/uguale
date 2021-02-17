@@ -15,7 +15,7 @@ function NewUserModal() {
     console.log(form);
     console.log(form.age);
   }
-  
+
   const [form, setState] = useState({
     age: "",
     technicalAssistance: "",
@@ -38,47 +38,48 @@ function NewUserModal() {
               <Form.Row>
                 <Form.Label>Who is this application for:</Form.Label>
               </Form.Row>
-              <Form.Row>
-                <div key={`custom-inline-radio`} className="mb-3">
-                  <Form.Check
-                    custom
-                    inline
-                    label="Myself"
-                    type="radio"
-                    id={`custom-inline-radio-1`}
-                    name="mySelf"
-                    onChange={e => setState({technicalAssistance: e.target.name})}
-                  />
-                  <Form.Check
-                    custom
-                    inline
-                    label="A Loved One"
-                    type="radio"
-                    id={`custom-inline-radio-2`}
-                    name="lovedOne"
-                    onChange={e => setState({technicalAssistance: e.target.name})}
-                  />
-                  <Form.Check
-                    custom
-                    inline
-                    label="A Student"
-                    type="radio"
-                    id={`custom-inline-radio-2`}
-                    name="aStudent"
-                    onChange={e => setState({technicalAssistance: e.target.name})}
-                  />
-                </div>
-              </Form.Row>
+              <fieldset>
+                <Form.Group as={Row}>
+                  <Form.Label as="legend" column sm={2}>
+                    Radios
+                  </Form.Label>
+                  <Col sm={10}>
+                    <Form.Check
+                      type="radio"
+                      label="Myself"
+                      name="mySelf"
+                      id="formHorizontalRadios1"
+                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="A Loved One"
+                      name="mySelf"
+                      id="formHorizontalRadios2"
+                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="A Student"
+                      name="lovedOne"
+                      id="formHorizontalRadios3"
+                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                    />
+                  </Col>
+                </Form.Group>
+              </fieldset>
               <Form.Label>Please Enter Your Current Age</Form.Label>
               <Form.Row>
+                <Form.Label>Range</Form.Label>
+                <Form.Control type="Age" />
+
                 <Col xs="9">
                   <RangeSlider
-                    value={0}
-                    onChange={e => setState({age: e.target.value})}
+                    onChange={e => setState({ age: e.target.value })}
                   />
                 </Col>
                 <Col xs="3">
-                  <Form.Control value={0} />
+                  <Form.Control />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -86,7 +87,7 @@ function NewUserModal() {
                 <Form.Control as="textarea"
                   rows={2}
                   name="outcome"
-                  onChange={e => setState({outcome: e.target.value})}
+                  onChange={e => setState({ outcome: e.target.value })}
                 />
               </Form.Group>
 
