@@ -18,32 +18,39 @@ function NewUserModal() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
+    let modDifficulty;
+    let newMath;
     if (form.age > 13){
-      let modDifficulty = 50;
-      let newMath = Curr.equationSkip(modDifficulty);
+      modDifficulty = 50;
+      newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else if (form.age > 19){
-      let modDifficulty = 200;
-      let newMath = Curr.equationSkip(modDifficulty);
+      modDifficulty = 200;
+      newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else if (form.age > 45 && form.age < 60){
-      let modDifficulty = 100;
-      let newMath = Curr.equationSkip(modDifficulty);
+      modDifficulty = 100;
+      newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else {
-      let modDifficulty = 2
-      let newMath = Curr.equationSkip(modDifficulty);
+      modDifficulty = 2
+      newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     }
+
+    sendStats(modDifficulty, newMath[1], newMath[2]);
+
+  }
+
+  function sendStats(difficulty, numberOne, numberTwo){
     dispatch({
       type: "submitForm",
-      difficulty: modDifficulty,
-      numberOne: newMath[1],
-      numberTwo: newMath[2],
+      difficulty: difficulty,
+      numberOne: numberOne,
+      numberTwo: numberTwo,
       newUser: false
     });
   }
-
   return (
     <div>
       <Modal size="lg"
