@@ -72,7 +72,6 @@ function NewUserModal() {
               <Form.Label>Please Enter Your Current Age</Form.Label>
               <Form.Row>
                 <Form.Label>Range</Form.Label>
-                <Form.Control type="Age" />
                 <Col xs="9">
                   <RangeSlider
                     onChange={e => setState({ age: e.target.value })}
@@ -81,7 +80,7 @@ function NewUserModal() {
                 <Col xs="3">
                   <Form.Control 
                   value= {value}
-                  onChange={e => setValue(e.target.value)}
+                  onChange={e => this.value = {value}}
                   />
                 </Col>
               </Form.Row>
