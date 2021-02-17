@@ -4,8 +4,6 @@ import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
 
-// refresh token
-import { refreshTokenSetup } from '../../utils/refreshToken';
 import NewUserModal from '../NewUserModal';
 
 
