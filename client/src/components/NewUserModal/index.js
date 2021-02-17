@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMathContext } from "../../utils/GlobalState";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
-import { Col, Form, Row, Button } from "react-bootstrap";
+import { Col, Form, Row, Button, RangeSlider } from "react-bootstrap";
 import '../Buttons/buttons.css';
 // import Form from "react-bootstrap/Form"
 
