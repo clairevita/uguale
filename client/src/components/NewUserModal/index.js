@@ -12,7 +12,11 @@ function NewUserModal() {
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
   const [value, setValue] = React.useState(25);
 
-  function handleFormSubmit() {
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    setState({
+      age: value
+    });
     console.log(form);
     console.log(form.age);
   }
@@ -86,8 +90,8 @@ function NewUserModal() {
 
               <Button variant="primary"
                 type="submit"
-                onClick={() => {
-                  handleFormSubmit();
+                onClick={event => {
+                  handleFormSubmit(event);
                 }}
               >
                 Submit
