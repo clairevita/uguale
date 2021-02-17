@@ -12,18 +12,15 @@ function NewUserModal() {
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
 
   function handleFormSubmit() {
-
     console.log(form);
     console.log(form.age);
-
   }
-
+  
   const [form, setState] = useState({
     age: "",
     technicalAssistance: "",
     outcome: ""
   })
-
   return (
     <div>
       <Modal size="lg"

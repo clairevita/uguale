@@ -34,8 +34,7 @@ function Login() {
     })
     dispatch({
       type: "setEmail",
-      email: res.profileObj.email,
-      newUser: true
+      email: res.profileObj.email
   });
   console.log(state);
     refreshTokenSetup(res);
