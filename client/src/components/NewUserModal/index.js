@@ -10,7 +10,7 @@ import '../Buttons/buttons.css';
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = React.useState(25);
 
   function handleFormSubmit() {
     console.log(form);
@@ -65,15 +65,14 @@ function NewUserModal() {
               <Form.Label>Please Enter Your Current Age</Form.Label>
               <Form.Row>
                 <Form.Label>Range</Form.Label>
-                <Col xs="4">
-                  <Form.Control value={value3} size='lg' />
-                </Col>
-                <Col xs="8">
+                <Col xs="9">
                   <RangeSlider
-                    value={value3}
-                    onChange={e => setValue3(e.target.value)}
-                    size='lg'
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
                   />
+                </Col>
+                <Col xs="3">
+                  <Form.Control value={value} />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
