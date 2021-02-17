@@ -75,11 +75,14 @@ function NewUserModal() {
                 <Form.Control type="Age" />
                 <Col xs="9">
                   <RangeSlider
-                    onChange={e => setState({ age: e.target.value }), setValue(changeEvent.target.value)}
+                    onChange={e => setState({ age: e.target.value })}
                   />
                 </Col>
                 <Col xs="3">
-                  <Form.Control />
+                  <Form.Control 
+                  value= {value}
+                  onChange={e => setValue(e.target.value)}
+                  />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
