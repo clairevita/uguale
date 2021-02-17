@@ -24,8 +24,10 @@ function Login() {
       name: res.profileObj.name,
     }).then(
       (response) => {
-          if (response.data.status === 200){
+          if (response.status == 200){
             console.log("Conditional funcationality!")
+          } else {
+            console.log("New user created")
           }
       }
     );
