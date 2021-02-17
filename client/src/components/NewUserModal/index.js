@@ -67,13 +67,13 @@ function NewUserModal() {
                 <Form.Label>Range</Form.Label>
                 <Col m="9">
                   <RangeSlider
-                    onChange={e => setValue({ age: e.target.value })}
+                    onChange={e => setValue({ value: e.target.value })}
                   />
                 </Col>
                 <Col xs="3">
                   <Form.Control 
                   value= {value}
-                  onChange={e => setState({ outcome: e.target.value })}
+                  onChange={e => setState({ age: e.target.value })}
                   />
                 </Col>
               </Form.Row>
