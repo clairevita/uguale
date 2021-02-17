@@ -43,8 +43,7 @@ function Canvas(props) {
             API.updateStats({
                 email: state.email,
                 difficulty: dif,
-                lastIntegers: numbers,
-                wrongQuestions: "Test"
+                lastIntegers: numbers
             })
             dispatch({
                     type: "win",
