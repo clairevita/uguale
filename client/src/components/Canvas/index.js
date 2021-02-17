@@ -33,8 +33,6 @@ function Canvas(props) {
         let userAnswer = state.answers.join("");
         let finalAnswer = state.numberOne + state.numberTwo;
 
-
-
         console.log(userAnswer, finalAnswer);
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
