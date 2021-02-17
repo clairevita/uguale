@@ -26,7 +26,6 @@ function EquationBox() {
     dispatch({
       type: "answer",
       answers: userAnswer,
-
     })
     console.log(state.answers);
   }
