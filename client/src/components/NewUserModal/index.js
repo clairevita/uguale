@@ -50,14 +50,14 @@ function NewUserModal() {
                       label="Myself"
                       name="Myself"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                      onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
                       name="A Loved One"
                       id="formHorizontalRadios2"
-                      onChange={e => setState({ technicalAssistance: e.target.name })}
+                      onChange={e => setState({ ...state, technicalAssistance: e.target.name })}
                     />
                   </Col>
                 </Form.Group>
@@ -68,7 +68,7 @@ function NewUserModal() {
                 <Col xs="9">
                   <RangeSlider
                     value={form.age}
-                    onChange={e => setState({age: e.target.value})}
+                    onChange={e => setState({ ...state, age: e.target.value})}
                   />
                 </Col>
                 <Col xs="3">
@@ -80,7 +80,7 @@ function NewUserModal() {
                 <Form.Control as="textarea"
                   rows={2}
                   name="outcome"
-                  onChange={e => setState({ outcome: e.target.value })}
+                  onChange={e => setState({ ...state, outcome: e.target.value })}
                 />
               </Form.Group>
 
