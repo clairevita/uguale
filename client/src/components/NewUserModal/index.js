@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import RangeSlider from 'react-bootstrap-range-slider';
 import { Col, Form, Row, Button } from "react-bootstrap";
 import '../Buttons/buttons.css';
-// import Form from "react-bootstrap/Form"
+import Curr from '../../utils/Curr';
 
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
@@ -18,14 +18,30 @@ function NewUserModal() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(form.age + ", " + form.technicalAssistance +", " + form.outcome);
+    let modDifficulty;
+    let newMath;
+
+    if (form.age > 13){
+      modDifficulty == 50;
+      newMath = Curr.equationSkip(modDifficulty);
+    } else if (form.age > 19){
+      modDifficulty == 200;
+      newMath = Curr.equationSkip(modDifficulty);
+    } else if (form.age > 45 && form.age < 60){
+      modDifficulty = 100;
+      newMath = Curr.equationSkip(modDifficulty);
+    } else {
+      modDifficulty = 2
+      newMath = Curr.equationSkip(modDifficulty);
+    }
     dispatch({
       type: "submitForm",
+      difficulty: modDifficulty,
+      numberOne: newMath[1],
+      numberTwo: newMath[2],
       newUser: false
     });
-    
   }
-
 
   return (
     <div>
