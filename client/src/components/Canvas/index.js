@@ -32,6 +32,9 @@ function Canvas(props) {
     function checkAnswer() {
         let userAnswer = state.answers.join("");
         let finalAnswer = state.numberOne + state.numberTwo;
+
+
+
         console.log(userAnswer, finalAnswer);
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
@@ -109,7 +112,7 @@ function Canvas(props) {
                             canvasRef.current.clearCanvas()
                         }} />
                         <p>{dif}</p>
-                        {/* <p>{numbers.toString()}</p> */}
+                   
                 </Col>
             </Row>
 

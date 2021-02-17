@@ -65,11 +65,7 @@ function EquationBox() {
               ))}
             </Row>
       </div>
-
-
     </div>
-
-
   );
 }
 
