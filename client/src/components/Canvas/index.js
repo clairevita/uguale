@@ -17,7 +17,6 @@ const curr= require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
-    const [numbers, setNums] = useLocalState("numbers");
     console.log(props)
     function handleSkip(){
         let newMath = curr.equationSkip(state.difficulty);
@@ -33,17 +32,19 @@ function Canvas(props) {
     function checkAnswer() {
         let userAnswer = state.answers.join("");
         let finalAnswer = state.numberOne + state.numberTwo;
+
+
+
         console.log(userAnswer, finalAnswer);
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            setNums([newMath[1], newMath[2]]);
-            // API.updateStats({
-            //     email: state.email,
-            //     difficulty: dif,
-            //     lastIntegers: numbers,
-            //     wrongQuestions: "Test"
-            // })
+            let numbers = newMath[1] + "," + newMath[2]
+            API.updateStats({
+                email: state.email,
+                difficulty: dif,
+                lastIntegers: numbers
+            })
             dispatch({
                     type: "win",
                     difficulty: newMath[0],
@@ -110,7 +111,7 @@ function Canvas(props) {
                             canvasRef.current.clearCanvas()
                         }} />
                         <p>{dif}</p>
-                        {/* <p>{numbers.toString()}</p> */}
+                   
                 </Col>
             </Row>
 
