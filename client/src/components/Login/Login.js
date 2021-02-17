@@ -22,15 +22,13 @@ function Login() {
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
-    }).then(
-      (response) => {
-          if (response.status == 200){
-            console.log("Conditional funcationality!")
-          } else {
-            console.log("New user created")
-          }
+    }).then(function(res) {
+      if (res.statusCode === 200){
+        console.log("Status is 200")
+      } else {
+        console.log("Status is not 200")
       }
-    );
+    })
     dispatch({
       type: "setEmail",
       email: res.profileObj.email,
