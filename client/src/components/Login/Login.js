@@ -23,7 +23,13 @@ function Login() {
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
     }).then(function(response) {
-      console.log(response)
+      if (response.data === "user already exists!"){
+        //*****
+        //Add modal unhide!
+        //*****
+      } else {
+        console.log("New user created!")
+      }
     })
     dispatch({
       type: "setEmail",
