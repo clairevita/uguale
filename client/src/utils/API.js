@@ -11,12 +11,8 @@ export default {
   },
   // Saves a post to the database
   signup: function(data) {
-    return axios.post("/api/sign", data).catch(function (error) {
-      if (error.response) {
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      }
+    return axios.post("/api/sign", data).then(function (res) {
+       console.log(res)
     });
   },
   updateStats: function(data){

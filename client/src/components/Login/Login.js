@@ -22,7 +22,11 @@ function Login() {
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
-    });
+    }).then(
+      (res) => {
+          console.log(res);
+      }
+    );
     dispatch({
       type: "setEmail",
       email: res.profileObj.email,
