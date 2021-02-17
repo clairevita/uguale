@@ -18,7 +18,8 @@ function NewUserModal() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(form);
+    console.log(form.age + ", " + form.technicalAssistance +", " + form.outcome);
+
   }
 
 
