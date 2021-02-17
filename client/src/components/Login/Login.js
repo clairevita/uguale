@@ -22,12 +22,8 @@ function Login() {
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
-    }).then(function(res) {
-      if (res.statusCode === 200){
-        console.log("Status is 200")
-      } else {
-        console.log("Status is not 200")
-      }
+    }).then(function(response) {
+      console.log(response)
     })
     dispatch({
       type: "setEmail",
