@@ -37,7 +37,8 @@ function Login() {
       email: res.profileObj.email
   });
   console.log(state);
-    refreshTokenSetup(res);
+// This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
+  // refreshTokenSetup(res);
 
   };
 
@@ -63,12 +64,14 @@ function Login() {
   });
 
   return (
+    <>
     <button onClick={signIn} className="button">
       <img src="icons/logo.png" alt="google login" className="icon"></img>
 
       <span className="buttonText">Sign in with Google</span>
-      <NewUserModal />
     </button>
+    <NewUserModal />
+  </>
   );
 }
 
