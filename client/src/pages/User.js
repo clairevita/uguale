@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Dashboard from "../components/Dashboard";
 
 
 
@@ -10,7 +11,7 @@ function User() {
                 <p>Here is space for Roman to set up page</p>
             </Container>
             <Container>
-                <p>Here is space for dashboard component</p>
+                <Dashboard />
             </Container>
         </div>
     )

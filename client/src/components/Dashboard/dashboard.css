@@ -1,0 +1,130 @@
+/* .header {
+    background-color: lightgray;
+    border-width: thin;
+    padding: 20px;
+  }
+  
+  body {
+    background-color: #659dbd;
+  }
+  
+  .results-background {
+    background-color: #f8fafe;
+  }
+  
+  .dash {
+    background-color: ;
+  } */
+  
+  .border-left-mint {
+    border-left: #4c3735;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-berry {
+    border-left: #2d2147;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-honey {
+    border-left: #701b45;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-classic {
+    border-left: #302E2C;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .text-mint {
+    text-decoration-color: #4c3735;
+  }
+  
+  .text-berry {
+    text-decoration-color: #2d2147;
+  } 
+
+  .text-honey {
+    text-decoration-color: #701b45;
+  }
+
+  .text-classic {
+    text-decoration-color: #302E2C;
+  }
+
+  .left-padding {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+  }
+  
+  .dash-row {
+    padding: 20px;
+  }
+  
+  .graph-row {
+    padding: 5px;
+  }
+  
+  .pad-right {
+    padding-right: 30px;
+  }
+  
+  .pad-left {
+    padding-left: 30px;
+  }
+  
+  .mini-dash-row {
+    padding-bottom: 5px;
+  }
+  
+  .text-secondary {
+    text-decoration-color: #858796;
+  }
+
+
+  /* card background colors 
+   */
+  .mintmain {
+    background-color: #AFEADC;
+    opacity: 95%;
+  }
+  
+  .berrymain {
+    background-color: #e9ced5;
+    opacity: 95%;
+  }
+  
+  .honeymain {
+    background-color: #F2F0A1;
+    opacity: 95%;
+  }
+  
+  .classicmain {
+   background-color: #e6eeec;
+   opacity: 95%;
+  }
+  
+  .nightmintmain {
+    background-color: #4c3735;
+  }
+  
+  .nightberrymain {
+    background-color: #2d2147;
+  }
+  
+  .nighthoneymain {
+    background-color: #701b45;
+  }
+  
+  .nightclassicmain {
+    background-color: #302E2C;
+  }

@@ -59,7 +59,7 @@ const MathProvider = ({ value = [], ...props }) => {
         numberOne: 2,
         numberTwo: 2,
         answers: [],
-        themeStyle: "mint",
+        themeStyle: "berry",
         night: "",
         newUser: false
     });

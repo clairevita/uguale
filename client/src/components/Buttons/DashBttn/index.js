@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import '../buttons.css';
 
-function HomeBttn() {
+function DashBttn() {
   const [state] = useMathContext();
   return (
-    <Link to='/'> 
-      <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'} >
-      <i className="fa fa-home"></i> home
+    <Link to='/game'> 
+      <Button bsPrefix={state.night + state.themeStyle + ' DashBttn'}>
+      <i className="fa fa-pencil fa-fw"></i> <span>props.text ?</span>
       </Button>
     </Link>
   )
 }
 
-export default HomeBttn;
+export default DashBttn;
