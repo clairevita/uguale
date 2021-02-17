@@ -51,14 +51,22 @@ function NewUserModal() {
                       label="Myself"
                       name="who"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ ...state, technicalAssistance: e.target.label })}
+                      onChange={e => setState({ 
+                        age: form.age, 
+                        technicalAssistance: false,
+                        outcome: form.outcome
+                      })}
                     />
                     <Form.Check
                       type="radio"
                       label="A Loved One"
                       name="who"
                       id="formHorizontalRadios2"
-                      onChange={e => setState({ ...state, technicalAssistance: e.target.label })}
+                      onChange={e => setState({
+                        age: form.age, 
+                        technicalAssistance: true,
+                        outcome: form.outcome
+                      })}
                     />
                   </Col>
                 </Form.Group>
@@ -69,7 +77,11 @@ function NewUserModal() {
                 <Col xs="9">
                   <RangeSlider
                     value={form.age}
-                    onChange={e => setState({ ...state, age: e.target.value})}
+                    onChange={e => setState({
+                      age: e.target.value,
+                      technicalAssistance: form.technicalAssistance,
+                      outcome: form.outcome
+                    })}
                   />
                 </Col>
                 <Col xs="3">
@@ -81,7 +93,11 @@ function NewUserModal() {
                 <Form.Control as="textarea"
                   rows={2}
                   name="outcome"
-                  onChange={e => setState({ ...state, outcome: e.target.value })}
+                  onChange={e => setState({ 
+                    age: form.age, 
+                    technicalAssistance: form.technicalAssistance, 
+                    outcome: e.target.value 
+                  })}
                 />
               </Form.Group>
 
