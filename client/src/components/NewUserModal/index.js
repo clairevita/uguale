@@ -10,6 +10,7 @@ import '../Buttons/buttons.css';
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
+  const [ value, setValue ] = useState(0); 
 
   function handleFormSubmit() {
     console.log(form);
@@ -72,10 +73,9 @@ function NewUserModal() {
               <Form.Row>
                 <Form.Label>Range</Form.Label>
                 <Form.Control type="Age" />
-
                 <Col xs="9">
                   <RangeSlider
-                    onChange={e => setState({ age: e.target.value })}
+                    onChange={e => setState({ age: e.target.value }), setValue(changeEvent.target.value)}
                   />
                 </Col>
                 <Col xs="3">
