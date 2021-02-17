@@ -10,15 +10,16 @@ function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
 
-  function handleFormSubmit(e){
-    console.log(e.target.name);
+  function handleFormSubmit() {
+
+    console.log(form);
+    console.log(form.age);
+
   }
 
   const [form, setState] = useState({
-    firstName: "",
-    lastName: "",
-    mySelf: "",
-    lovedOne: "",
+    age: "",
+    technicalAssistance: "",
     outcome: ""
   })
 
@@ -48,40 +49,54 @@ function NewUserModal() {
                     type="radio"
                     id={`custom-inline-radio-1`}
                     name="mySelf"
+                    onChange={e => setState({technicalAssistance: e.target.name})}
                   />
                   <Form.Check
                     custom
                     inline
-                    label="A loved one"
+                    label="A Loved One"
                     type="radio"
                     id={`custom-inline-radio-2`}
                     name="lovedOne"
+                    onChange={e => setState({technicalAssistance: e.target.name})}
+                  />
+                  <Form.Check
+                    custom
+                    inline
+                    label="A Student"
+                    type="radio"
+                    id={`custom-inline-radio-2`}
+                    name="aStudent"
+                    onChange={e => setState({technicalAssistance: e.target.name})}
                   />
                 </div>
               </Form.Row>
+              <Form.Label>Please Enter Your Current Age</Form.Label>
               <Form.Row>
-                <Col>
-                  <Form.Control placeholder="First name" 
-                  name="firstName"
+                <Col xs="9">
+                  <RangeSlider
+                    value={value}
+                    onChange={e => setState({age: e.target.value})}
                   />
                 </Col>
-                <Col>
-                  <Form.Control placeholder="Last name" 
-                  name="lastName"
-                  />
+                <Col xs="3">
+                  <Form.Control value={value} />
                 </Col>
               </Form.Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Briefly describe your desired outcome:</Form.Label>
-                <Form.Control as="textarea" 
-                rows={2} 
-                name="outcome"
+                <Form.Control as="textarea"
+                  rows={2}
+                  name="outcome"
+                  onChange={e => setState({outcome: e.target.value})}
                 />
               </Form.Group>
 
-              <Button variant="primary" 
-              type="submit"
-              handleFormSubmit={handleFormSubmit}
+              <Button variant="primary"
+                type="submit"
+                onClick={() => {
+                  handleFormSubmit();
+                }}
               >
                 Submit
               </Button>
