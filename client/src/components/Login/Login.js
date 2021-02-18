@@ -52,8 +52,6 @@ function Login() {
           numberOne: numberOne,
           numberTwo: numberTwo
         });
-        
-        history.push("/game");
       } else if (!response.data.response){
         modalOpen();
       }
