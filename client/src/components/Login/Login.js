@@ -37,6 +37,7 @@ function Login() {
         let numberTwo;
         if (response.data.data.lastIntegers) {
           let splitResponse = response.data.data.lastIntegers.split(",");
+          console.log(splitResponse);
           numberOne = splitResponse[0];
           numberTwo = splitResponse[1];
         } else {
