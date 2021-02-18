@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import { useMathContext } from "../../utils/GlobalState";
@@ -44,24 +45,36 @@ function ThemeModal() {
       <br/>
       
       <Row>
-        <Col size="md-6" align="center">
-          <div className="btn-group">
-              <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "night" })}>
+        <Col size="md-3" align="center">
+              <Button bsPrefix={"night" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "night" })}>
                 Night Colors
               </Button>
-              <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "light" })}>
+        </Col>
+        <Col size="md-3" align="center">
+          <Button bsPrefix={"" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "light" })}>
                 Light Colors
               </Button>
-          </div>
         </Col>
+
       </Row>
       <br></br>
+
       <Row>
         <Col size="md-12">
           <div className="googleButtons">
             <Login />
             <Logout />
           </div>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col size="md-12">
+          <Link to="/user">
+            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'}>
+              USER DASHBOARD
+            </Button>          
+          </Link>
         </Col>
       </Row>
 
