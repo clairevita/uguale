@@ -45,7 +45,7 @@ function NewUserModal() {
   }
 
   function sendStats(difficulty, numberOne, numberTwo){
-    console.log(state);
+    
     dispatch({
       type: "submitForm",
       difficulty: difficulty,
@@ -58,9 +58,9 @@ function NewUserModal() {
       email: state.email,
       difficulty: difficulty,
       lastIntegers: numbers,
-      age: state.age,
-      technicalAssistance: state.technicalAssistance,
-      outcome: state.outcome
+      age: form.age,
+      technicalAssistance: form.technicalAssistance,
+      outcome: form.outcome
   })
   }
   return (
