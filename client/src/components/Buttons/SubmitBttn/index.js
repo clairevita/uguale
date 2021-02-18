@@ -6,11 +6,11 @@ import '../buttons.css';
 const SkipBttn = (props) => {
     const [state] = useMathContext();
     return (
-        <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
+        <Button id="submitBttn" bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
         // onClick={()=>{}}
         {...props}
         >
-            submit
+            SUBMIT
         </Button>
     )
 }
