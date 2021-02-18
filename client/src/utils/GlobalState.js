@@ -53,6 +53,12 @@ const reducer = (state, action) => {
                 ...state, 
                 email: action.email 
             };
+        case "submitForm":
+            return { ...state, 
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                newUser: false };
         default:
             return state;
     };

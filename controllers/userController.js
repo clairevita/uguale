@@ -19,7 +19,7 @@ module.exports = {
         email: req.body.email,
         profileImage: req.body.profileImage,
         name: req.body.name,
-        difficulty: 2
+        difficulty: "2"
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err)); 
@@ -45,7 +45,7 @@ module.exports = {
       .findOne({where: {email: req.body.email}})
       .then(function(user){
         if (user){
-          console.log('User Exists!')
+          res.send({ data: 'user already exists!' })
         } else {
           db.User
           .create({
@@ -59,5 +59,23 @@ module.exports = {
         }
 
       })
+  },
+  infoAdd: function (req, res) {
+    db.User
+      .update({
+        difficulty: req.body.difficulty,
+        lastIntegers: req.body.numbers,
+        age: req.body.age,
+        technicalAssistance: req.body.technicalAssistance,
+        outcome: req.body.outcome
+      },
+      {
+        where: {
+          email: req.body.email
+        }
+      }
+      )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };
