@@ -31,9 +31,10 @@ function Login() {
       name: res.profileObj.name,
     }).then(function (response) {
       console.log(response.data);
-      if (response.data.age) {
+      if (response.response == "returning") {
         let numberOne;
         let numberTwo;
+        setModalIsOpen(false);
         if (response.data.lastIntegers) {
           let splitResponse = response.data.lastIntegers.split(",");
           numberOne = splitResponse[0];
@@ -48,11 +49,10 @@ function Login() {
           numberOne: numberOne,
           numberTwo: numberTwo
         });
-        setModalIsOpen(false);
+        
         history.push("/game");
-      } if (response.response == "returning") {
+      } else {
         setModalIsOpen(true);
-        history.push("/");
       }
     })
     dispatch({
