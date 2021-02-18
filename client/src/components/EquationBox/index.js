@@ -55,7 +55,7 @@ function EquationBox() {
                 <Col className="formLoc">
                   <Form.Control
                     size="s"
-                    type="text"
+                    type="number"
                     bsPrefix="answer"
                     maxlength="1"
                     data-index-number={[index]}
