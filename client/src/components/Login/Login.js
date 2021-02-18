@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGoogleLogin } from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
@@ -16,8 +16,8 @@ function Login() {
       email: res.profileObj.email,
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
-    }).then(function(response) {
-      if (response.data === "user already exists!"){
+    }).then(function (response) {
+      if (response.data === "user already exists!") {
         console.log("")
       } else {
         dispatch({
@@ -30,12 +30,12 @@ function Login() {
     dispatch({
       type: "setEmail",
       email: res.profileObj.email
-  });
-  console.log(state);
-// This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
-  // refreshTokenSetup(res);
+    });
+    console.log(state);
+    // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
+    // refreshTokenSetup(res);
   };
-  function relocate(){
+  function relocate() {
     history.go(0)
   }
   const onFailure = (res) => {
@@ -43,30 +43,24 @@ function Login() {
     dispatch({
       type: "setEmail",
       email: "Guest"
-  });
+    });
     console.log(
       `Failed to login`
     );
   };
 
-  const { signIn } = useGoogleLogin({
-    onSuccess,
-    onFailure,
-    clientId,
-    isSignedIn: true,
-    accessType: 'offline',
-    // responseType: 'code',
-    // prompt: 'consent',
-  });
-
   return (
-    <>
-    <button onClick={signIn} className="button">
-      <img src="icons/logo.png" alt="google login" className="icon"></img>
-      <span className="buttonText">Sign in with Google</span>
-    </button>
-    
-  </>
+    <div>
+      <GoogleLogin
+        clientId={clientId}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        style={{ marginTop: '100px' }}
+        isSignedIn={true}
+      />
+    </div>
   );
 }
 
