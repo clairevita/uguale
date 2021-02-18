@@ -32,7 +32,7 @@ function Login() {
     }).then(function (response) {
       console.log(response.data);
       setModalIsOpen(false);
-      if (response.response == "returning") {
+      if (response.data.response == "returning") {
         let numberOne;
         let numberTwo;
         if (response.data.lastIntegers) {
