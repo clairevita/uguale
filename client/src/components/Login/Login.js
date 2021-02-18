@@ -47,8 +47,8 @@ function Login() {
           difficulty: response.data.difficulty,
           numberOne: numberOne,
           numberTwo: numberTwo
-        })
-        console.log(state);
+        });
+        history.push("/home");
       } else if (!response.data.age) {
         setModalIsOpen(true);
       }
