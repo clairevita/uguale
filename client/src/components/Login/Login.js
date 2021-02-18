@@ -4,7 +4,7 @@ import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
 import { useHistory } from 'react-router';
-import NewUserModal from '../components/NewUserModal';
+import NewUserModal from '../NewUserModal';
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
