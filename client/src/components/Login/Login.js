@@ -33,19 +33,8 @@ function Login() {
       console.log(response.data);
       setModalIsOpen(false);
       if (response.data.response == "returning") {
-        let numberOne;
-        let numberTwo;
-        if (response.data.data.lastIntegers) {
-          let splitResponse = response.data.data.lastIntegers.split(",");
-          console.log(splitResponse);
-          numberOne = splitResponse[0];
-          console.log(numberOne);
-          numberTwo = splitResponse[1];
-          console.log(numberTwo);
-        } else {
-          numberOne = Math.ceil(Math.random() * response.data.datadifficulty);
-          numberTwo = Math.ceil(Math.random() * response.data.data.difficulty);
-        }
+        let numberOne = Math.ceil(Math.random() * response.data.datadifficulty);
+        let numberTwo = Math.ceil(Math.random() * response.data.data.difficulty);
         dispatch({
           type: "returnUser",
           difficulty: response.data.data.difficulty,
@@ -63,10 +52,6 @@ function Login() {
     // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
     // refreshTokenSetup(res);
   };
-
-  function modalOpen() {
-    
-  }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     dispatch({
