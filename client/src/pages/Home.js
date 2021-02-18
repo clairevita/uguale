@@ -3,11 +3,10 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
-import Footer from "../components/Footer";
 import logo from '../images/uguale-logo-brown.png';
 import Login from "../components/Login/Login";
 import './home.css';
-import NewUserModal from '../NewUserModal';
+import NewUserModal from '../components/NewUserModal';
 function Home() {
   return (
     <div>

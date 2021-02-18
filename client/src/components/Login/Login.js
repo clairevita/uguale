@@ -4,10 +4,6 @@ import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
 
-
-
-
-
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
@@ -65,7 +61,6 @@ function Login() {
     <>
     <button onClick={signIn} className="button">
       <img src="icons/logo.png" alt="google login" className="icon"></img>
-
       <span className="buttonText">Sign in with Google</span>
     </button>
     
