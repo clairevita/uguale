@@ -31,8 +31,6 @@ const SubmitBttn = (props) => {
                 aria-labelledby="example-modal-sizes-title-lg">
                 <Modal.Body className={state.night + state.themeStyle + 'main'}>
                     <h1> {state.ans} </h1>
-                    {/* <h1>the answer was: </h1> */}
-                    {/* <h1> {state.oldnumberOne + state.oldnumberTwo} </h1> */}
                 </Modal.Body>
             </Modal>
         </div>

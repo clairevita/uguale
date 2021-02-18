@@ -9,30 +9,38 @@ import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
 import SkipBttn from '../Buttons/SkipBttn';
 import EraseBttn from '../Buttons/EraseBttn';
-import Row from "../Row/index";
-import Col from "../Col/index";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const curr = require('../../utils/Curr');
 
 
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
+    // const [numbers, setNumbers] = useLocalState("numbers")
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
+    let userAnswer;
     console.log(props)
+
     function handleSkip() {
+        userAnswer = state.answers.join("");
+        finalAnswer = state.numberOne + state.numberTwo;
         let newMath = curr.equationSkip(state.difficulty);
+        setModalIsOpen(true);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
         dispatch({
             type: "skip",
             difficulty: newMath[0],
             numberOne: newMath[1],
-            numberTwo: newMath[2]
+            numberTwo: newMath[2],
+            ans: ("You are doing great, the right answer was: " + finalAnswer)
         });
     }
 
     function checkAnswer() {
-        let userAnswer = state.answers.join("");
+        userAnswer = state.answers.join("");
         finalAnswer = state.numberOne + state.numberTwo;
         dispatch({
             type: "setOld",
@@ -58,27 +66,39 @@ function Canvas(props) {
                 ans: "You are Awesome and SMART"
             });
         } else {
-            let newMath = curr.equationLose(state.difficulty);
+            let wrongAnswer = `${state.numberOne}-${state.numberTwo}||`
+            let wrongQuestions = state.wrongQuestions + wrongAnswer;
+            let modDifficulty;
+            if (state.difficulty === 2){
+                modDifficulty = 3;
+            } else {
+                modDifficulty = state.difficulty;
+            }
+            let newMath = curr.equationLose(modDifficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2]
+            let numbers = newMath[1] + "," + newMath[2]  
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
-                lastIntegers: numbers
+                lastIntegers: numbers,
+                wrongQuestions: wrongQuestions
             })
             dispatch({
                 type: "loss",
                 difficulty: newMath[0],
                 numberOne: newMath[1],
                 numberTwo: newMath[2],
-                ans: ("You are doing great, the right answer was: "+finalAnswer)
+                wrongQuestions: wrongQuestions,
+                ans: ("You are doing great, the right answer was: " + finalAnswer)
             });
+            console.log(state);
         }
     }
 
     const canvasRef = useRef(null)
     return (
         <div>
+            <Container fluid>
             <div className='canvasContainer'>
                 <ReactSketchCanvas className="bgCanvas"
                     ref={canvasRef}
@@ -94,8 +114,8 @@ function Canvas(props) {
             </div>
 
 
-            <Row>
-                <Col size="md-6" align="center">
+            <Row xs={2} md={4}>
+                <Col md="auto" xs={6} md={6} align="center">
                     <EraseBttn
                         onClick={() => {
                             canvasRef.current.clearCanvas();
@@ -103,9 +123,13 @@ function Canvas(props) {
                         }}
                     />
                 </Col>
-                <Col size="md-6" align="center">
+                <Col md="auto" xs={6} md={6} align="center">
                     <SkipBttn
-                        onClick={() => { 
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
+                        onClick={() => {
+                            setDif(state.difficulty);
+
                             handleSkip();
                             canvasRef.current.clearCanvas();
                         }}
@@ -116,19 +140,18 @@ function Canvas(props) {
             <Row>
                 <Col size="md-12" align="center">
                     <SubmitBttn
-                    show={modalIsOpen}
-                    onHide={() => setModalIsOpen(false)}
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
                         onClick={() => {
                             setDif(state.difficulty);
-                            
+
                             checkAnswer();
                             canvasRef.current.clearCanvas();
-                        }} /> 
+                        }} />
                     <p>{dif}</p>
-
                 </Col>
             </Row>
-
+            </Container>
         </div>
     );
 

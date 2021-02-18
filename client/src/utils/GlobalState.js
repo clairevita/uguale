@@ -23,6 +23,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
+                wrongQuestions: action.wrongQuestions,
                 answers: ["", "", "", "", "", "", "", ""],
                 ans: action.ans
             };
@@ -62,6 +63,13 @@ const reducer = (state, action) => {
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
                 newUser: false };
+        case "returnUser": 
+            return {
+                ...state, 
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo
+        }
         default:
             return state;
     };
@@ -75,6 +83,7 @@ const MathProvider = ({ value = [], ...props }) => {
         oldnumberOne: "",
         oldnumberTwo: "",
         answers: [],
+        wrongQuestions: "",
         themeStyle: "mint",
         night: "",
         newUser: false,
