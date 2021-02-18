@@ -13,6 +13,16 @@ function EquationBox() {
   let digits = []
   let userAnswer;
   let answer = state.numberOne + state.numberTwo;
+  let num1;
+  let num2;
+
+  if (state.numberOne >= state.numberTwo) {
+    num1= state.numberOne;
+    num2 = state.numberTwo;
+  } else {
+    num1= state.numberTwo;
+    num2 = state.numberOne;
+  }
 
   function getInputNo(answer) {
     digits = ("" + answer).split("")
@@ -42,10 +52,10 @@ function EquationBox() {
           </Col>
           <Col xs sm md lg="2">
             <Row className="number">
-              {state.numberOne}
+              {num1}
             </Row>
             <Row className="number">
-              {state.numberTwo}
+              {num2}
             </Row>
           </Col>
         </Row>
