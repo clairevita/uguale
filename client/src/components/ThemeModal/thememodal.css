@@ -1,15 +1,27 @@
+h2 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+}
+
+
 .themebttn {
-    /* width: 100%;
+    width: 100%;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 20px;
     border: 0;
     border-radius: 3px;
-    font-family: 'Varela Round', sans-serif; */
+    font-family: 'Varela Round', sans-serif;
+}
+
+.googleButtons{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
 }
 
 .mint {
@@ -110,8 +122,7 @@
 
 
 
-
-//background theme colors 
+/*background theme colors*/
 
 .mintmain {
     background-color: #AFEADC;

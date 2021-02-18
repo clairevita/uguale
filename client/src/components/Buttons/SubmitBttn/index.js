@@ -17,13 +17,13 @@ const SubmitBttn = (props) => {
 
     return (
         <div>
-            <Button bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
+            <Button id="submitBttn" bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
                 {...props}
                 onClick={() => {
                     props.onClick();
                 }}
             >
-                submit
+                SUBMIT
         </Button>
             <Modal size="sm"
                 show={props.show}

@@ -1,44 +1,83 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import { useMathContext } from "../../utils/GlobalState";
-import '../Buttons/buttons.css';
+import "./thememodal.css";
+import Logout from "../Logout/Logout.js";
+import Login from "../Login/Login.js";
+
 // import Form from "react-bootstrap/Form"
 
 function ThemeModal() {
   const [state, dispatch] = useMathContext();
   return (
     <div>
-        <Row>
-            <Col size="md-6">
-            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "mint"})}>
-              Mint Theme
-            </Button>            
-            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "berry"})}> 
-              Berry Theme
-            </Button>
-            </Col>
-            <Col size="md-6">
-            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "honey"})}>
-              Honey Theme
-            </Button>
-            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "classic"})}>
-              Classic Theme
-            </Button>
-            </Col>
+      <br></br>
+      <Row>
+        <br></br><br></br>
+
+        <Col size="md-3">
+          <Button bsPrefix={state.night + "mint" + ' themebttn'} onClick={() => dispatch({ type: "mint" })}>
+            mint theme
+            </Button> 
+        </Col>
+
+        <Col size="md-3">
+          <Button bsPrefix={state.night + "berry" + ' themebttn'} onClick={() => dispatch({ type: "berry" })}>
+          berry theme            
+          </Button>
+        </Col>
         
-        </Row>
-        <br/>
-        <Row>
-          <div className="btn-group"> 
-            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "night"})}>
-              Night Colors
-            </Button>
-            <Button bsPrefix={state.night + state.themeStyle} onClick={() => dispatch({ type: "light"})}>
-              Light Colors
-            </Button>
+        <Col size="md-3">
+          <Button bsPrefix={state.night + "honey" + ' themebttn'} onClick={() => dispatch({ type: "honey" })}>
+          honey theme    
+         </Button>
+        </Col>
+        
+        <Col size="md-3">
+          <Button bsPrefix={state.night + "classic" + ' themebttn'} onClick={() => dispatch({ type: "classic" })}>
+          chalk theme
+          </Button>
+        </Col>
+      
+      </Row>
+      <br/>
+      
+      <Row>
+        <Col size="md-3" align="center">
+              <Button bsPrefix={"night" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "night" })}>
+                Night Colors
+              </Button>
+        </Col>
+        <Col size="md-3" align="center">
+          <Button bsPrefix={"" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "light" })}>
+                Light Colors
+              </Button>
+        </Col>
+
+      </Row>
+      <br></br>
+
+      <Row>
+        <Col size="md-12">
+          <div className="googleButtons">
+            <Login />
+            <Logout />
           </div>
-        </Row>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col size="md-12">
+          <Link to="/user">
+            <Button bsPrefix={state.night + state.themeStyle + ' themebttn'}>
+              USER DASHBOARD
+            </Button>          
+          </Link>
+        </Col>
+      </Row>
+
     </div>
   )
 }

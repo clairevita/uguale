@@ -28,6 +28,7 @@
     "if-env": "^1.0.4",
     "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
+    "react-bootstrap-range-slider": "^2.0.2",
     "sequelize": "^5.22.3"
   }
 }
