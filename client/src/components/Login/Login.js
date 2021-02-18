@@ -18,8 +18,9 @@ function Login() {
       name: res.profileObj.name,
     }).then(function(response) {
       if (response.data === "user already exists!"){
-        API.getUser(res.profileObj.email).then((res) => {
-          console.log(res.data);
+        console.log(response.data);
+        API.getUser(res.profileObj.email).then((userInfo) => {
+          console.log(userInfo.data);
         })
       } else {
         dispatch({
