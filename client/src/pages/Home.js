@@ -33,7 +33,7 @@ function Home() {
         <Row>
           <Col size="md-12">
             <p className="text-center">
-              A simple maths application for regular practice.
+              A simple web application for new and returning mathematicians.
             </p>
           </Col>
         </Row>
