@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
 import { useHistory } from 'react-router';
+import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
+import RangeSlider from 'react-bootstrap-range-slider';
+import { Col, Form, Row, Button } from "react-bootstrap";
+import '../Buttons/buttons.css';
+import Curr from '../../utils/Curr';
 
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
@@ -44,12 +50,7 @@ function Login() {
         })
         console.log(state);
       } else if (!response.data.age) {
-        dispatch({
-          type: "profile",
-          newUser: true
-        })
-        console.log(state.newUser);
-        relocate();
+        setModalIsOpen(true);
       }
     })
     dispatch({
@@ -60,9 +61,9 @@ function Login() {
     // refreshTokenSetup(res);
   };
 
-  function relocate() {
-    history.push("/home");
-  }
+  // function relocate() {
+  //   history.push("/home");
+  // }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     dispatch({
@@ -126,110 +127,109 @@ function Login() {
       technicalAssistance: form.technicalAssistance,
       outcome: form.outcome
     })
+  }
+  return (
+    <>
+      <button onClick={signIn} className="button">
+        <img src="icons/logo.png" alt="google login" className="icon"></img>
+        <span className="buttonText">Sign in with Google</span>
+      </button>
 
-    return (
-      <>
-        <button onClick={signIn} className="button">
-          <img src="icons/logo.png" alt="google login" className="icon"></img>
-          <span className="buttonText">Sign in with Google</span>
-        </button>
-
-        <div>
-          <Modal size="lg"
-            backdrop="static"
-            keyboard={false}
-            show={modalIsOpen}
-            onHide={() => setModalIsOpen(false)}
-            aria-labelledby="example-modal-sizes-title-lg">
-            <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">
-                Welcome! Please create your profile:
-                    </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className={state.night + state.themeStyle + 'main'}>
-              <Container>
-                <Form>
-                  <Form.Row>
-                    <Form.Label>Who is this application for:</Form.Label>
-                  </Form.Row>
-                  <fieldset>
-                    <Form.Group as={Row}>
-                      <Form.Label as="legend" column sm={2}>
-                        Radios
-                  </Form.Label>
-                      <Col sm={10}>
-                        <Form.Check
-                          type="radio"
-                          label="Myself"
-                          name="who"
-                          id="formHorizontalRadios1"
-                          onChange={e => setState({
-                            age: form.age,
-                            technicalAssistance: false,
-                            outcome: form.outcome
-                          })}
-                        />
-                        <Form.Check
-                          type="radio"
-                          label="A Loved One"
-                          name="who"
-                          id="formHorizontalRadios2"
-                          onChange={e => setState({
-                            age: form.age,
-                            technicalAssistance: true,
-                            outcome: form.outcome
-                          })}
-                        />
-                      </Col>
-                    </Form.Group>
-                  </fieldset>
-                  <Form.Label>Please Enter Your Current Age</Form.Label>
-                  <Form.Row>
-                    <Form.Label>Range</Form.Label>
-                    <Col xs="9">
-                      <RangeSlider
-                        value={form.age}
+      <div>
+        <Modal size="lg"
+          backdrop="static"
+          keyboard={false}
+          show={modalIsOpen}
+          onHide={() => setModalIsOpen(false)}
+          aria-labelledby="example-modal-sizes-title-lg">
+          <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Welcome! Please create your profile:
+                  </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className={state.night + state.themeStyle + 'main'}>
+            <Container>
+              <Form>
+                <Form.Row>
+                  <Form.Label>Who is this application for:</Form.Label>
+                </Form.Row>
+                <fieldset>
+                  <Form.Group as={Row}>
+                    <Form.Label as="legend" column sm={2}>
+                      Radios
+                </Form.Label>
+                    <Col sm={10}>
+                      <Form.Check
+                        type="radio"
+                        label="Myself"
+                        name="who"
+                        id="formHorizontalRadios1"
                         onChange={e => setState({
-                          age: e.target.value,
-                          technicalAssistance: form.technicalAssistance,
+                          age: form.age,
+                          technicalAssistance: false,
+                          outcome: form.outcome
+                        })}
+                      />
+                      <Form.Check
+                        type="radio"
+                        label="A Loved One"
+                        name="who"
+                        id="formHorizontalRadios2"
+                        onChange={e => setState({
+                          age: form.age,
+                          technicalAssistance: true,
                           outcome: form.outcome
                         })}
                       />
                     </Col>
-                    <Col xs="3">
-                      <Form.Control value={form.age} />
-                    </Col>
-                  </Form.Row>
-                  <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Briefly describe your desired outcome:</Form.Label>
-                    <Form.Control as="textarea"
-                      rows={2}
-                      name="outcome"
+                  </Form.Group>
+                </fieldset>
+                <Form.Label>Please Enter Your Current Age</Form.Label>
+                <Form.Row>
+                  <Form.Label>Range</Form.Label>
+                  <Col xs="9">
+                    <RangeSlider
+                      value={form.age}
                       onChange={e => setState({
-                        age: form.age,
+                        age: e.target.value,
                         technicalAssistance: form.technicalAssistance,
-                        outcome: e.target.value
+                        outcome: form.outcome
                       })}
                     />
-                  </Form.Group>
+                  </Col>
+                  <Col xs="3">
+                    <Form.Control value={form.age} />
+                  </Col>
+                </Form.Row>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                  <Form.Label>Briefly describe your desired outcome:</Form.Label>
+                  <Form.Control as="textarea"
+                    rows={2}
+                    name="outcome"
+                    onChange={e => setState({
+                      age: form.age,
+                      technicalAssistance: form.technicalAssistance,
+                      outcome: e.target.value
+                    })}
+                  />
+                </Form.Group>
 
-                  <Button variant="primary"
-                    type="submit"
-                    onClick={event => {
-                      handleFormSubmit(event);
-                    }}
-                  >
-                    Submit
-              </Button>
+                <Button variant="primary"
+                  type="submit"
+                  onClick={event => {
+                    handleFormSubmit(event);
+                  }}
+                >
+                  Submit
+            </Button>
 
-                </Form>
-              </Container>
-            </Modal.Body>
-          </Modal>
-        </div>
-      </>
-    );
-  }
+              </Form>
+            </Container>
+          </Modal.Body>
+        </Modal>
+      </div>
+    </>
+  );
 }
 export default Login;
 
