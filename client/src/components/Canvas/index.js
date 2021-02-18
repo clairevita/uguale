@@ -9,8 +9,9 @@ import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
 import SkipBttn from '../Buttons/SkipBttn';
 import EraseBttn from '../Buttons/EraseBttn';
-import Row from "../Row/index";
-import Col from "../Col/index";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const curr = require('../../utils/Curr');
 
 
@@ -79,6 +80,7 @@ function Canvas(props) {
     const canvasRef = useRef(null)
     return (
         <div>
+            <Container fluid>
             <div className='canvasContainer'>
                 <ReactSketchCanvas className="bgCanvas"
                     ref={canvasRef}
@@ -94,8 +96,8 @@ function Canvas(props) {
             </div>
 
 
-            <Row>
-                <Col size="md-6" align="center">
+            <Row xs={2} md={4}>
+                <Col md="auto" xs={6} md={6} align="center">
                     <EraseBttn
                         onClick={() => {
                             canvasRef.current.clearCanvas();
@@ -103,7 +105,7 @@ function Canvas(props) {
                         }}
                     />
                 </Col>
-                <Col size="md-6" align="center">
+                <Col md="auto" xs={6} md={6} align="center">
                     <SkipBttn
                         onClick={() => { 
                             handleSkip();
@@ -127,7 +129,7 @@ function Canvas(props) {
                     <p>{dif}</p>
                 </Col>
             </Row>
-
+            </Container>
         </div>
     );
 
