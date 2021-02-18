@@ -78,7 +78,7 @@ const MathProvider = ({ value = [], ...props }) => {
         themeStyle: "mint",
         night: "",
         newUser: false,
-        ans: ""
+        ans: "",
         email: ""
     });
     return <Provider value={[state, dispatch]} {...props} />
