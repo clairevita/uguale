@@ -3,7 +3,7 @@
 module.exports = {
     equationWin(score){
         console.log("Win");
-        let newScore = score + .5;
+        let newScore = score + 2;
         let numberOne = Math.ceil((1+Math.random())*newScore);
         let numberTwo = Math.ceil((1+Math.random())*newScore);
         return [newScore, numberOne, numberTwo]

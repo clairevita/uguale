@@ -14,7 +14,7 @@ export const refreshTokenSetup = (res) => {
     };
   
     // Setup first refresh timer
-    setTimeout(refreshToken, refreshTiming);
+    // setTimeout(refreshToken, refreshTiming);
   };
 
 //   This function checks for expires_in timestamp or our custom time (before the token expires) and calls reloadAuthResponse which is a util function provided by the library and it handles refresh_token and obtains new tokenId.

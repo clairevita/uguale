@@ -5,9 +5,13 @@ import "./StartBttn.css";
 
 function StartBttn() {
   return (
-  <Button variant="contained" color="secondary" bsPrefix="StartBttn" onClick={event =>  window.location.href='/game'}>
-      start
- </Button>
-)}
+    <Link to='/game'>
+      <Button variant="contained" color="secondary" bsPrefix="StartBttn" >
+        start
+      </Button>
+    </Link>
+
+  )
+}
 
 export default StartBttn;
