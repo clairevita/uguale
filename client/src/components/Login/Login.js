@@ -36,7 +36,7 @@ function Login() {
           numberTwo: numberTwo,
           newUser: false
         })
-      } else {
+      } else if (!response.data.age){
         newUser();
       }
     })
