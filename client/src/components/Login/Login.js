@@ -10,6 +10,7 @@ const clientId =
 function Login() {
   const [state, dispatch] = useMathContext();
   const history = useHistory();
+  let clicked = false;
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     API.signup({
@@ -36,6 +37,7 @@ function Login() {
     // refreshTokenSetup(res);
   };
   function relocate() {
+    clicked = false;
     history.go(0)
   }
   const onFailure = (res) => {
@@ -47,6 +49,7 @@ function Login() {
     console.log(
       `Failed to login`
     );
+    clicked = false;
   };
 
   return (
@@ -58,7 +61,8 @@ function Login() {
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
         style={{ marginTop: '100px' }}
-        isSignedIn={true}
+        isSignedIn={false}
+        className="button"
       />
     </div>
   );
