@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useReducer } from "react";
+import React, { useContext, createContext, useReducer, useEffect } from "react";
 
 const MathContext = createContext();
 const { Provider } = MathContext;
@@ -23,7 +23,8 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", "", "", "", "", "", "", ""]
+                answers: ["", "", "", "", "", "", "", ""],
+                ans: action.ans
             };
         case "win":
             return {
@@ -31,7 +32,8 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", "", "", "", "", "", "", ""]
+                answers: ["", "", "", "", "", "", "", ""],
+                ans: action.ans
             };
         case "skip":
             return {
@@ -39,7 +41,8 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", "", "", "", "", "", "", ""]
+                answers: ["", "", "", "", "", "", "", ""],
+                ans: action.ans
             };
         case "answer":
             return {
@@ -69,10 +72,13 @@ const MathProvider = ({ value = [], ...props }) => {
         difficulty: 2,
         numberOne: 2,
         numberTwo: 2,
+        oldnumberOne: "",
+        oldnumberTwo: "",
         answers: [],
         themeStyle: "mint",
         night: "",
         newUser: false,
+        ans: ""
         email: ""
     });
     return <Provider value={[state, dispatch]} {...props} />
@@ -82,4 +88,4 @@ const useMathContext = () => {
     return useContext(MathContext);
 }
 
-export { MathProvider, useMathContext };
+export { MathProvider, useMathContext, useEffect };
