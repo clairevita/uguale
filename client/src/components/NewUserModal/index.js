@@ -6,6 +6,8 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import { Col, Form, Row, Button } from "react-bootstrap";
 import '../Buttons/buttons.css';
 import Curr from '../../utils/Curr';
+import API from '../../utils/API';
+
 
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
