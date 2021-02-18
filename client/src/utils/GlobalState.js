@@ -75,7 +75,7 @@ const MathProvider = ({ value = [], ...props }) => {
         oldnumberOne: "",
         oldnumberTwo: "",
         answers: [],
-        themeStyle: "berry",
+        themeStyle: "mint",
         night: "",
         newUser: false,
         ans: "",
