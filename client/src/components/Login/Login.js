@@ -23,8 +23,9 @@ function Login() {
         dispatch({
           type: "profile",
           newUser: true
-        });
-        history.go(0);
+        }).then( ()=>{
+          history.go(0);
+        })
       }
     })
     dispatch({
