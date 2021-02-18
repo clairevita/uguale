@@ -51,6 +51,7 @@
 }
 .answerField {
     padding-inline: 100px;
+    width: auto;
 }
 .unselectable {
     user-select: auto;
@@ -71,3 +72,19 @@
 .number {
     letter-spacing: 32px;
 }
+
+@media screen and (max-width: 768px) {
+    .EQbox {
+        margin-top: 100px;
+    }
+    .number {
+      font-size: 50px;
+    }
+    .answer {
+        width: 70px;
+        height: 100px;
+    }
+  }
+  @media screen and (max-width: 575px) {
+
+  }
