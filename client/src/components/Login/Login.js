@@ -37,12 +37,7 @@ function Login() {
           newUser: false
         })
       } else {
-        dispatch({
-          type: "profile",
-          newUser: true
-        })
-        console.log(state.newUser);
-        relocate();
+        newUser();
       }
     })
     dispatch({
@@ -53,6 +48,15 @@ function Login() {
 // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
   // refreshTokenSetup(res);
   };
+
+  function newUser(){
+    dispatch({
+      type: "profile",
+      newUser: true
+    })
+    console.log(state.newUser);
+    relocate();
+  }
 
 
   function relocate(){
