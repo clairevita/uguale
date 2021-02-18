@@ -66,6 +66,8 @@ function Canvas(props) {
                 ans: "You are Awesome and SMART"
             });
         } else {
+            let wrongAnswer = `${state.numberOne}-${state.numberTwo}||`
+            let wrongQuestions = state.wrongQuestions + wrongAnswer;
             let modDifficulty;
             if (state.difficulty === 2){
                 modDifficulty = 3;
@@ -78,15 +80,18 @@ function Canvas(props) {
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
-                lastIntegers: numbers
+                lastIntegers: numbers,
+                wrongQuestions: wrongQuestions
             })
             dispatch({
                 type: "loss",
                 difficulty: newMath[0],
                 numberOne: newMath[1],
                 numberTwo: newMath[2],
+                wrongQuestions: wrongQuestions,
                 ans: ("You are doing great, the right answer was: " + finalAnswer)
             });
+            console.log(state);
         }
     }
 

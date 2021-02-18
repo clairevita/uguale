@@ -23,6 +23,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
+                wrongQuestions: action.wrongQuestions,
                 answers: ["", "", "", "", "", "", "", ""],
                 ans: action.ans
             };
@@ -82,6 +83,7 @@ const MathProvider = ({ value = [], ...props }) => {
         oldnumberOne: "",
         oldnumberTwo: "",
         answers: [],
+        wrongQuestions: "",
         themeStyle: "mint",
         night: "",
         newUser: false,
