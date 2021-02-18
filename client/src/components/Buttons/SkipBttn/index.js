@@ -5,11 +5,11 @@ import Modal from "react-bootstrap/Modal";
 import '../buttons.css';
 
 function SkipBttn(props) {
-    const [state] = useMathContext();
+    const [state, dispatch] = useMathContext();
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            closeModal();
+            props.onHide();
         }, 4000);
         // I will be deleted while component is unmounting.
         return () => clearTimeout(timer)
