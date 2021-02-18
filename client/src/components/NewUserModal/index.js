@@ -22,11 +22,11 @@ function NewUserModal() {
     e.preventDefault();
     let modDifficulty;
     let newMath;
-    if (form.age > 13){
+    if (form.age > 13 && form.age >! 19){
       modDifficulty = 50;
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-    } else if (form.age > 19){
+    } else if (form.age > 19 && form.age >! 45){
       modDifficulty = 200;
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -62,6 +62,7 @@ function NewUserModal() {
       technicalAssistance: form.technicalAssistance,
       outcome: form.outcome
   })
+  setModalIsOpen(false);
   }
   return (
     <div>
