@@ -86,7 +86,7 @@ function Dashboard() {
                 <Col size="md-12">
                     <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
                         <Card.Header>
-                            <div className={'h4 font-weight-bold text-lowercase text-' + state.night + state.themeStyle}> you got this question wrong in the past, give it another shot!
+                            <div className={'h5 font-weight-bold text-lowercase text-' + state.night + state.themeStyle}> you got this question wrong in the past, give it another shot!
                             </div>
                         </Card.Header>
                         <Card.Body className="left-padding">
