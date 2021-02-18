@@ -11,6 +11,7 @@ function Dashboard() {
     const [state, dispatch] = useMathContext();
     let wronganswerString = state.wrongQuestions;
     let wrongAnswers;
+    let data = state.startDate.substring(0, 6)
     let index;
     if (wronganswerString != "") {
         wrongAnswers = wronganswerString.split("||");
