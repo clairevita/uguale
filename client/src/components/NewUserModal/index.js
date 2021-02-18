@@ -19,33 +19,37 @@ function NewUserModal() {
   })
 
   function handleFormSubmit(e) {
-    e.preventDefault();
-    let modDifficulty;
-    let newMath;
-    if (form.age > 13 && form.age < 20){
-      modDifficulty = 50;
-      newMath = Curr.equationSkip(modDifficulty);
-      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-    } else if (form.age > 19 && form.age < 46){
-      modDifficulty = 200;
-      newMath = Curr.equationSkip(modDifficulty);
-      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-    } else if (form.age > 45 && form.age < 60){
-      modDifficulty = 100;
-      newMath = Curr.equationSkip(modDifficulty);
-      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+    if (!state.newUser == false){
+      e.preventDefault();
+      let modDifficulty;
+      let newMath;
+      if (form.age > 13 && form.age < 20){
+        modDifficulty = 50;
+        newMath = Curr.equationSkip(modDifficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+      } else if (form.age > 19 && form.age < 46){
+        modDifficulty = 200;
+        newMath = Curr.equationSkip(modDifficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+      } else if (form.age > 45 && form.age < 60){
+        modDifficulty = 100;
+        newMath = Curr.equationSkip(modDifficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+      } else {
+        modDifficulty = 2
+        newMath = Curr.equationSkip(modDifficulty);
+        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+      }
+  
+      sendStats(modDifficulty, newMath[1], newMath[2]);
     } else {
-      modDifficulty = 2
-      newMath = Curr.equationSkip(modDifficulty);
-      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+      setModalIsOpen(false);
     }
 
-    sendStats(modDifficulty, newMath[1], newMath[2]);
 
   }
 
   function sendStats(difficulty, numberOne, numberTwo){
-    
     dispatch({
       type: "submitForm",
       difficulty: difficulty,
