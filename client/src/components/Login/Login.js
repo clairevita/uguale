@@ -35,23 +35,23 @@ function Login() {
       if (response.data.response == "returning") {
         let numberOne;
         let numberTwo;
-        if (response.data.lastIntegers) {
-          let splitResponse = response.data.lastIntegers.split(",");
+        if (response.data.data.lastIntegers) {
+          let splitResponse = response.data.data.lastIntegers.split(",");
           numberOne = splitResponse[0];
           numberTwo = splitResponse[1];
         } else {
-          numberOne = Math.ceil(Math.random() * response.data.difficulty);
-          numberTwo = Math.ceil(Math.random() * response.data.difficulty);
+          numberOne = Math.ceil(Math.random() * response.data.datadifficulty);
+          numberTwo = Math.ceil(Math.random() * response.data.data.difficulty);
         }
         dispatch({
           type: "returnUser",
-          difficulty: response.data.difficulty,
+          difficulty: response.data.data.difficulty,
           numberOne: numberOne,
           numberTwo: numberTwo
         });
         
         history.push("/game");
-      } else if (!response.response){
+      } else if (!response.data.response){
         modalOpen();
       }
     })
