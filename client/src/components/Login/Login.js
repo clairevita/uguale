@@ -19,13 +19,9 @@ function Login() {
     }).then(function(response) {
       console.log(response.data);
       if (response.data === "user already exists!"){
-        dispatch({
-          type: "profile",
-          newUser: false
-        })
-        
+       
         API.getUser(res.profileObj.email).then(res => {
-          dataCheck(res);
+          console.log("Check!" + data)
         })
       } else {
         dispatch({
@@ -45,7 +41,7 @@ function Login() {
   // refreshTokenSetup(res);
   };
   function dataCheck(data){
-    console.log("Check!" + data)
+    
   }
 
   function relocate(){
