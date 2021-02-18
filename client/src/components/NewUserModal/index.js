@@ -17,9 +17,6 @@ function NewUserModal() {
     technicalAssistance: false,
     outcome: ""
   })
-  if (state.newUser == false) {
-    setModalIsOpen(false);
-  }
   function handleFormSubmit(e) {
     e.preventDefault();
     let modDifficulty;

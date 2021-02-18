@@ -23,7 +23,7 @@ function Login() {
           type: "profile",
           newUser: false
         })
-        console.log(state);
+        
         API.getUser(res.profileObj.email).then(res => {
           dataCheck(res);
         })
@@ -32,7 +32,7 @@ function Login() {
           type: "profile",
           newUser: true
         })
-        console.log(state);
+        console.log(state.newUser);
         relocate();
       }
     })
@@ -40,7 +40,7 @@ function Login() {
       type: "setEmail",
       email: res.profileObj.email
   });
-  console.log(state);
+
 // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
   // refreshTokenSetup(res);
   };
