@@ -17,11 +17,11 @@ function Login() {
       profileImage: res.profileObj.imageUrl,
       name: res.profileObj.name,
     }).then(function(response) {
+      console.log(response.data);
       if (response.data === "user already exists!"){
-        console.log(response.data);
-        // API.getUser(res.profileObj.email).then(res => {
-        //   dataCheck(res);
-        // })
+        API.getUser(res.profileObj.email).then(res => {
+          dataCheck(res);
+        })
       } else {
         dispatch({
           type: "profile",
