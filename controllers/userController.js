@@ -19,7 +19,7 @@ module.exports = {
         email: req.body.email,
         profileImage: req.body.profileImage,
         name: req.body.name,
-        difficulty: "2"
+        difficulty: 2
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err)); 

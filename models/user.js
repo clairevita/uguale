@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     difficulty: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     lastIntegers: {

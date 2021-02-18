@@ -40,7 +40,7 @@ function Canvas(props) {
             let numbers = newMath[1] + "," + newMath[2]
             API.updateStats({
                 email: state.email,
-                difficulty: dif,
+                difficulty: newMath[0],
                 lastIntegers: numbers
             })
             dispatch({
@@ -55,7 +55,7 @@ function Canvas(props) {
             let numbers = newMath[1] + "," + newMath[2]
             API.updateStats({
                 email: state.email,
-                difficulty: state.difficulty,
+                difficulty: newMath[0],
                 lastIntegers: numbers
             })
             dispatch({
