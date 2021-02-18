@@ -43,7 +43,7 @@ function Login() {
   // refreshTokenSetup(res);
   };
   function dataCheck(data){
-    console.log(data)
+    console.log("Check!" + data)
   }
 
   function relocate(){
