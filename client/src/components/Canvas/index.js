@@ -24,6 +24,8 @@ function Canvas(props) {
     function handleSkip() {
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+        let numbers = newMath[1] + "," + newMath[2]
+        setNumbers = numbers;
         dispatch({
             type: "skip",
             difficulty: newMath[0],
@@ -46,6 +48,7 @@ function Canvas(props) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             let numbers = newMath[1] + "," + newMath[2]
+            setNumbers = numbers;
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
@@ -61,7 +64,8 @@ function Canvas(props) {
         } else {
             let newMath = curr.equationLose(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2]
+            let numbers = newMath[1] + "," + newMath[2];
+            setNumbers = numbers;
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],

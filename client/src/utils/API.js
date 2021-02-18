@@ -14,7 +14,7 @@ export default {
   // Saves a post to the database
   signup: function(data) {
     return axios.post("/api/sign", data).then(response => {
-      return response.data
+      return response
    });
   },
   updateStats: function(data){
