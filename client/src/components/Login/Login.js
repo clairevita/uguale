@@ -33,7 +33,7 @@ function Login() {
       console.log(response.data);
       setModalIsOpen(false);
       if (response.data.response == "returning") {
-        let numberOne = Math.ceil(Math.random() * response.data.datadifficulty);
+        let numberOne = Math.ceil(Math.random() * response.data.data.difficulty);
         let numberTwo = Math.ceil(Math.random() * response.data.data.difficulty);
         dispatch({
           type: "returnUser",

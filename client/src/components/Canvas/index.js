@@ -59,9 +59,15 @@ function Canvas(props) {
                 ans: "You are Awesome and SMART"
             });
         } else {
-            let newMath = curr.equationLose(state.difficulty);
+            let modDifficulty;
+            if (state.difficulty === 2){
+                modDifficulty = 3;
+            } else {
+                modDifficulty = state.difficulty;
+            }
+            let newMath = curr.equationLose(modDifficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2]
+            let numbers = newMath[1] + "," + newMath[2]  
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
