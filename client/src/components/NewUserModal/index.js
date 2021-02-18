@@ -17,35 +17,32 @@ function NewUserModal() {
     technicalAssistance: false,
     outcome: ""
   })
-
+  if (state.newUser == false) {
+    setModalIsOpen(false);
+  }
   function handleFormSubmit(e) {
-    if (!state.newUser == false){
-      e.preventDefault();
-      let modDifficulty;
-      let newMath;
-      if (form.age > 13 && form.age < 20){
-        modDifficulty = 50;
-        newMath = Curr.equationSkip(modDifficulty);
-        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-      } else if (form.age > 19 && form.age < 46){
-        modDifficulty = 200;
-        newMath = Curr.equationSkip(modDifficulty);
-        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-      } else if (form.age > 45 && form.age < 60){
-        modDifficulty = 100;
-        newMath = Curr.equationSkip(modDifficulty);
-        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-      } else {
-        modDifficulty = 2
-        newMath = Curr.equationSkip(modDifficulty);
-        console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-      }
-  
-      sendStats(modDifficulty, newMath[1], newMath[2]);
+    e.preventDefault();
+    let modDifficulty;
+    let newMath;
+    if (form.age > 13 && form.age < 20){
+      modDifficulty = 50;
+      newMath = Curr.equationSkip(modDifficulty);
+      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+    } else if (form.age > 19 && form.age < 46){
+      modDifficulty = 200;
+      newMath = Curr.equationSkip(modDifficulty);
+      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+    } else if (form.age > 45 && form.age < 60){
+      modDifficulty = 100;
+      newMath = Curr.equationSkip(modDifficulty);
+      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     } else {
-      setModalIsOpen(false);
+      modDifficulty = 2
+      newMath = Curr.equationSkip(modDifficulty);
+      console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     }
 
+    sendStats(modDifficulty, newMath[1], newMath[2]);
 
   }
 
