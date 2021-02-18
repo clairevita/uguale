@@ -31,10 +31,10 @@ function Login() {
       name: res.profileObj.name,
     }).then(function (response) {
       console.log(response.data);
+      setModalIsOpen(false);
       if (response.response == "returning") {
         let numberOne;
         let numberTwo;
-        setModalIsOpen(false);
         if (response.data.lastIntegers) {
           let splitResponse = response.data.lastIntegers.split(",");
           numberOne = splitResponse[0];
