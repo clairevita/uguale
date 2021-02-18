@@ -24,16 +24,6 @@ function SkipBttn(props) {
             >
                 skip
         </Button>
-            <Modal size="sm"
-                show={props.show}
-                onHide={props.onHide}
-                aria-labelledby="example-modal-sizes-title-lg">
-                <Modal.Body className={state.night + state.themeStyle + 'main'}>
-                    <h1> You are doing great, keep going </h1>
-                    <p>the answer was:</p>
-                    {state.numberOne + state.numberTwo}
-                </Modal.Body>
-            </Modal>
         </div>
     )
 }
