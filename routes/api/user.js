@@ -4,7 +4,7 @@ const userController = require("../../controllers/userController");
 
 router.post("/sign", userController.findOne)
 
-router.get("/user/:id", userController.findById);
+router.get("/user/:id", userController.getuserData);
 
 router.put("/user", userController.update);
 
