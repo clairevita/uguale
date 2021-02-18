@@ -1,24 +1,4 @@
-
-
-
-/* .header {
-    background-color: lightgray;
-    border-width: thin;
-    padding: 20px;
-  }
-  
-  body {
-    background-color: #659dbd;
-  }
-  
-  .results-background {
-    background-color: #f8fafe;
-  }
-  
-  .dash {
-    background-color: ;
-  } */
-  
+   /* dash card colors */
   .border-left-mint {
     border-left: #4c3735;
     border-left-style: solid;
@@ -47,20 +27,64 @@
     padding: 25px;
   }
 
+  .border-left-nightmint {
+    border-left: #AFEADC;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-nightberry {
+    border-left: #e9ced5;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-nighthoney {
+    border-left: #F2F0A1;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
+  .border-left-nightclassic {
+    border-left: #e6eeec;
+    border-left-style: solid;
+    border-left-width: 6px;
+    padding: 25px;
+  }
+
   .text-mint {
-    text-decoration-color: #4c3735;
+    text-decoration-color: #4c3735 !important;
   }
   
   .text-berry {
-    text-decoration-color: #2d2147;
+    text-decoration-color: #2d2147 !important;
   } 
 
   .text-honey {
-    text-decoration-color: #701b45;
+    text-decoration-color: #701b45 !important;
   }
 
   .text-classic {
-    text-decoration-color: #302E2C;
+    text-decoration-color: #302E2C !important;
+  }
+
+  .text-nightmint {
+    text-decoration-color: #AFEADC !important;
+  }
+  
+  .text-nightberry {
+    text-decoration-color: #e9ced5 !important;
+  } 
+
+  .text-nighthoney {
+    text-decoration-color: #F2F0A1 !important;
+  }
+
+  .text-nightclassic {
+    text-decoration-color: #e6eeec !important;
   }
 
   .left-padding {
@@ -70,7 +94,7 @@
   }
   
   .dash-row {
-    padding: 20px;
+    padding: 10px;
   }
   
   .graph-row {
@@ -94,47 +118,64 @@
   }
 
 
-
   /* jumbotron */
-
-  .jumbotron {
+  /* .jumbotron {
     padding: 100px;
-  }
+  } */
 
-  /* jumbotron background colors 
+
+
+ /* profile header h2 */
+ .profile {
+  padding: 50px !important;
+ } 
+
+  /* header colors 
    */
   .mintdash {
-    background-color: #AFEADC;
-    opacity: 95%;
+    background-color: #AFEADC !important; 
+    opacity: 95% !important;
+    text-decoration-color: #4C3735 !important;
   }
   
   .berrydash {
-    background-color: #e9ced5;
-    opacity: 95%;
+    background-color: #e9ced5 !important;
+    opacity: 95% i !important;
+    text-decoration-color: #2d2147 !important;
   }
   
   .honeydash {
-    background-color: #F2F0A1;
-    opacity: 95%;
+    background-color: #F2F0A1 !important;
+    opacity: 95% !important;
+    text-decoration-color: #701b45 !important;
   }
   
   .classicdash {
-   background-color: #e6eeec;
-   opacity: 95%;
+   background-color: #e6eeec !important;
+   opacity: 95% !important;
+   text-decoration-color: #302E2C !important;
   }
   
   .nightmintdash {
-    background-color: #4c3735;
+    background-color: #4c3735 !important;
+    opacity: 95% !important;
+    text-decoration-color: #AFEADC !important;
   }
   
   .nightberrydash {
-    background-color: #2d2147;
+    background-color: #2d2147 !important;
+    opacity: 95% !important;
+    text-decoration-color: #e9ced5 !important;
   }
   
   .nighthoneydash {
-    background-color: #701b45;
+    background-color: #701b45 !important;
+    opacity: 95% !important;
+    text-decoration-color: #F2F0A1 i !important;
   }
   
   .nightclassicdash {
-    background-color: #302E2C;
+    background-color: #302E2C !important;
+    opacity: 95% !important;
+    text-decoration-color: #e6eeec !important;
   }
