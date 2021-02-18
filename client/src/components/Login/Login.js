@@ -48,7 +48,8 @@ function Login() {
           numberOne: numberOne,
           numberTwo: numberTwo
         });
-        history.push("/home");
+        setModalIsOpen(false);
+        history.push("/");
       } else if (!response.data.age) {
         setModalIsOpen(true);
       }
@@ -104,9 +105,8 @@ function Login() {
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
     }
-
     sendStats(modDifficulty, newMath[1], newMath[2]);
-
+    setModalIsOpen(false);
   }
 
   function sendStats(difficulty, numberOne, numberTwo) {
