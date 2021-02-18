@@ -17,15 +17,13 @@ const curr = require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
-    const [numbers, setNumbers] = useLocalState("numbers")
+    const [numbers, setNumbers] = useL
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
     console.log(props)
     function handleSkip() {
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-        let numbers = newMath[1] + "," + newMath[2]
-        setNumbers = numbers;
         dispatch({
             type: "skip",
             difficulty: newMath[0],
@@ -48,7 +46,6 @@ function Canvas(props) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
             let numbers = newMath[1] + "," + newMath[2]
-            setNumbers = numbers;
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
@@ -64,8 +61,7 @@ function Canvas(props) {
         } else {
             let newMath = curr.equationLose(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2];
-            setNumbers = numbers;
+            let numbers = newMath[1] + "," + newMath[2]
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
@@ -134,7 +130,7 @@ function Canvas(props) {
                             canvasRef.current.clearCanvas();
                         }} />
                     <p>{dif}</p>
-                    <p>{numbers}</p>
+
                 </Col>
             </Row>
 
