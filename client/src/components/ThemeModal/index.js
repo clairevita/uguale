@@ -42,16 +42,15 @@ function ThemeModal() {
         </Col>
       
       </Row>
-      <br/>
-      
+   
       <Row>
         <Col size="md-3" align="center">
-              <Button bsPrefix={"night" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "night" })}>
+              <Button bsPrefix={"" + state.themeStyle + ' lightdarkbttn'} onClick={() => dispatch({ type: "night" })}>
                 Night Colors
               </Button>
         </Col>
         <Col size="md-3" align="center">
-          <Button bsPrefix={"" + state.themeStyle + ' themebttn'} onClick={() => dispatch({ type: "light" })}>
+          <Button bsPrefix={"night" + state.themeStyle + ' lightdarkbttn'} onClick={() => dispatch({ type: "light" })}>
                 Light Colors
               </Button>
         </Col>
