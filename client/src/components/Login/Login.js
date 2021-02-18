@@ -57,7 +57,6 @@ function Login() {
     relocate();
   }
 
-
   function relocate(){
     history.push("/home");
   }
