@@ -11,9 +11,12 @@ function Dashboard() {
     const [state, dispatch] = useMathContext();
     let wronganswerString = state.wrongQuestions;
     let wrongAnswers;
+    let index;
     if (wronganswerString != "") {
         wrongAnswers = wronganswerString.split("||");
         wrongAnswers.pop();
+        console.log(wrongAnswers)
+        index = wrongAnswers.length -1;
     }
     function setCurrent(equation, i) {
         let numbers = equation.split("+");
@@ -29,7 +32,6 @@ function Dashboard() {
             difficulty: state.difficulty,
             numberOne: numberOne,
             numberTwo: numberTwo
-            // wrongQuestions: stringSplice
         })
         relocation();
         console.log(state)
@@ -93,13 +95,13 @@ function Dashboard() {
 
                                         <br></br>
                                         <Button bsPrefix={state.night + state.themeStyle + ' DashBttn'}
-                                            value={wrongAnswer[0]}
+                                            value={wrongAnswers[index]}
                                             data-index-number={[index]}
                                             onClick={() => {
-                                                setCurrent(wrongAnswer[0]);
+                                                setCurrent(wrongAnswers[index]);
                                             }}
                                         >
-                                            <i className="fa fa-pencil fa-fw"></i> <span>{wrongAnswer[0]}</span>
+                                            <i className="fa fa-pencil fa-fw"></i> <span>{wrongAnswers[index]}</span>
                                         </Button>
                                         <br></br>
                                     </div>
