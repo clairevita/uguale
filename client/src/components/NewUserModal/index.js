@@ -68,7 +68,7 @@ function NewUserModal() {
         backdrop="static"
         keyboard={false}
         show={modalIsOpen}
-        onHide={() => setModalIsOpen(false)}
+        onHide={() => setModalIsOpen(!state.newUser)}
         aria-labelledby="example-modal-sizes-title-lg">
         <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
