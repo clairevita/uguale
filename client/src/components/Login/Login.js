@@ -39,7 +39,9 @@ function Login() {
           let splitResponse = response.data.data.lastIntegers.split(",");
           console.log(splitResponse);
           numberOne = splitResponse[0];
+          console.log(numberOne);
           numberTwo = splitResponse[1];
+          console.log(numberTwo);
         } else {
           numberOne = Math.ceil(Math.random() * response.data.datadifficulty);
           numberTwo = Math.ceil(Math.random() * response.data.data.difficulty);
