@@ -52,7 +52,7 @@ function Login() {
         
         history.push("/game");
       } else if (!response.response){
-        setModalIsOpen(true);
+        modalOpen();
       }
     })
     dispatch({
@@ -63,9 +63,9 @@ function Login() {
     // refreshTokenSetup(res);
   };
 
-  // function relocate() {
-  //   history.push("/home");
-  // }
+  function modalOpen() {
+    setModalIsOpen(true);
+  }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     dispatch({
