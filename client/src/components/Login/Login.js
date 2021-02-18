@@ -30,11 +30,10 @@ function Login() {
           numberTwo = Math.ceil(Math.random()*response.data.difficulty);
         }
         dispatch({
-          type: "submitForm",
+          type: "returnUser",
           difficulty: response.data.difficulty,
           numberOne: numberOne,
-          numberTwo: numberTwo,
-          newUser: false
+          numberTwo: numberTwo
         })
       } else if (!response.data.age){
         newUser();
