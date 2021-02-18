@@ -18,11 +18,8 @@ function Login() {
       name: res.profileObj.name,
     }).then(function(response) {
       console.log(response.data);
-      if (response.data === "user already exists!"){
-       
-        API.getUser(res.profileObj.email).then(res => {
-          console.log("Check!" + data)
-        })
+      if (response.data == "user already exists!"){
+
       } else {
         dispatch({
           type: "profile",
@@ -39,10 +36,6 @@ function Login() {
 
 // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
   // refreshTokenSetup(res);
-  };
-  function dataCheck(data){
-    
-  }
 
   function relocate(){
     history.push("/home");
