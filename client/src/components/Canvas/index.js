@@ -17,7 +17,7 @@ const curr = require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
-    const [numbers, setNumbers] = useL
+    // const [numbers, setNumbers] = useLocalState("numbers")
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
     console.log(props)
