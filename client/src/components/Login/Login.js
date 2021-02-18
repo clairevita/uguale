@@ -19,6 +19,10 @@ function Login() {
     }).then(function(response) {
       console.log(response.data);
       if (response.data === "user already exists!"){
+        dispatch({
+          type: "profile",
+          newUser: false
+        })
         API.getUser(res.profileObj.email).then(res => {
           dataCheck(res);
         })

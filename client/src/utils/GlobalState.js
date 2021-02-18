@@ -50,7 +50,7 @@ const reducer = (state, action) => {
                 answers: action.answers,
             };
         case "profile":
-            return { ...state, newUser: true };
+            return { ...state, newUser: action.newUser };
         case "setEmail":
             return { 
                 ...state, 
