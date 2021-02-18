@@ -3,7 +3,7 @@
 module.exports = {
     equationWin(score){
         console.log("Win");
-        let newScore = score + .5;
+        let newScore = score + 2;
         let numberOne = Math.ceil((1+Math.random())*newScore);
         let numberTwo = Math.ceil((1+Math.random())*newScore);
         return [newScore, numberOne, numberTwo]
@@ -11,7 +11,7 @@ module.exports = {
     
     equationLose(score){
         console.log("Lose");
-        let newScore = score - .8;
+        let newScore = score - 1;
         let numberOne = Math.ceil(Math.random()*newScore);
         let numberTwo = Math.ceil(Math.random()*newScore);
         return [newScore, numberOne, numberTwo]

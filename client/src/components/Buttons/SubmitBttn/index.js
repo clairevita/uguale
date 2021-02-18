@@ -1,18 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMathContext } from "../../../utils/GlobalState";
 import Button from "react-bootstrap/Button";
 import '../buttons.css';
+import Modal from "react-bootstrap/Modal";
 
-const SkipBttn = (props) => {
-    const [state] = useMathContext();
+const SubmitBttn = (props) => {
+    const [state, dispatch] = useMathContext();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            props.onHide();
+        }, 4000);
+        // I will be deleted while component is unmounting.
+        return () => clearTimeout(timer)
+    }, [props.show]);
+
     return (
-        <Button id="submitBttn" bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
-        // onClick={()=>{}}
-        {...props}
-        >
-            SUBMIT
+        <div>
+            <Button id="submitBttn" bsPrefix={state.night + state.themeStyle + ' MenuBttn'}
+                {...props}
+                onClick={() => {
+                    props.onClick();
+                }}
+            >
+                SUBMIT
         </Button>
+            <Modal size="sm"
+                show={props.show}
+                onHide={props.onHide}
+                aria-labelledby="example-modal-sizes-title-lg">
+                <Modal.Body className={state.night + state.themeStyle + 'main'}>
+                    <h1> {state.ans} </h1>
+                    {/* <h1>the answer was: </h1> */}
+                    {/* <h1> {state.oldnumberOne + state.oldnumberTwo} </h1> */}
+                </Modal.Body>
+            </Modal>
+        </div>
     )
 }
 
-export default SkipBttn;
+export default SubmitBttn;

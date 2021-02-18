@@ -27,8 +27,16 @@ module.exports = function(sequelize, DataTypes) {
     },
     wrongQuestions: {
       type: DataTypes.STRING 
+    },
+    age: {
+      type: DataTypes.INTEGER
+    },
+    technicalAssistance: {
+      type: DataTypes.BOOLEAN
+    },
+    outcome: {
+      type: DataTypes.STRING
     }
-
   });
 
   return User;
