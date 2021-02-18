@@ -2,7 +2,6 @@ import React from "react";
 import { useMathContext } from "../../utils/GlobalState";
 import { Card, Row, Col, ButtonGroup, Jumbotron } from "react-bootstrap";
 import "./dashboard.css";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import '../../components/Buttons/buttons.css';
 import { useHistory } from 'react-router';
@@ -12,11 +11,9 @@ function Dashboard() {
     const [state, dispatch] = useMathContext();
     let wronganswerString = state.wrongQuestions;
     let wrongAnswers;
-    if (wronganswerString != ""){
+    if (wronganswerString != "") {
         wrongAnswers = wronganswerString.split("||");
         wrongAnswers.pop();
-    } else {
-        
     }
     function setCurrent(equation, i) {
         let numbers = equation.split("+");
@@ -91,30 +88,26 @@ function Dashboard() {
                         </Card.Header>
                         <Card.Body className="left-padding">
                             <ButtonGroup className="list-group mini-dash-row">
-                            {wrongAnswers ? 
-                            <div>
-                            {wrongAnswers.map((wrongAnswer, index) => (
-                                <div>
-                                    <br></br>
-                                
+                                {wrongAnswers ?
+                                    <div>
+
+                                        <br></br>
                                         <Button bsPrefix={state.night + state.themeStyle + ' DashBttn'}
-                                            value={wrongAnswer}
+                                            value={wrongAnswer[0]}
                                             data-index-number={[index]}
                                             onClick={() => {
-                                                setCurrent(wrongAnswer, index);
+                                                setCurrent(wrongAnswer[0]);
                                             }}
                                         >
-                                            <i className="fa fa-pencil fa-fw"></i> <span>{wrongAnswer}</span>
+                                            <i className="fa fa-pencil fa-fw"></i> <span>{wrongAnswer[0]}</span>
                                         </Button>
-                                  
-                                    <br></br>
-                                </div>
-                            ))
-                            }
-                            </div>
-                            : 
-                            <h2>nice job! no wrong answers!</h2>
+                                        <br></br>
+                                    </div>
                             
+
+                            :
+                            <h2>nice job! no wrong answers!</h2>
+
                             }
 
 
