@@ -2,11 +2,27 @@
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    border: 0;
+    border-radius: 7px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+#submitBttn {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 50px;
+    margin-bottom: 0px;
+    font-size: 40px;
     border: 0;
     border-radius: 7px;
     font-family: 'Varela Round', sans-serif;
@@ -26,7 +42,7 @@
     box-shadow: 1px 1px 10px #4C3735;
 }
 
-.mint:hov1 {
+.mint:hover {
     color: #AFEADC;
     background-color: #4C3735;
     opacity: 0.85;
@@ -116,6 +132,12 @@
     opacity: 0.85;
 }
 
+/* Settings header CSS section */
+
+.h4 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 70px;
+}
 
 .mintheader {
     background: #4C3735;
