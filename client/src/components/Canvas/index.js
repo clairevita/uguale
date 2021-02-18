@@ -18,6 +18,7 @@ const curr = require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
+    // const [numbers, setNumbers] = useLocalState("numbers")
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
     console.log(props)
@@ -59,9 +60,15 @@ function Canvas(props) {
                 ans: "You are Awesome and SMART"
             });
         } else {
-            let newMath = curr.equationLose(state.difficulty);
+            let modDifficulty;
+            if (state.difficulty === 2){
+                modDifficulty = 3;
+            } else {
+                modDifficulty = state.difficulty;
+            }
+            let newMath = curr.equationLose(modDifficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2]
+            let numbers = newMath[1] + "," + newMath[2]  
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
@@ -72,7 +79,7 @@ function Canvas(props) {
                 difficulty: newMath[0],
                 numberOne: newMath[1],
                 numberTwo: newMath[2],
-                ans: ("You are doing great, the right answer was: "+finalAnswer)
+                ans: ("You are doing great, the right answer was: " + finalAnswer)
             });
         }
     }
@@ -107,7 +114,11 @@ function Canvas(props) {
                 </Col>
                 <Col md="auto" xs={6} md={6} align="center">
                     <SkipBttn
-                        onClick={() => { 
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
+                        onClick={() => {
+                            setDif(state.difficulty);
+
                             handleSkip();
                             canvasRef.current.clearCanvas();
                         }}
@@ -118,14 +129,14 @@ function Canvas(props) {
             <Row>
                 <Col size="md-12" align="center">
                     <SubmitBttn
-                    show={modalIsOpen}
-                    onHide={() => setModalIsOpen(false)}
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
                         onClick={() => {
                             setDif(state.difficulty);
-                            
+
                             checkAnswer();
                             canvasRef.current.clearCanvas();
-                        }} /> 
+                        }} />
                     <p>{dif}</p>
                 </Col>
             </Row>

@@ -8,29 +8,27 @@ import '../Buttons/buttons.css';
 import Curr from '../../utils/Curr';
 import API from '../../utils/API';
 
-
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
-  const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [form, setState] = useState({
     age: 50,
     technicalAssistance: false,
     outcome: ""
   })
-
   function handleFormSubmit(e) {
     e.preventDefault();
     let modDifficulty;
     let newMath;
-    if (form.age > 13 && form.age < 20){
+    if (form.age > 13 && form.age < 20) {
       modDifficulty = 50;
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-    } else if (form.age > 19 && form.age < 46){
+    } else if (form.age > 19 && form.age < 46) {
       modDifficulty = 200;
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-    } else if (form.age > 45 && form.age < 60){
+    } else if (form.age > 45 && form.age < 60) {
       modDifficulty = 100;
       newMath = Curr.equationSkip(modDifficulty);
       console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -44,8 +42,7 @@ function NewUserModal() {
 
   }
 
-  function sendStats(difficulty, numberOne, numberTwo){
-    
+  function sendStats(difficulty, numberOne, numberTwo) {
     dispatch({
       type: "submitForm",
       difficulty: difficulty,
@@ -53,6 +50,7 @@ function NewUserModal() {
       numberTwo: numberTwo,
       newUser: false
     });
+    console.log(state)
     let numbers = numberOne + "," + numberTwo
     API.newuserInfo({
       email: state.email,
@@ -61,12 +59,14 @@ function NewUserModal() {
       age: form.age,
       technicalAssistance: form.technicalAssistance,
       outcome: form.outcome
-  })
-  setModalIsOpen(false);
+    })
+    // setModalIsOpen(false);
   }
   return (
     <div>
       <Modal size="lg"
+        backdrop="static"
+        keyboard={false}
         show={modalIsOpen}
         onHide={() => setModalIsOpen(false)}
         aria-labelledby="example-modal-sizes-title-lg">
@@ -92,8 +92,8 @@ function NewUserModal() {
                       label="Myself"
                       name="who"
                       id="formHorizontalRadios1"
-                      onChange={e => setState({ 
-                        age: form.age, 
+                      onChange={e => setState({
+                        age: form.age,
                         technicalAssistance: false,
                         outcome: form.outcome
                       })}
@@ -104,7 +104,7 @@ function NewUserModal() {
                       name="who"
                       id="formHorizontalRadios2"
                       onChange={e => setState({
-                        age: form.age, 
+                        age: form.age,
                         technicalAssistance: true,
                         outcome: form.outcome
                       })}
@@ -134,10 +134,10 @@ function NewUserModal() {
                 <Form.Control as="textarea"
                   rows={2}
                   name="outcome"
-                  onChange={e => setState({ 
-                    age: form.age, 
-                    technicalAssistance: form.technicalAssistance, 
-                    outcome: e.target.value 
+                  onChange={e => setState({
+                    age: form.age,
+                    technicalAssistance: form.technicalAssistance,
+                    outcome: e.target.value
                   })}
                 />
               </Form.Group>
