@@ -37,7 +37,12 @@ function Login() {
         })
         console.log(state);
       } else if (!response.data.age){
-        newUser();
+        dispatch({
+          type: "profile",
+          newUser: true
+        })
+        console.log(state.newUser);
+        relocate();
       }
     })
     dispatch({
@@ -50,12 +55,7 @@ function Login() {
   };
 
   function newUser(){
-    dispatch({
-      type: "profile",
-      newUser: true
-    })
-    console.log(state.newUser);
-    relocate();
+
   }
 
   function relocate(){
