@@ -36,6 +36,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     outcome: {
       type: DataTypes.STRING
+    },
+    counter: {
+      type: DataTypes.INTEGER
     }
   });
 

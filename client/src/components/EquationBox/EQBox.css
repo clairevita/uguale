@@ -47,6 +47,7 @@
     height: 140px;
     margin-left: -50px;
     margin-right: -50px;
+    
  
 }
 .answerField {
@@ -71,6 +72,7 @@
 
 .number {
     letter-spacing: 32px;
+    text-align: right;
 }
 
 @media screen and (max-width: 768px) {
