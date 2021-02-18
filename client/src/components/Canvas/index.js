@@ -21,20 +21,26 @@ function Canvas(props) {
     // const [numbers, setNumbers] = useLocalState("numbers")
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
+    let userAnswer;
     console.log(props)
+
     function handleSkip() {
+        userAnswer = state.answers.join("");
+        finalAnswer = state.numberOne + state.numberTwo;
         let newMath = curr.equationSkip(state.difficulty);
+        setModalIsOpen(true);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
         dispatch({
             type: "skip",
             difficulty: newMath[0],
             numberOne: newMath[1],
-            numberTwo: newMath[2]
+            numberTwo: newMath[2],
+            ans: ("You are doing great, the right answer was: " + finalAnswer)
         });
     }
 
     function checkAnswer() {
-        let userAnswer = state.answers.join("");
+        userAnswer = state.answers.join("");
         finalAnswer = state.numberOne + state.numberTwo;
         dispatch({
             type: "setOld",
