@@ -60,7 +60,7 @@ function NewUserModal() {
       technicalAssistance: form.technicalAssistance,
       outcome: form.outcome
     })
-    setModalIsOpen(false);
+    // setModalIsOpen(false);
   }
   return (
     <div>
