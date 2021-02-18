@@ -3,7 +3,7 @@ import { useLocalState } from "../../utils/localS";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
 import './Canvas.css';
-
+import API from '../../utils/API';
 import EquationBox from '../EquationBox'
 import { useMathContext, useEffect } from "../../utils/GlobalState"
 import SubmitBttn from '../Buttons/SubmitBttn';
@@ -15,11 +15,11 @@ const curr = require('../../utils/Curr');
 
 
 function Canvas(props) {
-    const [state, dispatch] = useMathContext();
+    const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
-
+    console.log(props)
     function handleSkip() {
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
@@ -44,6 +44,12 @@ function Canvas(props) {
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+            let numbers = newMath[1] + "," + newMath[2]
+            API.updateStats({
+                email: state.email,
+                difficulty: newMath[0],
+                lastIntegers: numbers
+            })
             dispatch({
                 type: "win",
                 difficulty: newMath[0],
@@ -54,6 +60,12 @@ function Canvas(props) {
         } else {
             let newMath = curr.equationLose(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
+            let numbers = newMath[1] + "," + newMath[2]
+            API.updateStats({
+                email: state.email,
+                difficulty: newMath[0],
+                lastIntegers: numbers
+            })
             dispatch({
                 type: "loss",
                 difficulty: newMath[0],
@@ -108,10 +120,12 @@ function Canvas(props) {
                     onHide={() => setModalIsOpen(false)}
                         onClick={() => {
                             setDif(state.difficulty);
+                            
                             checkAnswer();
                             canvasRef.current.clearCanvas();
                         }} /> 
                     <p>{dif}</p>
+
                 </Col>
             </Row>
 

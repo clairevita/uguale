@@ -1,25 +1,49 @@
 import React from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
-
-// refresh token
-import { refreshTokenSetup } from '../../utils/refreshToken';
-import NewUserModal from '../NewUserModal';
-
+import { useMathContext } from "../../utils/GlobalState"
+import API from '../../utils/API';
+import { useHistory } from 'react-router'
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
 function Login() {
+  const [state, dispatch] = useMathContext();
+  const history = useHistory();
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
-    console.log(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
-    refreshTokenSetup(res);
+    API.signup({
+      email: res.profileObj.email,
+      profileImage: res.profileObj.imageUrl,
+      name: res.profileObj.name,
+    }).then(function(response) {
+      if (response.data === "user already exists!"){
+        console.log("")
+      } else {
+        dispatch({
+          type: "profile",
+          newUser: true
+        })
+        relocate();
+      }
+    })
+    dispatch({
+      type: "setEmail",
+      email: res.profileObj.email
+  });
+  console.log(state);
+// This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
+  // refreshTokenSetup(res);
   };
-
+  function relocate(){
+    history.push("/home");
+  }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
+    dispatch({
+      type: "setEmail",
+      email: "Guest"
+  });
     console.log(
       `Failed to login`
     );
@@ -29,19 +53,20 @@ function Login() {
     onSuccess,
     onFailure,
     clientId,
-    isSignedIn: true,
+    isSignedIn: false,
     accessType: 'offline',
     // responseType: 'code',
     // prompt: 'consent',
   });
 
   return (
+    <>
     <button onClick={signIn} className="button">
       <img src="icons/logo.png" alt="google login" className="icon"></img>
-
       <span className="buttonText">Sign in with Google</span>
-      <NewUserModal />
     </button>
+    
+  </>
   );
 }
 

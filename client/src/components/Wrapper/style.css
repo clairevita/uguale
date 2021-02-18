@@ -2,8 +2,8 @@
   min-height: 100%;
   padding-top: 25px;
   padding-bottom: 140px;
-  opacity: 99%;
   z-index: -1;
+  opacity: .99;
 }
 
 .mintmain {

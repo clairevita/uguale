@@ -8,9 +8,8 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
+    profileImage: {
+      type: DataTypes.STRING
     },
     name: {
       type: DataTypes.STRING,
@@ -18,6 +17,25 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
+    },
+    difficulty: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    lastIntegers: {
+      type: DataTypes.STRING
+    },
+    wrongQuestions: {
+      type: DataTypes.STRING 
+    },
+    age: {
+      type: DataTypes.INTEGER
+    },
+    technicalAssistance: {
+      type: DataTypes.BOOLEAN
+    },
+    outcome: {
+      type: DataTypes.STRING
     }
   });
 

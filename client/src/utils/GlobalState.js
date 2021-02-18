@@ -23,7 +23,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""],
+                answers: ["", "", "", "", "", "", "", ""],
                 ans: action.ans
             };
         case "win":
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""],
+                answers: ["", "", "", "", "", "", "", ""],
                 ans: action.ans
             };
         case "skip":
@@ -41,7 +41,7 @@ const reducer = (state, action) => {
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
-                answers: ["", ""],
+                answers: ["", "", "", "", "", "", "", ""],
                 ans: action.ans
             };
         case "answer":
@@ -50,13 +50,18 @@ const reducer = (state, action) => {
                 answers: action.answers,
             };
         case "profile":
-            return { ...state, newUser: true}; 
-        case "setOld":
-            return {
+            return { ...state, newUser: true };
+        case "setEmail":
+            return { 
                 ...state, 
-                oldnumberOne: action.numberOne,
-                oldnumberTwo: action.numberTwo
-            }
+                email: action.email 
+            };
+        case "submitForm":
+            return { ...state, 
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo,
+                newUser: false };
         default:
             return state;
     };
@@ -74,6 +79,7 @@ const MathProvider = ({ value = [], ...props }) => {
         night: "",
         newUser: false,
         ans: ""
+        email: ""
     });
     return <Provider value={[state, dispatch]} {...props} />
 };

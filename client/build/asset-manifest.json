@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af29dedb.chunk.css",
+    "main.js": "/static/js/main.3f19cba5.chunk.js",
+    "main.js.map": "/static/js/main.3f19cba5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d0661ea0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d0661ea0.js.map",
+    "static/css/2.0fff510e.chunk.css": "/static/css/2.0fff510e.chunk.css",
+    "static/js/2.2e7ef351.chunk.js": "/static/js/2.2e7ef351.chunk.js",
+    "static/js/2.2e7ef351.chunk.js.map": "/static/js/2.2e7ef351.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.0fff510e.chunk.css.map": "/static/css/2.0fff510e.chunk.css.map",
+    "static/css/main.af29dedb.chunk.css.map": "/static/css/main.af29dedb.chunk.css.map",
+    "static/js/2.2e7ef351.chunk.js.LICENSE.txt": "/static/js/2.2e7ef351.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/uguale-logo-brown.42e18256.png": "/static/media/uguale-logo-brown.42e18256.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0661ea0.js",
+    "static/css/2.0fff510e.chunk.css",
+    "static/js/2.2e7ef351.chunk.js",
+    "static/css/main.af29dedb.chunk.css",
+    "static/js/main.3f19cba5.chunk.js"
+  ]
+}

@@ -3,18 +3,17 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
-import Footer from "../components/Footer";
 import logo from '../images/uguale-logo-brown.png';
 import Login from "../components/Login/Login";
 import './home.css';
-
+import NewUserModal from '../components/NewUserModal';
 function Home() {
   return (
     <div>
       <Container style={{ marginTop: 30 }}>
-        <div class="Homebg"></div>
-        <div class="Homebg bg2"></div>
-        <div class="Homebg bg3"></div>
+        <div className="Homebg"></div>
+        <div className="Homebg bg2"></div>
+        <div className="Homebg bg3"></div>
         <Row>
           <Col size="md-2">
           </Col>
@@ -58,6 +57,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <NewUserModal />
     </div>
   );
 }
