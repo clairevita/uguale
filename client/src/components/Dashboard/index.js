@@ -1,6 +1,6 @@
 import React from "react";
 import { useMathContext } from "../../utils/GlobalState";
-import { Card, Row, Col, ButtonGroup, Button } from "react-bootstrap";
+import { Card, Row, Col, ButtonGroup, Jumbotron } from "react-bootstrap";
 import DashBttn from "../Buttons/DashBttn"
 import "./dashboard.css";
 
@@ -9,6 +9,11 @@ function Dashboard() {
     const [state, dispatch] = useMathContext();
     return (
         <div>
+
+            <Jumbotron className={'text-center ' + state.night + state.themeStyle + 'dash jumbotron-fluid'}> 
+                <h1 class="display-4">PROFILE<span> USER.EMAIL?</span></h1>
+            </Jumbotron>
+
             <Row className="dash-row">
                 <Col Size="md-4">
                     <Card bsPrefix={'border-left-' + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
@@ -80,3 +85,4 @@ export default Dashboard;
 
 
 // className={state.night + state.themeStyle + 'main'}
+// {/* <hr class="my-4"></hr> */}

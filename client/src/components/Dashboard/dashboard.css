@@ -1,3 +1,6 @@
+
+
+
 /* .header {
     background-color: lightgray;
     border-width: thin;
@@ -91,40 +94,47 @@
   }
 
 
-  /* card background colors 
+
+  /* jumbotron */
+
+  .jumbotron {
+    padding: 100px;
+  }
+
+  /* jumbotron background colors 
    */
-  .mintmain {
+  .mintdash {
     background-color: #AFEADC;
     opacity: 95%;
   }
   
-  .berrymain {
+  .berrydash {
     background-color: #e9ced5;
     opacity: 95%;
   }
   
-  .honeymain {
+  .honeydash {
     background-color: #F2F0A1;
     opacity: 95%;
   }
   
-  .classicmain {
+  .classicdash {
    background-color: #e6eeec;
    opacity: 95%;
   }
   
-  .nightmintmain {
+  .nightmintdash {
     background-color: #4c3735;
   }
   
-  .nightberrymain {
+  .nightberrydash {
     background-color: #2d2147;
   }
   
-  .nighthoneymain {
+  .nighthoneydash {
     background-color: #701b45;
   }
   
-  .nightclassicmain {
+  .nightclassicdash {
     background-color: #302E2C;
   }
