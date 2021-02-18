@@ -19,7 +19,7 @@ module.exports = {
         email: req.body.email,
         profileImage: req.body.profileImage,
         name: req.body.name,
-        difficulty: 2
+        difficulty: "2"
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err)); 
@@ -50,11 +50,9 @@ module.exports = {
           db.User
           .create({
             email: req.body.email,
-            difficulty: req.body.difficulty,
-            lastIntegers: req.body.numbers,
-            age: req.body.age,
-            technicalAssistance: req.body.technicalAssistance,
-            outcome: req.body.outcome
+            profileImage: req.body.profileImage,
+            name: req.body.name,
+            difficulty: 2
           })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err)); 
@@ -66,7 +64,12 @@ module.exports = {
   infoAdd: function (req, res) {
     db.User
       .update({
-
+        email: req.body.email,
+        difficulty: req.body.difficulty,
+        lastIntegers: req.body.numbers,
+        age: req.body.age,
+        technicalAssistance: req.body.technicalAssistance,
+        outcome: req.body.outcome
       },
       {
         where: {
