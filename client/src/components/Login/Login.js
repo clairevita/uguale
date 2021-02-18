@@ -3,13 +3,13 @@ import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
-
+import { useHistory } from 'react-router'
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
 function Login() {
   const [state, dispatch] = useMathContext();
-
+  const history = useHistory();
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     API.signup({
@@ -24,6 +24,7 @@ function Login() {
           type: "profile",
           newUser: true
         });
+        history.go(0);
       }
     })
     dispatch({
