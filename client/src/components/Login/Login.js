@@ -18,8 +18,8 @@ function Login() {
       name: res.profileObj.name,
     }).then(function(response) {
       if (response.data === "user already exists!"){
-        API.getUser(res.profileObj.email).then(function(response){
-          console.log(response.body);
+        API.getUser(res.profileObj.email).then((response) => {
+          console.log(response);
         })
       } else {
         dispatch({
@@ -46,7 +46,7 @@ function Login() {
       type: "setEmail",
       email: "Guest"
   });
-    console.log(
+    console.log( 
       `Failed to login`
     );
   };
@@ -57,8 +57,6 @@ function Login() {
     clientId,
     isSignedIn: false,
     accessType: 'offline',
-    // responseType: 'code',
-    // prompt: 'consent',
   });
 
   return (
