@@ -45,6 +45,7 @@ function NewUserModal() {
   }
 
   function sendStats(difficulty, numberOne, numberTwo){
+    console.log(state);
     dispatch({
       type: "submitForm",
       difficulty: difficulty,

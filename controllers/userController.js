@@ -64,7 +64,6 @@ module.exports = {
   infoAdd: function (req, res) {
     db.User
       .update({
-        email: req.body.email,
         difficulty: req.body.difficulty,
         lastIntegers: req.body.numbers,
         age: req.body.age,
