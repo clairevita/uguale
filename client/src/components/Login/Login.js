@@ -23,6 +23,7 @@ function Login() {
           type: "profile",
           newUser: false
         })
+        console.log(state);
         API.getUser(res.profileObj.email).then(res => {
           dataCheck(res);
         })
@@ -31,6 +32,7 @@ function Login() {
           type: "profile",
           newUser: true
         })
+        console.log(state);
         relocate();
       }
     })
