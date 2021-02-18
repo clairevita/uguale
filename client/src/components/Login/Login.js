@@ -53,7 +53,7 @@ function Login() {
           numberTwo: numberTwo
         });
       } else if (!response.data.response){
-        modalOpen();
+        setModalIsOpen(true);
       }
     })
     dispatch({
@@ -65,7 +65,7 @@ function Login() {
   };
 
   function modalOpen() {
-    setModalIsOpen(true);
+    
   }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
