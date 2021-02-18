@@ -70,7 +70,7 @@ function NewUserModal() {
         show={modalIsOpen}
         onHide={() => setModalIsOpen(false)}
         aria-labelledby="example-modal-sizes-title-lg">
-        <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
+        <Modal.Header className={state.night + state.themeStyle + 'header'}>
           <Modal.Title id="example-modal-sizes-title-lg">
             Welcome! Please create your profile:
                     </Modal.Title>

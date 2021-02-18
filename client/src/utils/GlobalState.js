@@ -34,6 +34,7 @@ const reducer = (state, action) => {
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
                 answers: ["", "", "", "", "", "", "", ""],
+                correctHistory: action.correctHistory,
                 ans: action.ans
             };
         case "skip":
@@ -68,7 +69,9 @@ const reducer = (state, action) => {
                 ...state, 
                 difficulty: action.difficulty,
                 numberOne: action.numberOne,
-                numberTwo: action.numberTwo
+                numberTwo: action.numberTwo,
+                signedUp: action.signedUp,
+                name: action.name
         }
         case "setCurrent":
             return {
@@ -97,7 +100,10 @@ const MathProvider = ({ value = [], ...props }) => {
         night: "",
         newUser: false,
         ans: "",
-        email: ""
+        email: "",
+        name: "Guest",
+        startDate: "Make an account to find out!",
+        correctHistory: 0
     });
     return <Provider value={[state, dispatch]} {...props} />
 };

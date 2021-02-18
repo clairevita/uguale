@@ -42,29 +42,17 @@ function Dashboard() {
     }
     return (
         <div>
-            <h2 className={'text-center text-' + state.night + state.themeStyle + ' jumbotron-fluid display-4 profile'}>PROFILE<span> USER.EMAIL?</span></h2>
+            <h2 className={'text-center text-' + state.night + state.themeStyle + ' jumbotron-fluid display-4 profile'}>hi,<span> {state.name.toLowerCase()}!</span></h2>
 
             <Row className="dash-row">
                 <Col size="md-4">
                     <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
                         <Card.Body className="left-padding">
                             <Row className="mini-dash-row">
-                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-uppercase'}>User Since:</div>
+                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-lowercase'}>User Since:</div>
                             </Row>
                             <Row className="mini-dash-row">
-                                <div className="h5 font-weight-bold text-secondary text-uppercase">Feb 2, 2020</div>
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col size="md-4">
-                    <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
-                        <Card.Body className="left-padding">
-                            <Row className="mini-dash-row">
-                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-uppercase'}># of Days Practiced:</div>
-                            </Row>
-                            <Row className="mini-dash-row">
-                                <div className="h5 font-weight-bold text-secondary text-uppercase"><span className="average-price">17</span></div>
+                                <div className="h5 font-weight-bold text-secondary text-lowercase">{state.startDate}</div>
                             </Row>
                         </Card.Body>
                     </Card>
@@ -73,10 +61,22 @@ function Dashboard() {
                     <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
                         <Card.Body className="left-padding">
                             <Row className="mini-dash-row">
-                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-uppercase'}>Completion Rate:</div>
+                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-lowercase'}># equations answered:</div>
                             </Row>
                             <Row className="mini-dash-row">
-                                <div className="h5 font-weight-bold text-secondary text-uppercase"><span className="completion-rate">90%</span></div>
+                                <div className="h5 font-weight-bold text-secondary text-lowercase"><span className="average-price">{state.correctHistory}</span></div>
+                            </Row>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col size="md-4">
+                    <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
+                        <Card.Body className="left-padding">
+                            <Row className="mini-dash-row">
+                                <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-lowercase'}>difficulty modifier:</div>
+                            </Row>
+                            <Row className="mini-dash-row">
+                                <div className="h5 font-weight-bold text-secondary text-lowercase"><span className="completion-rate">{state.difficulty}</span></div>
                             </Row>
                         </Card.Body>
                     </Card>
@@ -86,7 +86,7 @@ function Dashboard() {
                 <Col size="md-12">
                     <Card bsPrefix={'border-left-' + state.night + state.themeStyle + ' shadow p-3 mb-5 bg-white rounded'}>
                         <Card.Header>
-                            <div className={'h4 font-weight-bold text-uppercase text-' + state.night + state.themeStyle}> Give these another try:
+                            <div className={'h4 font-weight-bold text-lowercase text-' + state.night + state.themeStyle}> you got this question wrong in the past, give it another shot!
                             </div>
                         </Card.Header>
                         <Card.Body className="left-padding">
@@ -113,7 +113,7 @@ function Dashboard() {
                             }
                             </div>
                             : 
-                            <h2>Nice Job! No Wrong Answers!</h2>
+                            <h2>nice job! no wrong answers!</h2>
                             
                             }
 

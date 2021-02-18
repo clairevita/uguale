@@ -39,7 +39,10 @@ function Login() {
           type: "returnUser",
           difficulty: response.data.data.difficulty,
           numberOne: numberOne,
-          numberTwo: numberTwo
+          numberTwo: numberTwo,
+          signedUp: response.data.data.createdAt,
+          name: response.data.data.name,
+          correctHistory: response.data.data.counter
         });
       } else if (!response.data.response){
         setModalIsOpen(true);

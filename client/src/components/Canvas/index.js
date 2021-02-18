@@ -52,17 +52,20 @@ function Canvas(props) {
         if (userAnswer == finalAnswer) {
             let newMath = curr.equationWin(state.difficulty);
             console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
-            let numbers = newMath[1] + "," + newMath[2]
+            let numbers = newMath[1] + "," + newMath[2];
+            let streak = state.correctHistory + 1
             API.updateStats({
                 email: state.email,
                 difficulty: newMath[0],
-                lastIntegers: numbers
+                lastIntegers: numbers,
+                counter: streak
             })
             dispatch({
                 type: "win",
                 difficulty: newMath[0],
                 numberOne: newMath[1],
                 numberTwo: newMath[2],
+                correctHistory: streak,
                 ans: "You are Awesome and SMART"
             });
         } else {
@@ -147,7 +150,6 @@ function Canvas(props) {
                             checkAnswer();
                             canvasRef.current.clearCanvas();
                         }} />
-                    <p>{dif}</p>
                 </Col>
             </Row>
             </Container>
