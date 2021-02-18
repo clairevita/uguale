@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import logo from '../images/uguale-logo-brown.png';
 import Login from "../components/Login/Login";
 import './home.css';
-
+import NewUserModal from '../NewUserModal';
 function Home() {
   return (
     <div>
@@ -58,6 +58,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <NewUserModal />
     </div>
   );
 }

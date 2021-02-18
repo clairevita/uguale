@@ -4,7 +4,7 @@ import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
 
-import NewUserModal from '../NewUserModal';
+
 
 
 
@@ -27,7 +27,7 @@ function Login() {
         dispatch({
           type: "profile",
           newUser: true
-        })
+        });
       }
     })
     dispatch({
@@ -68,7 +68,7 @@ function Login() {
 
       <span className="buttonText">Sign in with Google</span>
     </button>
-    <NewUserModal />
+    
   </>
   );
 }
