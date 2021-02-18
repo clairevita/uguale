@@ -10,7 +10,7 @@ import API from '../../utils/API';
 
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
-  const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [form, setState] = useState({
     age: 50,
     technicalAssistance: false,
