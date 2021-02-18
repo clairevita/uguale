@@ -50,7 +50,7 @@ function Login() {
         });
         setModalIsOpen(false);
         history.push("/game");
-      } else if (!response.data.age) {
+      } if (response.response == "returning") {
         setModalIsOpen(true);
         history.push("/");
       }

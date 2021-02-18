@@ -45,7 +45,7 @@ module.exports = {
       .findOne({ where: { email: req.body.email } })
       .then(function (user) {
         if (user) {
-          res.send({ data: user })
+          res.send({ response: "returning", data: user })
           // res.send("user already exists!")
         } else {
           db.User
