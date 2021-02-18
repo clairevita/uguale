@@ -49,9 +49,10 @@ function Login() {
           numberTwo: numberTwo
         });
         setModalIsOpen(false);
-        history.push("/");
+        history.push("/game");
       } else if (!response.data.age) {
         setModalIsOpen(true);
+        history.push("/");
       }
     })
     dispatch({
