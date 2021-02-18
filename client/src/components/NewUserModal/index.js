@@ -8,7 +8,6 @@ import '../Buttons/buttons.css';
 import Curr from '../../utils/Curr';
 import API from '../../utils/API';
 
-
 function NewUserModal() {
   const [state, dispatch] = useMathContext();
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
@@ -68,7 +67,7 @@ function NewUserModal() {
         backdrop="static"
         keyboard={false}
         show={modalIsOpen}
-        onHide={() => setModalIsOpen(!state.newUser)}
+        onHide={() => setModalIsOpen(false)}
         aria-labelledby="example-modal-sizes-title-lg">
         <Modal.Header className={state.night + state.themeStyle + 'header'} closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">

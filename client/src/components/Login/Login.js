@@ -3,7 +3,8 @@ import { useGoogleLogin } from 'react-google-login';
 import "./login.css";
 import { useMathContext } from "../../utils/GlobalState"
 import API from '../../utils/API';
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router';
+import NewUserModal from '../components/NewUserModal';
 const clientId =
   '632745579079-uigk4jq1cgb2ueci500k91s4ip6gellc.apps.googleusercontent.com';
 
@@ -86,7 +87,7 @@ function Login() {
       <img src="icons/logo.png" alt="google login" className="icon"></img>
       <span className="buttonText">Sign in with Google</span>
     </button>
-    
+    <NewUserModal />
   </>
   );
 }
