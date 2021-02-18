@@ -24,6 +24,7 @@ function Login() {
           type: "profile",
           newUser: true
         })
+        relocate();
       }
     })
     dispatch({
@@ -34,6 +35,9 @@ function Login() {
 // This function keeps refreshing the signin. Since we're just using their email let's see how the app functions with out it.
   // refreshTokenSetup(res);
   };
+  function relocate(){
+    history.push("/home");
+  }
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
     dispatch({
