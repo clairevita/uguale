@@ -19,8 +19,23 @@ function Login() {
     }).then(function(response) {
       console.log(response.data);
       if (response.data.age){
-        // No we can dispatch
-       
+        let numberOne;
+        let numberTwo;
+        if (response.data.lastIntegers){
+          let splitResponse = response.data.lastIntegers.split(",");
+          numberOne = splitResponse[0];
+          numberTwo = splitResponse[1];
+        } else {
+          numberOne = Math.ceil(Math.random()*response.data.difficulty);
+          numberTwo = Math.ceil(Math.random()*response.data.difficulty);
+        }
+        dispatch({
+          type: "submitForm",
+          difficulty: response.data.difficulty,
+          numberOne: numberOne,
+          numberTwo: numberTwo,
+          newUser: false
+        })
       } else {
         dispatch({
           type: "profile",
