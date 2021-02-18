@@ -19,7 +19,7 @@ function Canvas(props) {
     const [dif, setDif] = useLocalState("dif");
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
-
+    console.log(props)
     function handleSkip() {
         let newMath = curr.equationSkip(state.difficulty);
         console.log(newMath[0] + "  NumberOne:" + newMath[1] + "  NumberTwo" + newMath[2]);
