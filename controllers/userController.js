@@ -21,7 +21,7 @@ module.exports = {
         name: req.body.name,
         difficulty: "2"
       })
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.send(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {

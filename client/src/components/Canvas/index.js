@@ -71,7 +71,7 @@ function Canvas(props) {
                 difficulty: newMath[0],
                 numberOne: newMath[1],
                 numberTwo: newMath[2],
-                ans: ("You are doing great, the right answer was: "+finalAnswer)
+                ans: ("You are doing great, the right answer was: " + finalAnswer)
             });
         }
     }
@@ -105,7 +105,11 @@ function Canvas(props) {
                 </Col>
                 <Col size="md-6" align="center">
                     <SkipBttn
-                        onClick={() => { 
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
+                        onClick={() => {
+                            setDif(state.difficulty);
+                            
                             handleSkip();
                             canvasRef.current.clearCanvas();
                         }}
@@ -116,14 +120,14 @@ function Canvas(props) {
             <Row>
                 <Col size="md-12" align="center">
                     <SubmitBttn
-                    show={modalIsOpen}
-                    onHide={() => setModalIsOpen(false)}
+                        show={modalIsOpen}
+                        onHide={() => setModalIsOpen(false)}
                         onClick={() => {
                             setDif(state.difficulty);
-                            
+
                             checkAnswer();
                             canvasRef.current.clearCanvas();
-                        }} /> 
+                        }} />
                     <p>{dif}</p>
 
                 </Col>
