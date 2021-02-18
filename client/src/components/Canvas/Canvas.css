@@ -10,6 +10,11 @@
     background-image: url("https://t4.ftcdn.net/jpg/00/51/26/13/360_F_51261378_tgZeyDjAdWl4AjXyk2IN4PRiylquEwyx.jpg");
     z-index: 0;
 }
+@media screen and (max-width: 768px) {
+    .canvasContainer  {
+        height: 400px;
+    }
+  }
 
 .buttons {
     margin-top: 10px;

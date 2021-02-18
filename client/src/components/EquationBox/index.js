@@ -37,10 +37,10 @@ function EquationBox() {
     <div id="EQbox" className="jumbotron jumbotron-fluid text-center ">
       <div>
         <Row>
-          <Col className="number">
+          <Col xs={4} sm={4} md={4} lg="5" className="number">
             +
           </Col>
-          <Col>
+          <Col xs sm md lg="2">
             <Row className="number">
               {state.numberOne}
             </Row>
