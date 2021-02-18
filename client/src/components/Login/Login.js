@@ -51,7 +51,7 @@ function Login() {
         });
         
         history.push("/game");
-      } else {
+      } else if (!response.response){
         setModalIsOpen(true);
       }
     })
