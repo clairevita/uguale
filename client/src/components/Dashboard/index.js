@@ -11,7 +11,7 @@ function Dashboard() {
     const [state, dispatch] = useMathContext();
     let wronganswerString = state.wrongQuestions;
     let wrongAnswers;
-    let data = state.startDate.substring(0, 6)
+    let date = state.startDate.substring(0, 6)
     let index;
     if (wronganswerString != "") {
         wrongAnswers = wronganswerString.split("||");
@@ -52,7 +52,7 @@ function Dashboard() {
                                 <div className={'text-' + state.night + state.themeStyle + ' font-weight-bold text-lowercase'}>User Since:</div>
                             </Row>
                             <Row className="mini-dash-row">
-                                <div className="h5 font-weight-bold text-secondary text-lowercase">{state.startDate}</div>
+                                <div className="h5 font-weight-bold text-secondary text-lowercase">{state.startDate.substring(0, 6)}</div>
                             </Row>
                         </Card.Body>
                     </Card>
