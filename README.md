@@ -18,13 +18,13 @@ https://github.com/clairevita/uguale
  https://uguale.herokuapp.com/
 
 ## Description
- xxxxxx
+ A full-stack application developed using the MVC paradigm; using Node and Sequelize to query and route data in the app, React to generate HTML and manage the frontend logic and Google Login to authenticate users loging in.
  
 ## Installation 
- xxxxx
+ This aplication is deployed to heroku so no installation is needed unless to be modified. You can fork this [REPO](https://github.com/clairevita/uguale) if you want to freely experiment with changes.
 
 ## Usage
- xxxxx
+ A simple Math application that mimics manual math skills using a canvas on the screen, it is free to use and it allows you to check on your progress.
 
 ## Contributing
  Claire Vita, Deirdre Cruice, Logan Morro, Roman Mazzei.
