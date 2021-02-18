@@ -70,6 +70,15 @@ const reducer = (state, action) => {
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo
         }
+        case "setCurrent":
+            return {
+                ...state,
+                difficulty: action.difficulty,
+                numberOne: action.numberOne,
+                numberTwo: action.numberTwo
+                // wrongQuestions: action.wrongQuestions
+
+            }
         default:
             return state;
     };

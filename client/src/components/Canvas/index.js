@@ -66,7 +66,7 @@ function Canvas(props) {
                 ans: "You are Awesome and SMART"
             });
         } else {
-            let wrongAnswer = `${state.numberOne}-${state.numberTwo}||`
+            let wrongAnswer = `${state.numberOne}+${state.numberTwo}||`
             let wrongQuestions = state.wrongQuestions + wrongAnswer;
             let modDifficulty;
             if (state.difficulty === 2){
@@ -119,7 +119,6 @@ function Canvas(props) {
                     <EraseBttn
                         onClick={() => {
                             canvasRef.current.clearCanvas();
-
                         }}
                     />
                 </Col>
