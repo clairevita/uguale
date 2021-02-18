@@ -5,6 +5,7 @@ import Col from "../components/Col";
 import StartBttn from "../components/StartBttn";
 import logo from '../images/uguale-logo-brown.png';
 import Login from "../components/Login/Login";
+import CreatorBttn from "../components/Buttons/CreatorBttns";
 import './home.css';
 
 function Home() {
@@ -26,16 +27,13 @@ function Home() {
 
         <Row>
           <Col size="md-12">
-            <h1>Welcome!</h1>
+            <h1>A Math Application Done the Right Way </h1>
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet diam tortor, id
-              consequat mauris ullamcorper eu. Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. Pellentesque et dui id justo finibus
-              sollicitudin at et metus. 
+            <p className="text-center">
+              A simple maths application for regular practice.
             </p>
           </Col>
         </Row>
@@ -54,6 +52,16 @@ function Home() {
         <Row>
           <Col size="md-12">
             <Login/>
+          </Col>
+        </Row>
+        <Row>
+        <Col size="md-12">
+          <br/>
+          <br />
+            <h2>Designed, Developed, Deployed by:</h2>
+          </Col>
+          <Col size="md-12">
+            <CreatorBttn />
           </Col>
         </Row>
       </Container>
