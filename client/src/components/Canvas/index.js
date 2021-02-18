@@ -17,6 +17,7 @@ const curr = require('../../utils/Curr');
 function Canvas(props) {
     const [state, dispatch] = useMathContext({});
     const [dif, setDif] = useLocalState("dif");
+    const [numbers, setNumbers] = useLocalState("numbers")
     const [modalIsOpen, setModalIsOpen] = useState(false);
     let finalAnswer;
     console.log(props)
@@ -109,7 +110,7 @@ function Canvas(props) {
                         onHide={() => setModalIsOpen(false)}
                         onClick={() => {
                             setDif(state.difficulty);
-                            
+
                             handleSkip();
                             canvasRef.current.clearCanvas();
                         }}
@@ -129,7 +130,7 @@ function Canvas(props) {
                             canvasRef.current.clearCanvas();
                         }} />
                     <p>{dif}</p>
-
+                    <p>{numbers}</p>
                 </Col>
             </Row>
 
