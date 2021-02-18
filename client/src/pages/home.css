@@ -3,7 +3,7 @@
     width: inherit;
 }
 
-h1 {
+h1, h2 {
     color: #4C3735;
     text-align: center;
     font-family: 'Varela Round', sans-serif;
