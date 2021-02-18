@@ -71,7 +71,9 @@ const reducer = (state, action) => {
                 numberOne: action.numberOne,
                 numberTwo: action.numberTwo,
                 signedUp: action.signedUp,
-                name: action.name
+                name: action.name,
+                correctHistory: action.correctHistory,
+                startDate: action.startDate
         }
         case "setCurrent":
             return {
