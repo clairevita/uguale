@@ -8,4 +8,6 @@ router.get("/user/:id", userController.findById);
 
 router.put("/user", userController.update);
 
+router.put("/user/info", userController.infoAdd);
+
 module.exports = router

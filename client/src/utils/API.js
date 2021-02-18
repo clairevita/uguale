@@ -17,5 +17,10 @@ export default {
   },
   updateStats: function(data){
     return axios.put("/api/user/", data);
+  },
+
+  newuserInfo: function(data){
+    return axios.put("/api/user/info", data);
   }
+
 };

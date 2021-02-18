@@ -12,7 +12,7 @@ function NewUserModal() {
   const [modalIsOpen, setModalIsOpen] = useState(state.newUser);
   const [form, setState] = useState({
     age: 50,
-    technicalAssistance: "",
+    technicalAssistance: false,
     outcome: ""
   })
 
@@ -50,6 +50,15 @@ function NewUserModal() {
       numberTwo: numberTwo,
       newUser: false
     });
+    let numbers = numberOne + "," + numberTwo
+    API.newuserInfo({
+      email: state.email,
+      difficulty: difficulty,
+      lastIntegers: numbers,
+      age: state.age,
+      technicalAssistance: state.technicalAssistance,
+      outcome: state.outcome
+  })
   }
   return (
     <div>
