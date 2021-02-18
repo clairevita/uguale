@@ -50,6 +50,7 @@ function NewUserModal() {
       numberTwo: numberTwo,
       newUser: false
     });
+    console.log(state)
     let numbers = numberOne + "," + numberTwo
     API.newuserInfo({
       email: state.email,
