@@ -18,25 +18,22 @@ https://github.com/clairevita/uguale
  https://uguale.herokuapp.com/
 
 ## Description
- xxxxxx
+Where are the math applications that engage with the skills we're taught when we're first learning? This basic addition application allows users to practice their addition skills like they learned in their early education. Right to left digit inputs and a sketchable backdrop engage your brain with those early methodologies.
  
 ## Installation 
- xxxxx
+ 
+ 
 
 ## Usage
  xxxxx
 
 ## Contributing
- Claire Vita, Deirdre Cruice, Logan Morro, Roman Mazzei.
 
-## Tests
- None.
+For contributions, comments, or suggestions. Please reachout to the developers. Their contact information can be found in [Credits](#credits).
 
 ## License
        MIT
-  
-## Questions
-For any questions you can find us on Github
+
 
 > GitHub https://github.com/clairevita
 
