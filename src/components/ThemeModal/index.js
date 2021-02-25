@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import { useMathContext } from "../../utils/GlobalState";
 import "./thememodal.css";
-import ToggleButton from "../ToggleBttn/index.js";
+/*import ToggleButton from "../ToggleBttn/index.js";*/
 import Logout from "../Logout/Logout.js";
 import Login from "../Login/Login.js";
 // import Form from "react-bootstrap/Form"
